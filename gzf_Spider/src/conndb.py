@@ -5,7 +5,7 @@ def conn_db():  # 连接数据库函数
     conn = pymysql.connect(
         host='111.230.251.136',
         user='root',
-        passwd='Liu@06027',
+        passwd='',
         db='gzf',
         charset='utf8')
     cur = conn.cursor()
