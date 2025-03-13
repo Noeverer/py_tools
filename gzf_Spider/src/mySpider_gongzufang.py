@@ -4,6 +4,7 @@ import time,os,re
 import datetime
 import conndb,requests
 from sendmail_for_gzf import sendmail
+from selenium.webdriver.chrome.service import Service  # 导入 Service 类
 
 
 def start_selenium(url):
@@ -12,10 +13,13 @@ def start_selenium(url):
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--remote-debugging-port=9222")
-    driver = os.path.join("/usr/bin/","chromedriver")
-
-    browser = webdriver.Chrome(executable_path=driver,chrome_options=chrome_options)
+    # 使用 Service 类指定 ChromeDriver 路径
+    driver_path = "/usr/local/bin/chromedriver"
+    service = Service(executable_path=driver_path)
     
+    # 初始化 WebDriver
+    browser = webdriver.Chrome(service=service, options=chrome_options)
+
     browser.get(url)
     time.sleep(2)
     print("web握手成功")
@@ -132,10 +136,10 @@ def checkbox_houses(houses,need_house,start_time,end_time):
         for one_house in houses:
             for one_need in need_house:
                 if one_house.get('house_type').find(one_need) != -1:
-                    if int(one_house.get('house_site').replace(' 月租金','')) < 3000:
+                    if int(one_house.get('house_site').replace(' 月租金','')) < 4000:
                         send_info = '<>'.join(one_house.values()) + '<>' +str(n_time)
                         send_info = re.sub('[^\u4e00-\u9fa5^a-z^A-Z^0-9]','',send_info)
-                        receiver = "https://api.day.app/65H5UU3wpmLwSAzxn7PVb6/%s?group=%s" % (send_info, '公租房')
+                        receiver = "https://api.day.app/WYmRcVLnFKWJP5AJKWADU/%s?group=%s" % (send_info, '公租房')
                         resp = requests.get(receiver)
                         print("+++ send to my iphone +++",send_info)
 
@@ -144,7 +148,7 @@ def main():
     print("程序执行开始")
     # url = "https://select.pdgzf.com/villageLists"
     url = "https://select.pdgzf.com/houseLists"
-    kill_chrome = os.system("ps -ef | grep chrome | awk -F ' ' '{print $2}' | xargs -i kill {}")
+    kill_chrome = os.system("ps -ef | grep chromedrive | awk -F ' ' '{print $2}' | xargs -i kill {}")
     print(kill_chrome,"frist kill chrome")
     driver = start_selenium(url)
     houselist = get_house_content(driver)
