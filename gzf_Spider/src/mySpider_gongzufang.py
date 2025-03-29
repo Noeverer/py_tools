@@ -135,13 +135,13 @@ def checkbox_houses(houses,need_house,start_time,end_time):
     if n_time > d_time and n_time < d_time1:
         for one_house in houses:
             for one_need in need_house:
-                if one_house.get('house_type').find(one_need) != -1:
-                    if int(one_house.get('house_site').replace(' 月租金','')) < 4000:
-                        send_info = '<>'.join(one_house.values()) + '<>' +str(n_time)
-                        send_info = re.sub('[^\u4e00-\u9fa5^a-z^A-Z^0-9]','',send_info)
-                        receiver = "https://api.day.app/WYmRcVLnFKWJP5AJKWADU/%s?group=%s" % (send_info, '公租房')
-                        resp = requests.get(receiver)
-                        print("+++ send to my iphone +++",send_info)
+                if one_house.get('house_type').find(one_need) != -1 and int(one_house.get('house_site').replace(' 月租金','')) < 4000:
+                    send_info = '<>'.join(one_house.values()) + '<>' +str(n_time)
+                    send_info = re.sub('[^\u4e00-\u9fa5^a-z^A-Z^0-9]','',send_info)
+                    receiver = "https://api.day.app/vWYmRcVLnFKWJP5AJKWADU/%s?group=%s" % (send_info, '公租房')
+                    # receiver = "https://api.day.app/vWYmRcVLnFKWJP5AJKWADU/%s?group=%s" % (send_info, '公租房')
+                    resp = requests.get(receiver)
+                    print("+++ send to my iphone +++",send_info)
 
 
 def main():
@@ -152,10 +152,10 @@ def main():
     print(kill_chrome,"frist kill chrome")
     driver = start_selenium(url)
     houselist = get_house_content(driver)
-    os.system("ps -ef | grep chrome | awk -F ' ' '{print $2}' | xargs -i kill {}")
+    os.system("ps -ef | grep chromedrive | awk -F ' ' '{print $2}' | xargs -i kill {}")
     checkbox_houses(houselist,need_house,'08:30','22:55')
     print("程序执行结束")
 
 
-need_house = ["唐镇","张江","川沙","曹路","合庆"]
+need_house = ["唐镇","张江","川沙","曹路","合庆","金桥"]
 main()
