@@ -23,7 +23,6 @@ def start_selenium(url):
     browser.get(url)
     time.sleep(2)
     print("web握手成功")
-    browser.quit
     return browser
 
 
@@ -88,7 +87,7 @@ def get_house_content(driver):
     except Exception as e:
         print(e)
     finally:
-        driver.quit()
+        driver.quit()  # 确保浏览器正确退出
     return houselist
 
 
@@ -148,11 +147,11 @@ def main():
     print("程序执行开始")
     # url = "https://select.pdgzf.com/villageLists"
     url = "https://select.pdgzf.com/houseLists"
-    kill_chrome = os.system("ps -ef | grep chromedrive | awk -F ' ' '{print $2}' | xargs -i kill {}")
-    print(kill_chrome,"frist kill chrome")
+    # kill_chrome = os.system("ps -ef | grep chromedrive | awk -F ' ' '{print $2}' | xargs -i kill {}")
+    # print(kill_chrome,"frist kill chrome")
     driver = start_selenium(url)
     houselist = get_house_content(driver)
-    os.system("ps -ef | grep chromedrive | awk -F ' ' '{print $2}' | xargs -i kill {}")
+    # os.system("ps -ef | grep chromedrive | awk -F ' ' '{print $2}' | xargs -i kill {}")
     checkbox_houses(houselist,need_house,'08:30','22:55')
     print("程序执行结束")
 

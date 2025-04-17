@@ -38,3 +38,10 @@ def conn_close(conn, cur):  # 关闭所有连接
     cur.close()
     conn.close()
     print("断开数据库")
+
+
+if __name__ == '__main__':
+    conn, cur = conn_db()
+    sql = 'select * from HouseData'
+    cur = exe_query(cur, sql)
+    print(cur.fetchall())

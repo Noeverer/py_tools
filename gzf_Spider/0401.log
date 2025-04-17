@@ -1,0 +1,178 @@
+程序执行开始
+web握手成功
+获取到1条房源 == {'house_name': '永泰路630弄（永泰花苑）/60号/11楼/1101', 'house_type': '所属区域：三林镇', 'house_site': '7412 月租金'}
+获取到2条房源 == {'house_name': '永泰路630弄（永泰花苑）/61号/11楼/1101', 'house_type': '所属区域：三林镇', 'house_site': '7484 月租金'}
+获取到3条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/09号/03楼/301', 'house_type': '所属区域：花木街道', 'house_site': '6789 月租金'}
+获取到4条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/09号/02楼/201', 'house_type': '所属区域：花木街道', 'house_site': '6770 月租金'}
+获取到5条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/14号/01楼/101', 'house_type': '所属区域：花木街道', 'house_site': '6701 月租金'}
+获取到6条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/11号/03楼/301', 'house_type': '所属区域：花木街道', 'house_site': '6789 月租金'}
+获取到7条房源 == {'house_name': '芳华路788弄（苗桐佳苑南区）/13号/01楼/101', 'house_type': '所属区域：花木街道', 'house_site': '6596 月租金'}
+获取到8条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/14号/02楼/201', 'house_type': '所属区域：花木街道', 'house_site': '6774 月租金'}
+获取到9条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/10号/02楼/203', 'house_type': '所属区域：花木街道', 'house_site': '6770 月租金'}
+获取到10条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/10号/01楼/103', 'house_type': '所属区域：花木街道', 'house_site': '6695 月租金'}
+成功抓取第1页
+获取到11条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/15号/01楼/103', 'house_type': '所属区域：花木街道', 'house_site': '6616 月租金'}
+获取到12条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/08号/01楼/103', 'house_type': '所属区域：花木街道', 'house_site': '6695 月租金'}
+获取到13条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/05号/01楼/101', 'house_type': '所属区域：花木街道', 'house_site': '6701 月租金'}
+获取到14条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/06号/01楼/103', 'house_type': '所属区域：花木街道', 'house_site': '6616 月租金'}
+获取到15条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/14号/03楼/301', 'house_type': '所属区域：花木街道', 'house_site': '6793 月租金'}
+获取到16条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/11号/02楼/201', 'house_type': '所属区域：花木街道', 'house_site': '6770 月租金'}
+获取到17条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/08号/02楼/203', 'house_type': '所属区域：花木街道', 'house_site': '6770 月租金'}
+获取到18条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/09号/01楼/101', 'house_type': '所属区域：花木街道', 'house_site': '6695 月租金'}
+获取到19条房源 == {'house_name': '芳华路739弄（苗桐佳苑北区）/15号/02楼/203', 'house_type': '所属区域：花木街道', 'house_site': '6690 月租金'}
+获取到20条房源 == {'house_name': '浦三路926弄（浦三锦苑）/07号/06楼/601', 'house_type': '所属区域：南码头路街道', 'house_site': '7354 月租金'}
+成功抓取第2页
+获取到21条房源 == {'house_name': '浦三路926弄（浦三锦苑）/07号/03楼/301', 'house_type': '所属区域：南码头路街道', 'house_site': '7314 月租金'}
+获取到22条房源 == {'house_name': '浦三路926弄（浦三锦苑）/07号/04楼/401', 'house_type': '所属区域：南码头路街道', 'house_site': '7324 月租金'}
+获取到23条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/02楼/204', 'house_type': '所属区域：金桥镇', 'house_site': '5284 月租金'}
+获取到24条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/18楼/1804', 'house_type': '所属区域：金桥镇', 'house_site': '5442 月租金'}
+获取到25条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/29楼/2901', 'house_type': '所属区域：金桥镇', 'house_site': '5558 月租金'}
+获取到26条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/20楼/2001', 'house_type': '所属区域：金桥镇', 'house_site': '5464 月租金'}
+获取到27条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/17楼/1701', 'house_type': '所属区域：金桥镇', 'house_site': '5432 月租金'}
+获取到28条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/16楼/1604', 'house_type': '所属区域：金桥镇', 'house_site': '5422 月租金'}
+获取到29条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/28楼/2801', 'house_type': '所属区域：金桥镇', 'house_site': '5549 月租金'}
+获取到30条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/15楼/1501', 'house_type': '所属区域：金桥镇', 'house_site': '5411 月租金'}
+成功抓取第3页
+获取到31条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/12楼/1201', 'house_type': '所属区域：金桥镇', 'house_site': '5378 月租金'}
+获取到32条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/25楼/2501', 'house_type': '所属区域：金桥镇', 'house_site': '5517 月租金'}
+获取到33条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/31楼/3101', 'house_type': '所属区域：金桥镇', 'house_site': '5570 月租金'}
+获取到34条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/27楼/2701', 'house_type': '所属区域：金桥镇', 'house_site': '5538 月租金'}
+获取到35条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/10楼/1004', 'house_type': '所属区域：金桥镇', 'house_site': '5358 月租金'}
+获取到36条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/05楼/504', 'house_type': '所属区域：金桥镇', 'house_site': '5305 月租金'}
+获取到37条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/16楼/1601', 'house_type': '所属区域：金桥镇', 'house_site': '5422 月租金'}
+获取到38条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/26楼/2601', 'house_type': '所属区域：金桥镇', 'house_site': '5528 月租金'}
+获取到39条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/04楼/401', 'house_type': '所属区域：金桥镇', 'house_site': '5305 月租金'}
+获取到40条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/09楼/904', 'house_type': '所属区域：金桥镇', 'house_site': '5347 月租金'}
+成功抓取第4页
+获取到41条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/09楼/901', 'house_type': '所属区域：金桥镇', 'house_site': '5347 月租金'}
+获取到42条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/22楼/2201', 'house_type': '所属区域：金桥镇', 'house_site': '5485 月租金'}
+获取到43条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/11楼/1101', 'house_type': '所属区域：金桥镇', 'house_site': '5369 月租金'}
+获取到44条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/19楼/1901', 'house_type': '所属区域：金桥镇', 'house_site': '5453 月租金'}
+获取到45条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/03楼/304', 'house_type': '所属区域：金桥镇', 'house_site': '5294 月租金'}
+获取到46条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/27楼/2704', 'house_type': '所属区域：金桥镇', 'house_site': '5538 月租金'}
+获取到47条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/13楼/1301', 'house_type': '所属区域：金桥镇', 'house_site': '5389 月租金'}
+获取到48条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/28楼/2804', 'house_type': '所属区域：金桥镇', 'house_site': '5549 月租金'}
+获取到49条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/08楼/804', 'house_type': '所属区域：金桥镇', 'house_site': '5337 月租金'}
+获取到50条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/07楼/704', 'house_type': '所属区域：金桥镇', 'house_site': '5325 月租金'}
+成功抓取第5页
+获取到51条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/10楼/1001', 'house_type': '所属区域：金桥镇', 'house_site': '5358 月租金'}
+获取到52条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/23楼/2301', 'house_type': '所属区域：金桥镇', 'house_site': '5495 月租金'}
+获取到53条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/14楼/1404', 'house_type': '所属区域：金桥镇', 'house_site': '5400 月租金'}
+获取到54条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/29楼/2904', 'house_type': '所属区域：金桥镇', 'house_site': '5558 月租金'}
+获取到55条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/31楼/3104', 'house_type': '所属区域：金桥镇', 'house_site': '5570 月租金'}
+获取到56条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/30楼/3001', 'house_type': '所属区域：金桥镇', 'house_site': '5570 月租金'}
+获取到57条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/26楼/2604', 'house_type': '所属区域：金桥镇', 'house_site': '5528 月租金'}
+获取到58条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/07楼/701', 'house_type': '所属区域：金桥镇', 'house_site': '5325 月租金'}
+获取到59条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/14楼/1401', 'house_type': '所属区域：金桥镇', 'house_site': '5400 月租金'}
+获取到60条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/02楼/201', 'house_type': '所属区域：金桥镇', 'house_site': '5284 月租金'}
+成功抓取第6页
+获取到61条房源 == {'house_name': '庙港路188弄（申鸿苑）/03号/06楼/604', 'house_type': '所属区域：金桥镇', 'house_site': '5315 月租金'}
+获取到62条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/18楼/1801', 'house_type': '所属区域：', 'house_site': '13008 月租金'}
+获取到63条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/24楼/2401', 'house_type': '所属区域：', 'house_site': '13208 月租金'}
+获取到64条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/02楼/201', 'house_type': '所属区域：', 'house_site': '12385 月租金'}
+获取到65条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/13楼/1301', 'house_type': '所属区域：', 'house_site': '12843 月租金'}
+获取到66条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/11楼/1103', 'house_type': '所属区域：', 'house_site': '12776 月租金'}
+获取到67条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/20楼/2001', 'house_type': '所属区域：', 'house_site': '13074 月租金'}
+获取到68条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/02楼/203', 'house_type': '所属区域：', 'house_site': '12641 月租金'}
+获取到69条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/21楼/2103', 'house_type': '所属区域：', 'house_site': '10840 月租金'}
+获取到70条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/11楼/1103', 'house_type': '所属区域：', 'house_site': '10579 月租金'}
+成功抓取第7页
+获取到71条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/17楼/1703', 'house_type': '所属区域：', 'house_site': '12975 月租金'}
+获取到72条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/14楼/1403', 'house_type': '所属区域：', 'house_site': '12876 月租金'}
+获取到73条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/25楼/2501', 'house_type': '所属区域：', 'house_site': '13240 月租金'}
+获取到74条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/05楼/501', 'house_type': '所属区域：', 'house_site': '12578 月租金'}
+获取到75条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/23楼/2303', 'house_type': '所属区域：', 'house_site': '13173 月租金'}
+获取到76条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/26楼/2601', 'house_type': '所属区域：', 'house_site': '13240 月租金'}
+获取到77条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/17楼/1703', 'house_type': '所属区域：', 'house_site': '10736 月租金'}
+获取到78条房源 == {'house_name': '永泰路136弄/15号/18楼/1801', 'house_type': '所属区域：三林镇', 'house_site': '4403 月租金'}
+获取到79条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/12楼/1205', 'house_type': '所属区域：川沙新镇', 'house_site': '2902 月租金'}
+获取到80条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/3楼/302', 'house_type': '所属区域：川沙新镇', 'house_site': '2861 月租金'}
+成功抓取第8页
+连接数据库……
+数据库连接成功
+准备写入数据…… [{'house_name': '永泰路630弄（永泰花苑）/60号/11楼/1101', 'house_type': '所属区域：三林镇', 'house_site': '7412 月租金'}, {'house_name': '永泰路630弄（永泰花苑）/61号/11楼/1101', 'house_type': '所属区域：三林镇', 'house_site': '7484 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/09号/03楼/301', 'house_type': '所属区域：花木街道', 'house_site': '6789 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/09号/02楼/201', 'house_type': '所属区域：花木街道', 'house_site': '6770 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/14号/01楼/101', 'house_type': '所属区域：花木街道', 'house_site': '6701 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/11号/03楼/301', 'house_type': '所属区域：花木街道', 'house_site': '6789 月租金'}, {'house_name': '芳华路788弄（苗桐佳苑南区）/13号/01楼/101', 'house_type': '所属区域：花木街道', 'house_site': '6596 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/14号/02楼/201', 'house_type': '所属区域：花木街道', 'house_site': '6774 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/10号/02楼/203', 'house_type': '所属区域：花木街道', 'house_site': '6770 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/10号/01楼/103', 'house_type': '所属区域：花木街道', 'house_site': '6695 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/15号/01楼/103', 'house_type': '所属区域：花木街道', 'house_site': '6616 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/08号/01楼/103', 'house_type': '所属区域：花木街道', 'house_site': '6695 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/05号/01楼/101', 'house_type': '所属区域：花木街道', 'house_site': '6701 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/06号/01楼/103', 'house_type': '所属区域：花木街道', 'house_site': '6616 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/14号/03楼/301', 'house_type': '所属区域：花木街道', 'house_site': '6793 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/11号/02楼/201', 'house_type': '所属区域：花木街道', 'house_site': '6770 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/08号/02楼/203', 'house_type': '所属区域：花木街道', 'house_site': '6770 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/09号/01楼/101', 'house_type': '所属区域：花木街道', 'house_site': '6695 月租金'}, {'house_name': '芳华路739弄（苗桐佳苑北区）/15号/02楼/203', 'house_type': '所属区域：花木街道', 'house_site': '6690 月租金'}, {'house_name': '浦三路926弄（浦三锦苑）/07号/06楼/601', 'house_type': '所属区域：南码头路街道', 'house_site': '7354 月租金'}, {'house_name': '浦三路926弄（浦三锦苑）/07号/03楼/301', 'house_type': '所属区域：南码头路街道', 'house_site': '7314 月租金'}, {'house_name': '浦三路926弄（浦三锦苑）/07号/04楼/401', 'house_type': '所属区域：南码头路街道', 'house_site': '7324 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/02楼/204', 'house_type': '所属区域：金桥镇', 'house_site': '5284 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/18楼/1804', 'house_type': '所属区域：金桥镇', 'house_site': '5442 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/29楼/2901', 'house_type': '所属区域：金桥镇', 'house_site': '5558 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/20楼/2001', 'house_type': '所属区域：金桥镇', 'house_site': '5464 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/17楼/1701', 'house_type': '所属区域：金桥镇', 'house_site': '5432 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/16楼/1604', 'house_type': '所属区域：金桥镇', 'house_site': '5422 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/28楼/2801', 'house_type': '所属区域：金桥镇', 'house_site': '5549 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/15楼/1501', 'house_type': '所属区域：金桥镇', 'house_site': '5411 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/12楼/1201', 'house_type': '所属区域：金桥镇', 'house_site': '5378 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/25楼/2501', 'house_type': '所属区域：金桥镇', 'house_site': '5517 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/31楼/3101', 'house_type': '所属区域：金桥镇', 'house_site': '5570 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/27楼/2701', 'house_type': '所属区域：金桥镇', 'house_site': '5538 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/10楼/1004', 'house_type': '所属区域：金桥镇', 'house_site': '5358 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/05楼/504', 'house_type': '所属区域：金桥镇', 'house_site': '5305 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/16楼/1601', 'house_type': '所属区域：金桥镇', 'house_site': '5422 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/26楼/2601', 'house_type': '所属区域：金桥镇', 'house_site': '5528 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/04楼/401', 'house_type': '所属区域：金桥镇', 'house_site': '5305 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/09楼/904', 'house_type': '所属区域：金桥镇', 'house_site': '5347 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/09楼/901', 'house_type': '所属区域：金桥镇', 'house_site': '5347 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/22楼/2201', 'house_type': '所属区域：金桥镇', 'house_site': '5485 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/11楼/1101', 'house_type': '所属区域：金桥镇', 'house_site': '5369 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/19楼/1901', 'house_type': '所属区域：金桥镇', 'house_site': '5453 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/03楼/304', 'house_type': '所属区域：金桥镇', 'house_site': '5294 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/27楼/2704', 'house_type': '所属区域：金桥镇', 'house_site': '5538 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/13楼/1301', 'house_type': '所属区域：金桥镇', 'house_site': '5389 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/28楼/2804', 'house_type': '所属区域：金桥镇', 'house_site': '5549 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/08楼/804', 'house_type': '所属区域：金桥镇', 'house_site': '5337 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/07楼/704', 'house_type': '所属区域：金桥镇', 'house_site': '5325 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/10楼/1001', 'house_type': '所属区域：金桥镇', 'house_site': '5358 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/23楼/2301', 'house_type': '所属区域：金桥镇', 'house_site': '5495 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/14楼/1404', 'house_type': '所属区域：金桥镇', 'house_site': '5400 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/29楼/2904', 'house_type': '所属区域：金桥镇', 'house_site': '5558 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/31楼/3104', 'house_type': '所属区域：金桥镇', 'house_site': '5570 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/30楼/3001', 'house_type': '所属区域：金桥镇', 'house_site': '5570 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/26楼/2604', 'house_type': '所属区域：金桥镇', 'house_site': '5528 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/07楼/701', 'house_type': '所属区域：金桥镇', 'house_site': '5325 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/14楼/1401', 'house_type': '所属区域：金桥镇', 'house_site': '5400 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/02楼/201', 'house_type': '所属区域：金桥镇', 'house_site': '5284 月租金'}, {'house_name': '庙港路188弄（申鸿苑）/03号/06楼/604', 'house_type': '所属区域：金桥镇', 'house_site': '5315 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/18楼/1801', 'house_type': '所属区域：', 'house_site': '13008 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/24楼/2401', 'house_type': '所属区域：', 'house_site': '13208 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/02楼/201', 'house_type': '所属区域：', 'house_site': '12385 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/13楼/1301', 'house_type': '所属区域：', 'house_site': '12843 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/11楼/1103', 'house_type': '所属区域：', 'house_site': '12776 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/20楼/2001', 'house_type': '所属区域：', 'house_site': '13074 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/02楼/203', 'house_type': '所属区域：', 'house_site': '12641 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/21楼/2103', 'house_type': '所属区域：', 'house_site': '10840 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/11楼/1103', 'house_type': '所属区域：', 'house_site': '10579 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/17楼/1703', 'house_type': '所属区域：', 'house_site': '12975 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/14楼/1403', 'house_type': '所属区域：', 'house_site': '12876 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/25楼/2501', 'house_type': '所属区域：', 'house_site': '13240 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/05楼/501', 'house_type': '所属区域：', 'house_site': '12578 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/23楼/2303', 'house_type': '所属区域：', 'house_site': '13173 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/26楼/2601', 'house_type': '所属区域：', 'house_site': '13240 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/17楼/1703', 'house_type': '所属区域：', 'house_site': '10736 月租金'}, {'house_name': '永泰路136弄/15号/18楼/1801', 'house_type': '所属区域：三林镇', 'house_site': '4403 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/12楼/1205', 'house_type': '所属区域：川沙新镇', 'house_site': '2902 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/3楼/302', 'house_type': '所属区域：川沙新镇', 'house_site': '2861 月租金'}]
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('永泰路630弄（永泰花苑）/60号/11楼/1101','所属区域：三林镇','7412 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('永泰路630弄（永泰花苑）/61号/11楼/1101','所属区域：三林镇','7484 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/09号/03楼/301','所属区域：花木街道','6789 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/09号/02楼/201','所属区域：花木街道','6770 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/14号/01楼/101','所属区域：花木街道','6701 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/11号/03楼/301','所属区域：花木街道','6789 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路788弄（苗桐佳苑南区）/13号/01楼/101','所属区域：花木街道','6596 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/14号/02楼/201','所属区域：花木街道','6774 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/10号/02楼/203','所属区域：花木街道','6770 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/10号/01楼/103','所属区域：花木街道','6695 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/15号/01楼/103','所属区域：花木街道','6616 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/08号/01楼/103','所属区域：花木街道','6695 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/05号/01楼/101','所属区域：花木街道','6701 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/06号/01楼/103','所属区域：花木街道','6616 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/14号/03楼/301','所属区域：花木街道','6793 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/11号/02楼/201','所属区域：花木街道','6770 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/08号/02楼/203','所属区域：花木街道','6770 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/09号/01楼/101','所属区域：花木街道','6695 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('芳华路739弄（苗桐佳苑北区）/15号/02楼/203','所属区域：花木街道','6690 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路926弄（浦三锦苑）/07号/06楼/601','所属区域：南码头路街道','7354 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路926弄（浦三锦苑）/07号/03楼/301','所属区域：南码头路街道','7314 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路926弄（浦三锦苑）/07号/04楼/401','所属区域：南码头路街道','7324 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/02楼/204','所属区域：金桥镇','5284 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/18楼/1804','所属区域：金桥镇','5442 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/29楼/2901','所属区域：金桥镇','5558 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/20楼/2001','所属区域：金桥镇','5464 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/17楼/1701','所属区域：金桥镇','5432 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/16楼/1604','所属区域：金桥镇','5422 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/28楼/2801','所属区域：金桥镇','5549 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/15楼/1501','所属区域：金桥镇','5411 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/12楼/1201','所属区域：金桥镇','5378 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/25楼/2501','所属区域：金桥镇','5517 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/31楼/3101','所属区域：金桥镇','5570 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/27楼/2701','所属区域：金桥镇','5538 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/10楼/1004','所属区域：金桥镇','5358 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/05楼/504','所属区域：金桥镇','5305 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/16楼/1601','所属区域：金桥镇','5422 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/26楼/2601','所属区域：金桥镇','5528 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/04楼/401','所属区域：金桥镇','5305 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/09楼/904','所属区域：金桥镇','5347 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/09楼/901','所属区域：金桥镇','5347 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/22楼/2201','所属区域：金桥镇','5485 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/11楼/1101','所属区域：金桥镇','5369 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/19楼/1901','所属区域：金桥镇','5453 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/03楼/304','所属区域：金桥镇','5294 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/27楼/2704','所属区域：金桥镇','5538 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/13楼/1301','所属区域：金桥镇','5389 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/28楼/2804','所属区域：金桥镇','5549 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/08楼/804','所属区域：金桥镇','5337 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/07楼/704','所属区域：金桥镇','5325 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/10楼/1001','所属区域：金桥镇','5358 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/23楼/2301','所属区域：金桥镇','5495 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/14楼/1404','所属区域：金桥镇','5400 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/29楼/2904','所属区域：金桥镇','5558 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/31楼/3104','所属区域：金桥镇','5570 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/30楼/3001','所属区域：金桥镇','5570 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/26楼/2604','所属区域：金桥镇','5528 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/07楼/701','所属区域：金桥镇','5325 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/14楼/1401','所属区域：金桥镇','5400 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/02楼/201','所属区域：金桥镇','5284 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('庙港路188弄（申鸿苑）/03号/06楼/604','所属区域：金桥镇','5315 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/18楼/1801','所属区域：','13008 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/24楼/2401','所属区域：','13208 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/02楼/201','所属区域：','12385 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/13楼/1301','所属区域：','12843 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/11楼/1103','所属区域：','12776 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/20楼/2001','所属区域：','13074 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/02楼/203','所属区域：','12641 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/21楼/2103','所属区域：','10840 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/11楼/1103','所属区域：','10579 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/17楼/1703','所属区域：','12975 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/14楼/1403','所属区域：','12876 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/25楼/2501','所属区域：','13240 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/05楼/501','所属区域：','12578 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/23楼/2303','所属区域：','13173 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/26楼/2601','所属区域：','13240 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/17楼/1703','所属区域：','10736 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('永泰路136弄/15号/18楼/1801','所属区域：三林镇','4403 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/12楼/1205','所属区域：川沙新镇','2902 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/3楼/302','所属区域：川沙新镇','2861 月租金') 
+数据写入完成
+断开数据库
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号12楼1205所属区域川沙新镇2902月租金20250417095550240572
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号3楼302所属区域川沙新镇2861月租金20250417095550240572
+程序执行结束
