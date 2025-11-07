@@ -1,0 +1,203 @@
+程序执行开始
+开始检查运行环境...
+Chrome浏览器版本: Google Chrome 139.0.7258.138
+chromedriver版本: ChromeDriver 139.0.7258.138 (884e54ea8d42947ed636779015c5b4815e069838-refs/branch-heads/7258@{#2631})
+环境检查通过
+web握手成功
+获取到1条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/18楼/1801', 'house_type': '所属区域：', 'house_site': '13008 月租金'}
+获取到2条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/22楼/2201', 'house_type': '所属区域：', 'house_site': '13141 月租金'}
+获取到3条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/24楼/2401', 'house_type': '所属区域：', 'house_site': '13208 月租金'}
+获取到4条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/02楼/201', 'house_type': '所属区域：', 'house_site': '12385 月租金'}
+获取到5条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/13楼/1301', 'house_type': '所属区域：', 'house_site': '12843 月租金'}
+获取到6条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/11楼/1103', 'house_type': '所属区域：', 'house_site': '12776 月租金'}
+获取到7条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/20楼/2001', 'house_type': '所属区域：', 'house_site': '13074 月租金'}
+获取到8条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/26楼/2601', 'house_type': '所属区域：', 'house_site': '10944 月租金'}
+获取到9条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/16楼/1603', 'house_type': '所属区域：', 'house_site': '12942 月租金'}
+获取到10条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/02楼/203', 'house_type': '所属区域：', 'house_site': '12641 月租金'}
+成功抓取第1页
+获取到11条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/17楼/1703', 'house_type': '所属区域：', 'house_site': '12975 月租金'}
+获取到12条房源 == {'house_name': '民生路318弄(馨澜公寓)/02号/14楼/1403', 'house_type': '所属区域：', 'house_site': '12876 月租金'}
+获取到13条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/25楼/2501', 'house_type': '所属区域：', 'house_site': '13240 月租金'}
+获取到14条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/05楼/501', 'house_type': '所属区域：', 'house_site': '12578 月租金'}
+获取到15条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/26楼/2601', 'house_type': '所属区域：', 'house_site': '13240 月租金'}
+获取到16条房源 == {'house_name': '民生路318弄(馨澜公寓)/01号/17楼/1701', 'house_type': '所属区域：', 'house_site': '12975 月租金'}
+获取到17条房源 == {'house_name': '杜鹃路188弄（花木星辰苑）/1号/07楼/701', 'house_type': '所属区域：花木街道', 'house_site': '7357 月租金'}
+获取到18条房源 == {'house_name': '浦三路930弄（艾东苑）/15号/16楼/1603', 'house_type': '所属区域：南码头路街道', 'house_site': '4909 月租金'}
+获取到19条房源 == {'house_name': '秋亭路88弄（朗诗未来树）/116号/6楼/602', 'house_type': '所属区域：祝桥镇', 'house_site': '2063 月租金'}
+获取到20条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/12楼/1206', 'house_type': '所属区域：川沙新镇', 'house_site': '2919 月租金'}
+成功抓取第2页
+获取到21条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/3楼/302', 'house_type': '所属区域：川沙新镇', 'house_site': '2861 月租金'}
+获取到22条房源 == {'house_name': '浦三路930弄（艾东苑）/15号/4楼/406', 'house_type': '所属区域：南码头路街道', 'house_site': '4773 月租金'}
+获取到23条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/16楼/1604', 'house_type': '所属区域：川沙新镇', 'house_site': '2930 月租金'}
+获取到24条房源 == {'house_name': '永泰路136弄/33号/17楼/1704', 'house_type': '所属区域：三林镇', 'house_site': '5474 月租金'}
+获取到25条房源 == {'house_name': '永泰路136弄/33号/2楼/201', 'house_type': '所属区域：三林镇', 'house_site': '5275 月租金'}
+获取到26条房源 == {'house_name': '浦三路930弄（艾东苑）/17号/6楼/607', 'house_type': '所属区域：南码头路街道', 'house_site': '4844 月租金'}
+获取到27条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/16楼/1607', 'house_type': '所属区域：川沙新镇', 'house_site': '2948 月租金'}
+获取到28条房源 == {'house_name': '川和路399弄（张江兴科苑）/11-12号/07楼/704', 'house_type': '所属区域：张江镇', 'house_site': '4122 月租金'}
+获取到29条房源 == {'house_name': '浦三路930弄（艾东苑）/17号/20楼/2001', 'house_type': '所属区域：南码头路街道', 'house_site': '4991 月租金'}
+获取到30条房源 == {'house_name': '潍坊五村513号/潍坊五村513号/2楼/210-12', 'house_type': '所属区域：潍坊新村街道', 'house_site': '4684 月租金'}
+成功抓取第3页
+获取到31条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/7楼/705', 'house_type': '所属区域：川沙新镇', 'house_site': '2867 月租金'}
+获取到32条房源 == {'house_name': '川和路399弄（张江兴科苑）/11-12号/11楼/1102', 'house_type': '所属区域：张江镇', 'house_site': '4163 月租金'}
+获取到33条房源 == {'house_name': '上南路3880弄/12号/6楼/602/602-F', 'house_type': '所属区域：三林镇', 'house_site': '1601 月租金'}
+获取到34条房源 == {'house_name': '宣黄公路2585弄（惠南宝业华庭）/101号/2楼/201', 'house_type': '所属区域：惠南镇', 'house_site': '2244 月租金'}
+获取到35条房源 == {'house_name': '宣黄公路2585弄（惠南宝业华庭）/101号/8楼/801', 'house_type': '所属区域：惠南镇', 'house_site': '2272 月租金'}
+获取到36条房源 == {'house_name': '康涵路58弄（世茂云图）/1号/02楼/204', 'house_type': '所属区域：康桥镇', 'house_site': '3638 月租金'}
+获取到37条房源 == {'house_name': '上南路3880弄/12号/6楼/602/602-E', 'house_type': '所属区域：三林镇', 'house_site': '1551 月租金'}
+获取到38条房源 == {'house_name': '永泰路136弄/33号/18楼/1804', 'house_type': '所属区域：三林镇', 'house_site': '5474 月租金'}
+获取到39条房源 == {'house_name': '秋亭路88弄（朗诗未来树）/121号/3楼/301', 'house_type': '所属区域：祝桥镇', 'house_site': '2172 月租金'}
+获取到40条房源 == {'house_name': '宣黄公路2585弄（惠南宝业华庭）/103号/8楼/801', 'house_type': '所属区域：惠南镇', 'house_site': '2272 月租金'}
+成功抓取第4页
+获取到41条房源 == {'house_name': '上南路3880弄/28号/6楼/602-F', 'house_type': '所属区域：三林镇', 'house_site': '1870 月租金'}
+获取到42条房源 == {'house_name': '上南路3323弄（仁文公寓）/1号/2楼/205', 'house_type': '所属区域：三林镇', 'house_site': '3606 月租金'}
+获取到43条房源 == {'house_name': '浦三路930弄（艾东苑）/17号/20楼/2002', 'house_type': '所属区域：南码头路街道', 'house_site': '4282 月租金'}
+获取到44条房源 == {'house_name': '川和路399弄（张江兴科苑）/11-12号/24楼/2402', 'house_type': '所属区域：张江镇', 'house_site': '4297 月租金'}
+获取到45条房源 == {'house_name': '永泰路136弄/33号/2楼/204', 'house_type': '所属区域：三林镇', 'house_site': '5278 月租金'}
+获取到46条房源 == {'house_name': '川和路399弄（张江兴科苑）/11-12号/03楼/305', 'house_type': '所属区域：张江镇', 'house_site': '4091 月租金'}
+获取到47条房源 == {'house_name': '永泰路136弄/33号/3楼/304', 'house_type': '所属区域：三林镇', 'house_site': '5292 月租金'}
+获取到48条房源 == {'house_name': '川和路399弄（张江兴科苑）/11-12号/23楼/2301', 'house_type': '所属区域：张江镇', 'house_site': '5696 月租金'}
+获取到49条房源 == {'house_name': '康涵路58弄（世茂云图）/1号/01楼/103', 'house_type': '所属区域：康桥镇', 'house_site': '3601 月租金'}
+获取到50条房源 == {'house_name': '浦三路930弄（艾东苑）/16号/4楼/402', 'house_type': '所属区域：南码头路街道', 'house_site': '4077 月租金'}
+成功抓取第5页
+获取到51条房源 == {'house_name': '川和路399弄（张江兴科苑）/11-12号/07楼/707', 'house_type': '所属区域：张江镇', 'house_site': '4122 月租金'}
+获取到52条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/16楼/1605', 'house_type': '所属区域：川沙新镇', 'house_site': '2930 月租金'}
+获取到53条房源 == {'house_name': '康涵路58弄（世茂云图）/1号/10楼/1002', 'house_type': '所属区域：康桥镇', 'house_site': '3701 月租金'}
+获取到54条房源 == {'house_name': '浦三路930弄（艾东苑）/16号/10楼/1005', 'house_type': '所属区域：南码头路街道', 'house_site': '4883 月租金'}
+获取到55条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/9楼/903', 'house_type': '所属区域：川沙新镇', 'house_site': '2897 月租金'}
+获取到56条房源 == {'house_name': '秋亭路88弄（朗诗未来树）/119号/2楼/202', 'house_type': '所属区域：祝桥镇', 'house_site': '2057 月租金'}
+获取到57条房源 == {'house_name': '宣黄公路2585弄（惠南宝业华庭）/103号/12楼/1202', 'house_type': '所属区域：惠南镇', 'house_site': '2294 月租金'}
+获取到58条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/11楼/1106', 'house_type': '所属区域：川沙新镇', 'house_site': '2912 月租金'}
+获取到59条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/4楼/405', 'house_type': '所属区域：川沙新镇', 'house_site': '2852 月租金'}
+获取到60条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/14楼/1403', 'house_type': '所属区域：川沙新镇', 'house_site': '2932 月租金'}
+成功抓取第6页
+获取到61条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/8楼/807', 'house_type': '所属区域：川沙新镇', 'house_site': '2890 月租金'}
+获取到62条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/5楼/503', 'house_type': '所属区域：川沙新镇', 'house_site': '2868 月租金'}
+获取到63条房源 == {'house_name': '潍坊五村513号/潍坊五村513号/5楼/505-07', 'house_type': '所属区域：潍坊新村街道', 'house_site': '4684 月租金'}
+获取到64条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/13楼/1307', 'house_type': '所属区域：川沙新镇', 'house_site': '2926 月租金'}
+获取到65条房源 == {'house_name': '川和路399弄（张江兴科苑）/11-12号/02楼/202', 'house_type': '所属区域：张江镇', 'house_site': '4081 月租金'}
+获取到66条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/17楼/1701', 'house_type': '所属区域：川沙新镇', 'house_site': '2845 月租金'}
+获取到67条房源 == {'house_name': '潍坊五村513号/潍坊五村513号/2楼/214-16', 'house_type': '所属区域：潍坊新村街道', 'house_site': '4684 月租金'}
+获取到68条房源 == {'house_name': '上南路3880弄/27号/6楼/601/601-E', 'house_type': '所属区域：三林镇', 'house_site': '2228 月租金'}
+获取到69条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/9楼/905', 'house_type': '所属区域：川沙新镇', 'house_site': '2880 月租金'}
+获取到70条房源 == {'house_name': '浦三路930弄（艾东苑）/16号/20楼/2001', 'house_type': '所属区域：南码头路街道', 'house_site': '4957 月租金'}
+成功抓取第7页
+获取到71条房源 == {'house_name': '宣黄公路2585弄（惠南宝业华庭）/101号/12楼/1201', 'house_type': '所属区域：惠南镇', 'house_site': '2294 月租金'}
+获取到72条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/19楼/1904', 'house_type': '所属区域：川沙新镇', 'house_site': '2952 月租金'}
+获取到73条房源 == {'house_name': '大道站路94弄/10幢38号/1楼/101', 'house_type': '所属区域：三林镇', 'house_site': '6335 月租金'}
+获取到74条房源 == {'house_name': '浦三路930弄（艾东苑）/17号/19楼/1903', 'house_type': '所属区域：南码头路街道', 'house_site': '4271 月租金'}
+获取到75条房源 == {'house_name': '上南路3880弄/27号/6楼/602/602-B', 'house_type': '所属区域：三林镇', 'house_site': '1711 月租金'}
+获取到76条房源 == {'house_name': '浦三路930弄（艾东苑）/16号/19楼/1903', 'house_type': '所属区域：南码头路街道', 'house_site': '4221 月租金'}
+获取到77条房源 == {'house_name': '上南路3880弄/6号/5楼/501/501-C', 'house_type': '所属区域：三林镇', 'house_site': '922 月租金'}
+获取到78条房源 == {'house_name': '妙川路800弄（川沙博景苑）/112号/6楼/605', 'house_type': '所属区域：川沙新镇', 'house_site': '2858 月租金'}
+获取到79条房源 == {'house_name': '浦三路930弄（艾东苑）/15号/15楼/1503', 'house_type': '所属区域：南码头路街道', 'house_site': '4896 月租金'}
+获取到80条房源 == {'house_name': '杜鹃路188弄（花木星辰苑）/1号/07楼/711', 'house_type': '所属区域：花木街道', 'house_site': '4219 月租金'}
+成功抓取第8页
+连接数据库……
+数据库连接成功
+准备写入数据…… [{'house_name': '民生路318弄(馨澜公寓)/01号/18楼/1801', 'house_type': '所属区域：', 'house_site': '13008 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/22楼/2201', 'house_type': '所属区域：', 'house_site': '13141 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/24楼/2401', 'house_type': '所属区域：', 'house_site': '13208 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/02楼/201', 'house_type': '所属区域：', 'house_site': '12385 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/13楼/1301', 'house_type': '所属区域：', 'house_site': '12843 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/11楼/1103', 'house_type': '所属区域：', 'house_site': '12776 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/20楼/2001', 'house_type': '所属区域：', 'house_site': '13074 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/26楼/2601', 'house_type': '所属区域：', 'house_site': '10944 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/16楼/1603', 'house_type': '所属区域：', 'house_site': '12942 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/02楼/203', 'house_type': '所属区域：', 'house_site': '12641 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/17楼/1703', 'house_type': '所属区域：', 'house_site': '12975 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/02号/14楼/1403', 'house_type': '所属区域：', 'house_site': '12876 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/25楼/2501', 'house_type': '所属区域：', 'house_site': '13240 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/05楼/501', 'house_type': '所属区域：', 'house_site': '12578 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/26楼/2601', 'house_type': '所属区域：', 'house_site': '13240 月租金'}, {'house_name': '民生路318弄(馨澜公寓)/01号/17楼/1701', 'house_type': '所属区域：', 'house_site': '12975 月租金'}, {'house_name': '杜鹃路188弄（花木星辰苑）/1号/07楼/701', 'house_type': '所属区域：花木街道', 'house_site': '7357 月租金'}, {'house_name': '浦三路930弄（艾东苑）/15号/16楼/1603', 'house_type': '所属区域：南码头路街道', 'house_site': '4909 月租金'}, {'house_name': '秋亭路88弄（朗诗未来树）/116号/6楼/602', 'house_type': '所属区域：祝桥镇', 'house_site': '2063 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/12楼/1206', 'house_type': '所属区域：川沙新镇', 'house_site': '2919 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/3楼/302', 'house_type': '所属区域：川沙新镇', 'house_site': '2861 月租金'}, {'house_name': '浦三路930弄（艾东苑）/15号/4楼/406', 'house_type': '所属区域：南码头路街道', 'house_site': '4773 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/16楼/1604', 'house_type': '所属区域：川沙新镇', 'house_site': '2930 月租金'}, {'house_name': '永泰路136弄/33号/17楼/1704', 'house_type': '所属区域：三林镇', 'house_site': '5474 月租金'}, {'house_name': '永泰路136弄/33号/2楼/201', 'house_type': '所属区域：三林镇', 'house_site': '5275 月租金'}, {'house_name': '浦三路930弄（艾东苑）/17号/6楼/607', 'house_type': '所属区域：南码头路街道', 'house_site': '4844 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/16楼/1607', 'house_type': '所属区域：川沙新镇', 'house_site': '2948 月租金'}, {'house_name': '川和路399弄（张江兴科苑）/11-12号/07楼/704', 'house_type': '所属区域：张江镇', 'house_site': '4122 月租金'}, {'house_name': '浦三路930弄（艾东苑）/17号/20楼/2001', 'house_type': '所属区域：南码头路街道', 'house_site': '4991 月租金'}, {'house_name': '潍坊五村513号/潍坊五村513号/2楼/210-12', 'house_type': '所属区域：潍坊新村街道', 'house_site': '4684 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/7楼/705', 'house_type': '所属区域：川沙新镇', 'house_site': '2867 月租金'}, {'house_name': '川和路399弄（张江兴科苑）/11-12号/11楼/1102', 'house_type': '所属区域：张江镇', 'house_site': '4163 月租金'}, {'house_name': '上南路3880弄/12号/6楼/602/602-F', 'house_type': '所属区域：三林镇', 'house_site': '1601 月租金'}, {'house_name': '宣黄公路2585弄（惠南宝业华庭）/101号/2楼/201', 'house_type': '所属区域：惠南镇', 'house_site': '2244 月租金'}, {'house_name': '宣黄公路2585弄（惠南宝业华庭）/101号/8楼/801', 'house_type': '所属区域：惠南镇', 'house_site': '2272 月租金'}, {'house_name': '康涵路58弄（世茂云图）/1号/02楼/204', 'house_type': '所属区域：康桥镇', 'house_site': '3638 月租金'}, {'house_name': '上南路3880弄/12号/6楼/602/602-E', 'house_type': '所属区域：三林镇', 'house_site': '1551 月租金'}, {'house_name': '永泰路136弄/33号/18楼/1804', 'house_type': '所属区域：三林镇', 'house_site': '5474 月租金'}, {'house_name': '秋亭路88弄（朗诗未来树）/121号/3楼/301', 'house_type': '所属区域：祝桥镇', 'house_site': '2172 月租金'}, {'house_name': '宣黄公路2585弄（惠南宝业华庭）/103号/8楼/801', 'house_type': '所属区域：惠南镇', 'house_site': '2272 月租金'}, {'house_name': '上南路3880弄/28号/6楼/602-F', 'house_type': '所属区域：三林镇', 'house_site': '1870 月租金'}, {'house_name': '上南路3323弄（仁文公寓）/1号/2楼/205', 'house_type': '所属区域：三林镇', 'house_site': '3606 月租金'}, {'house_name': '浦三路930弄（艾东苑）/17号/20楼/2002', 'house_type': '所属区域：南码头路街道', 'house_site': '4282 月租金'}, {'house_name': '川和路399弄（张江兴科苑）/11-12号/24楼/2402', 'house_type': '所属区域：张江镇', 'house_site': '4297 月租金'}, {'house_name': '永泰路136弄/33号/2楼/204', 'house_type': '所属区域：三林镇', 'house_site': '5278 月租金'}, {'house_name': '川和路399弄（张江兴科苑）/11-12号/03楼/305', 'house_type': '所属区域：张江镇', 'house_site': '4091 月租金'}, {'house_name': '永泰路136弄/33号/3楼/304', 'house_type': '所属区域：三林镇', 'house_site': '5292 月租金'}, {'house_name': '川和路399弄（张江兴科苑）/11-12号/23楼/2301', 'house_type': '所属区域：张江镇', 'house_site': '5696 月租金'}, {'house_name': '康涵路58弄（世茂云图）/1号/01楼/103', 'house_type': '所属区域：康桥镇', 'house_site': '3601 月租金'}, {'house_name': '浦三路930弄（艾东苑）/16号/4楼/402', 'house_type': '所属区域：南码头路街道', 'house_site': '4077 月租金'}, {'house_name': '川和路399弄（张江兴科苑）/11-12号/07楼/707', 'house_type': '所属区域：张江镇', 'house_site': '4122 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/16楼/1605', 'house_type': '所属区域：川沙新镇', 'house_site': '2930 月租金'}, {'house_name': '康涵路58弄（世茂云图）/1号/10楼/1002', 'house_type': '所属区域：康桥镇', 'house_site': '3701 月租金'}, {'house_name': '浦三路930弄（艾东苑）/16号/10楼/1005', 'house_type': '所属区域：南码头路街道', 'house_site': '4883 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/9楼/903', 'house_type': '所属区域：川沙新镇', 'house_site': '2897 月租金'}, {'house_name': '秋亭路88弄（朗诗未来树）/119号/2楼/202', 'house_type': '所属区域：祝桥镇', 'house_site': '2057 月租金'}, {'house_name': '宣黄公路2585弄（惠南宝业华庭）/103号/12楼/1202', 'house_type': '所属区域：惠南镇', 'house_site': '2294 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/11楼/1106', 'house_type': '所属区域：川沙新镇', 'house_site': '2912 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/4楼/405', 'house_type': '所属区域：川沙新镇', 'house_site': '2852 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/14楼/1403', 'house_type': '所属区域：川沙新镇', 'house_site': '2932 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/8楼/807', 'house_type': '所属区域：川沙新镇', 'house_site': '2890 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/5楼/503', 'house_type': '所属区域：川沙新镇', 'house_site': '2868 月租金'}, {'house_name': '潍坊五村513号/潍坊五村513号/5楼/505-07', 'house_type': '所属区域：潍坊新村街道', 'house_site': '4684 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/13楼/1307', 'house_type': '所属区域：川沙新镇', 'house_site': '2926 月租金'}, {'house_name': '川和路399弄（张江兴科苑）/11-12号/02楼/202', 'house_type': '所属区域：张江镇', 'house_site': '4081 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/17楼/1701', 'house_type': '所属区域：川沙新镇', 'house_site': '2845 月租金'}, {'house_name': '潍坊五村513号/潍坊五村513号/2楼/214-16', 'house_type': '所属区域：潍坊新村街道', 'house_site': '4684 月租金'}, {'house_name': '上南路3880弄/27号/6楼/601/601-E', 'house_type': '所属区域：三林镇', 'house_site': '2228 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/9楼/905', 'house_type': '所属区域：川沙新镇', 'house_site': '2880 月租金'}, {'house_name': '浦三路930弄（艾东苑）/16号/20楼/2001', 'house_type': '所属区域：南码头路街道', 'house_site': '4957 月租金'}, {'house_name': '宣黄公路2585弄（惠南宝业华庭）/101号/12楼/1201', 'house_type': '所属区域：惠南镇', 'house_site': '2294 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/19楼/1904', 'house_type': '所属区域：川沙新镇', 'house_site': '2952 月租金'}, {'house_name': '大道站路94弄/10幢38号/1楼/101', 'house_type': '所属区域：三林镇', 'house_site': '6335 月租金'}, {'house_name': '浦三路930弄（艾东苑）/17号/19楼/1903', 'house_type': '所属区域：南码头路街道', 'house_site': '4271 月租金'}, {'house_name': '上南路3880弄/27号/6楼/602/602-B', 'house_type': '所属区域：三林镇', 'house_site': '1711 月租金'}, {'house_name': '浦三路930弄（艾东苑）/16号/19楼/1903', 'house_type': '所属区域：南码头路街道', 'house_site': '4221 月租金'}, {'house_name': '上南路3880弄/6号/5楼/501/501-C', 'house_type': '所属区域：三林镇', 'house_site': '922 月租金'}, {'house_name': '妙川路800弄（川沙博景苑）/112号/6楼/605', 'house_type': '所属区域：川沙新镇', 'house_site': '2858 月租金'}, {'house_name': '浦三路930弄（艾东苑）/15号/15楼/1503', 'house_type': '所属区域：南码头路街道', 'house_site': '4896 月租金'}, {'house_name': '杜鹃路188弄（花木星辰苑）/1号/07楼/711', 'house_type': '所属区域：花木街道', 'house_site': '4219 月租金'}]
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/18楼/1801','所属区域：','13008 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/22楼/2201','所属区域：','13141 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/24楼/2401','所属区域：','13208 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/02楼/201','所属区域：','12385 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/13楼/1301','所属区域：','12843 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/11楼/1103','所属区域：','12776 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/20楼/2001','所属区域：','13074 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/26楼/2601','所属区域：','10944 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/16楼/1603','所属区域：','12942 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/02楼/203','所属区域：','12641 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/17楼/1703','所属区域：','12975 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/02号/14楼/1403','所属区域：','12876 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/25楼/2501','所属区域：','13240 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/05楼/501','所属区域：','12578 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/26楼/2601','所属区域：','13240 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('民生路318弄(馨澜公寓)/01号/17楼/1701','所属区域：','12975 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('杜鹃路188弄（花木星辰苑）/1号/07楼/701','所属区域：花木街道','7357 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/15号/16楼/1603','所属区域：南码头路街道','4909 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('秋亭路88弄（朗诗未来树）/116号/6楼/602','所属区域：祝桥镇','2063 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/12楼/1206','所属区域：川沙新镇','2919 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/3楼/302','所属区域：川沙新镇','2861 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/15号/4楼/406','所属区域：南码头路街道','4773 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/16楼/1604','所属区域：川沙新镇','2930 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('永泰路136弄/33号/17楼/1704','所属区域：三林镇','5474 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('永泰路136弄/33号/2楼/201','所属区域：三林镇','5275 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/17号/6楼/607','所属区域：南码头路街道','4844 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/16楼/1607','所属区域：川沙新镇','2948 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('川和路399弄（张江兴科苑）/11-12号/07楼/704','所属区域：张江镇','4122 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/17号/20楼/2001','所属区域：南码头路街道','4991 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('潍坊五村513号/潍坊五村513号/2楼/210-12','所属区域：潍坊新村街道','4684 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/7楼/705','所属区域：川沙新镇','2867 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('川和路399弄（张江兴科苑）/11-12号/11楼/1102','所属区域：张江镇','4163 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('上南路3880弄/12号/6楼/602/602-F','所属区域：三林镇','1601 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('宣黄公路2585弄（惠南宝业华庭）/101号/2楼/201','所属区域：惠南镇','2244 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('宣黄公路2585弄（惠南宝业华庭）/101号/8楼/801','所属区域：惠南镇','2272 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('康涵路58弄（世茂云图）/1号/02楼/204','所属区域：康桥镇','3638 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('上南路3880弄/12号/6楼/602/602-E','所属区域：三林镇','1551 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('永泰路136弄/33号/18楼/1804','所属区域：三林镇','5474 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('秋亭路88弄（朗诗未来树）/121号/3楼/301','所属区域：祝桥镇','2172 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('宣黄公路2585弄（惠南宝业华庭）/103号/8楼/801','所属区域：惠南镇','2272 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('上南路3880弄/28号/6楼/602-F','所属区域：三林镇','1870 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('上南路3323弄（仁文公寓）/1号/2楼/205','所属区域：三林镇','3606 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/17号/20楼/2002','所属区域：南码头路街道','4282 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('川和路399弄（张江兴科苑）/11-12号/24楼/2402','所属区域：张江镇','4297 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('永泰路136弄/33号/2楼/204','所属区域：三林镇','5278 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('川和路399弄（张江兴科苑）/11-12号/03楼/305','所属区域：张江镇','4091 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('永泰路136弄/33号/3楼/304','所属区域：三林镇','5292 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('川和路399弄（张江兴科苑）/11-12号/23楼/2301','所属区域：张江镇','5696 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('康涵路58弄（世茂云图）/1号/01楼/103','所属区域：康桥镇','3601 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/16号/4楼/402','所属区域：南码头路街道','4077 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('川和路399弄（张江兴科苑）/11-12号/07楼/707','所属区域：张江镇','4122 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/16楼/1605','所属区域：川沙新镇','2930 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('康涵路58弄（世茂云图）/1号/10楼/1002','所属区域：康桥镇','3701 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/16号/10楼/1005','所属区域：南码头路街道','4883 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/9楼/903','所属区域：川沙新镇','2897 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('秋亭路88弄（朗诗未来树）/119号/2楼/202','所属区域：祝桥镇','2057 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('宣黄公路2585弄（惠南宝业华庭）/103号/12楼/1202','所属区域：惠南镇','2294 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/11楼/1106','所属区域：川沙新镇','2912 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/4楼/405','所属区域：川沙新镇','2852 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/14楼/1403','所属区域：川沙新镇','2932 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/8楼/807','所属区域：川沙新镇','2890 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/5楼/503','所属区域：川沙新镇','2868 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('潍坊五村513号/潍坊五村513号/5楼/505-07','所属区域：潍坊新村街道','4684 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/13楼/1307','所属区域：川沙新镇','2926 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('川和路399弄（张江兴科苑）/11-12号/02楼/202','所属区域：张江镇','4081 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/17楼/1701','所属区域：川沙新镇','2845 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('潍坊五村513号/潍坊五村513号/2楼/214-16','所属区域：潍坊新村街道','4684 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('上南路3880弄/27号/6楼/601/601-E','所属区域：三林镇','2228 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/9楼/905','所属区域：川沙新镇','2880 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/16号/20楼/2001','所属区域：南码头路街道','4957 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('宣黄公路2585弄（惠南宝业华庭）/101号/12楼/1201','所属区域：惠南镇','2294 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/19楼/1904','所属区域：川沙新镇','2952 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('大道站路94弄/10幢38号/1楼/101','所属区域：三林镇','6335 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/17号/19楼/1903','所属区域：南码头路街道','4271 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('上南路3880弄/27号/6楼/602/602-B','所属区域：三林镇','1711 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/16号/19楼/1903','所属区域：南码头路街道','4221 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('上南路3880弄/6号/5楼/501/501-C','所属区域：三林镇','922 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('妙川路800弄（川沙博景苑）/112号/6楼/605','所属区域：川沙新镇','2858 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('浦三路930弄（艾东苑）/15号/15楼/1503','所属区域：南码头路街道','4896 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('杜鹃路188弄（花木星辰苑）/1号/07楼/711','所属区域：花木街道','4219 月租金') 
+数据写入完成
+断开数据库
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号12楼1206所属区域川沙新镇2919月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号3楼302所属区域川沙新镇2861月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号16楼1604所属区域川沙新镇2930月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号16楼1607所属区域川沙新镇2948月租金20251107094838710535
++++ send to my iphone +++ 川和路399弄张江兴科苑1112号07楼704所属区域张江镇4122月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号7楼705所属区域川沙新镇2867月租金20251107094838710535
++++ send to my iphone +++ 川和路399弄张江兴科苑1112号11楼1102所属区域张江镇4163月租金20251107094838710535
++++ send to my iphone +++ 川和路399弄张江兴科苑1112号24楼2402所属区域张江镇4297月租金20251107094838710535
++++ send to my iphone +++ 川和路399弄张江兴科苑1112号03楼305所属区域张江镇4091月租金20251107094838710535
++++ send to my iphone +++ 川和路399弄张江兴科苑1112号07楼707所属区域张江镇4122月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号16楼1605所属区域川沙新镇2930月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号9楼903所属区域川沙新镇2897月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号11楼1106所属区域川沙新镇2912月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号4楼405所属区域川沙新镇2852月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号14楼1403所属区域川沙新镇2932月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号8楼807所属区域川沙新镇2890月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号5楼503所属区域川沙新镇2868月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号13楼1307所属区域川沙新镇2926月租金20251107094838710535
++++ send to my iphone +++ 川和路399弄张江兴科苑1112号02楼202所属区域张江镇4081月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号17楼1701所属区域川沙新镇2845月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号9楼905所属区域川沙新镇2880月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号19楼1904所属区域川沙新镇2952月租金20251107094838710535
++++ send to my iphone +++ 妙川路800弄川沙博景苑112号6楼605所属区域川沙新镇2858月租金20251107094838710535
+程序执行结束
