@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import sys
 import subprocess
+=======
+>>>>>>> c4ba579a8612b4f108b5dbfd52860c8932752113
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time,os,re
@@ -7,8 +10,11 @@ import datetime
 import conndb,requests
 from sendmail_for_gzf import sendmail
 from selenium.webdriver.chrome.service import Service  # 导入 Service 类
+<<<<<<< HEAD
 # 导入环境检查函数
 from check_gzf import check_environment
+=======
+>>>>>>> c4ba579a8612b4f108b5dbfd52860c8932752113
 
 
 def start_selenium(url):
@@ -17,6 +23,7 @@ def start_selenium(url):
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--remote-debugging-port=9222")
+<<<<<<< HEAD
     
     # 确定 chromedriver 路径
     driver_path = "/usr/local/bin/chromedriver"
@@ -31,6 +38,10 @@ def start_selenium(url):
             driver_path = "chromedriver"
     
     # 使用 Service 类指定 ChromeDriver 路径
+=======
+    # 使用 Service 类指定 ChromeDriver 路径
+    driver_path = "/usr/local/bin/chromedriver"
+>>>>>>> c4ba579a8612b4f108b5dbfd52860c8932752113
     service = Service(executable_path=driver_path)
     
     # 初始化 WebDriver
@@ -150,7 +161,11 @@ def checkbox_houses(houses,need_house,start_time,end_time):
     if n_time > d_time and n_time < d_time1:
         for one_house in houses:
             for one_need in need_house:
+<<<<<<< HEAD
                 if one_house.get('house_type').find(one_need) != -1 and int(one_house.get('house_site').replace(' 月租金','')) < 5000:
+=======
+                if one_house.get('house_type').find(one_need) != -1 and int(one_house.get('house_site').replace(' 月租金','')) < 4000:
+>>>>>>> c4ba579a8612b4f108b5dbfd52860c8932752113
                     send_info = '<>'.join(one_house.values()) + '<>' +str(n_time)
                     send_info = re.sub('[^\u4e00-\u9fa5^a-z^A-Z^0-9]','',send_info)
                     receiver = "https://api.day.app/vWYmRcVLnFKWJP5AJKWADU/%s?group=%s" % (send_info, '公租房')
@@ -161,11 +176,14 @@ def checkbox_houses(houses,need_house,start_time,end_time):
 
 def main():
     print("程序执行开始")
+<<<<<<< HEAD
     
     # 检查运行环境，如果失败尝试自动安装
     if not check_environment(auto_install=True):
         print("环境检查失败，程序退出")
     
+=======
+>>>>>>> c4ba579a8612b4f108b5dbfd52860c8932752113
     # url = "https://select.pdgzf.com/villageLists"
     url = "https://select.pdgzf.com/houseLists"
     # kill_chrome = os.system("ps -ef | grep chromedrive | awk -F ' ' '{print $2}' | xargs -i kill {}")
@@ -177,5 +195,10 @@ def main():
     print("程序执行结束")
 
 
+<<<<<<< HEAD
 need_house = ["唐镇","张江","曹路","合庆","金桥"]
 main()
+=======
+need_house = ["唐镇","张江","川沙","曹路","合庆","金桥"]
+main()
+>>>>>>> c4ba579a8612b4f108b5dbfd52860c8932752113

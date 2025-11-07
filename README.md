@@ -12,7 +12,11 @@ docker run -d \
   -e MYSQL_USER=app_user \
   -e MYSQL_PASSWORD=123@1qaz \
   --restart=unless-stopped \
+<<<<<<< HEAD
   docker.1ms.run/mariadb:10.5 \
+=======
+  mariadb:10.5 \
+>>>>>>> c4ba579a8612b4f108b5dbfd52860c8932752113
   --character-set-server=utf8mb4 \
   --collation-server=utf8mb4_unicode_ci
 

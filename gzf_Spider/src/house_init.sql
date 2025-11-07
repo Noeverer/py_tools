@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 create database gzf;
 
+=======
+>>>>>>> c4ba579a8612b4f108b5dbfd52860c8932752113
 drop table `HouseData`;
 CREATE TABLE `HouseData` (
    `house_id` INT UNSIGNED AUTO_INCREMENT  comment '自增主键',
