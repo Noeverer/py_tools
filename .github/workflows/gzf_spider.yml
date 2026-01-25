@@ -1,0 +1,170 @@
+name: 公租房爬虫定时任务
+
+on:
+  # 定时触发 - 每天北京时间 9:00 和 15:00 (UTC 1:00 和 7:00)
+  schedule:
+    - cron: '0 1,7 * * *'  # 每天两次，UTC时间1点和7点，即北京时间9点和15点
+  
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: '运行模式'
+        required: true
+        default: 'normal'
+        type: choice
+        options:
+          - normal    # 正常运行
+          - debug     # 调试模式
+          - test      # 测试模式
+
+# 并发控制：同一时间只运行一个爬虫任务
+concurrency:
+  group: gzf-spider
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    # 添加超时限制，防止任务卡死
+    timeout-minutes: 30
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+      
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: 安装依赖
+        run: |
+          pip install --upgrade pip
+          pip install -r gzf_Spider/requirement.txt
+      
+      - name: 安装Chrome浏览器和驱动
+        run: |
+          # 安装Chrome浏览器
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          
+          # 安装ChromeDriver
+          CHROME_VERSION=$(google-chrome --version | cut -d ' ' -f 3 | cut -d '.' -f 1)
+          CHROMEDRIVER_URL="https://storage.googleapis.com/chrome-for-testing-public/${CHROME_VERSION}.0.0/chromedriver-linux64.zip"
+          wget -q $CHROMEDRIVER_URL -O /tmp/chromedriver.zip
+          sudo unzip -o /tmp/chromedriver.zip -d /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver-linux64
+          sudo ln -sf /usr/local/bin/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+      
+      - name: 准备数据库环境
+        run: |
+          # 如果需要数据库支持，可以在这里初始化
+          echo "准备数据库环境..."
+          # 检查SQL文件是否存在
+          if [ -f "gzf_Spider/src/house_init.sql" ]; then
+            echo "发现数据库初始化文件，等待数据库服务启动..."
+            # 等待数据库服务启动
+            sleep 10
+          fi
+          
+      - name: 执行公租房爬虫
+        env:
+          # ==========================================
+          # 数据库配置（可选）
+          # ==========================================
+          DB_HOST: ${{ secrets.DB_HOST || 'localhost' }}
+          DB_PORT: ${{ secrets.DB_PORT || '3306' }}
+          DB_USER: ${{ secrets.DB_USER || 'root' }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME || 'house_data' }}
+          
+          # ==========================================
+          # 邮件通知配置（可选）
+          # ==========================================
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER || 'smtp.gmail.com' }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL || secrets.EMAIL_USER }}
+          
+          # ==========================================
+          # 爬虫配置
+          # ==========================================
+          DEBUG_MODE: ${{ github.event.inputs.run_mode == 'debug' && 'true' || 'false' }}
+          
+        run: |
+          echo "=========================================="
+          echo "🕷️ 开始执行公租房爬虫任务"
+          echo "=========================================="
+          echo "⏰ 时间: $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+          echo "🎯 运行模式: ${{ github.event.inputs.run_mode || 'normal' }}"
+          echo "📋 检查依赖项..."
+          
+          # 检查Chrome浏览器
+          if command -v google-chrome-stable &> /dev/null; then
+              echo "✅ Chrome浏览器已安装: $(google-chrome-stable --version)"
+          else
+              echo "❌ Chrome浏览器未安装"
+              exit 1
+          fi
+          
+          # 检查ChromeDriver
+          if command -v chromedriver &> /dev/null; then
+              echo "✅ ChromeDriver已安装: $(chromedriver --version)"
+          else
+              echo "❌ ChromeDriver未安装"
+              exit 1
+          fi
+          
+          # 检查Python依赖
+          python -c "import selenium; print(f'✅ Selenium版本: {selenium.__version__}')"
+          python -c "import requests; print(f'✅ Requests版本: {requests.__version__}')"
+          
+          echo ""
+          echo "=========================================="
+          echo "🔧 开始执行爬虫脚本"
+          echo "=========================================="
+          
+          # 进入爬虫目录并执行
+          cd gzf_Spider/src
+          
+          # 根据运行模式决定如何执行脚本
+          if [ "${{ github.event.inputs.run_mode }}" = "debug" ]; then
+            echo "🐛 启动调试模式..."
+            python -u mySpider_gongzufang.py
+          elif [ "${{ github.event.inputs.run_mode }}" = "test" ]; then
+            echo "🧪 启动测试模式..."
+            # 为了测试目的，我们可以暂时注释掉实际爬取操作，只运行部分代码
+            sed -i 's/.*driver = start_selenium(url).*/print("跳过浏览器启动，仅测试其他功能")/' mySpider_gongzufang.py
+            sed -i 's/.*houselist = get_house_content(driver).*/houselist = []/' mySpider_gongzufang.py
+            python -u mySpider_gongzufang.py
+          else
+            echo "🚀 启动正常模式..."
+            python -u mySpider_gongzufang.py
+          fi
+          
+          echo ""
+          echo "=========================================="
+          echo "✅ 爬虫任务执行完成"
+          echo "=========================================="
+      
+      - name: 上传日志文件
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gzf-spider-logs-${{ github.run_number }}
+          path: |
+            gzf_Spider/*.log
+            gzf_Spider/src/*.log
+          retention-days: 30
+      
+      - name: 发送通知（可选）
+        if: always()
+        run: |
+          echo "任务状态: ${{ job.status }}"
+          # 可根据需要配置通知服务
+          # 例如发送到 Slack、邮件或其他通知服务
