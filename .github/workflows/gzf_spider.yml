@@ -189,14 +189,17 @@ jobs:
           REPO_NAME="${{ github.repository }}"
           WORKFLOW_NAME="${{ github.workflow }}"
           
+          # 构建通知消息
+          MESSAGE="Repo: $REPO_NAME
+          Workflow: $WORKFLOW_NAME
+          Status: $STATUS
+          Run Time: $RUN_TIME
+          Run ID: ${{ github.run_id }}"
+          
           # 发送Bark通知（如果配置了BARK_URL）
           if [[ -n "${{ secrets.BARK_URL }}" ]]; then
             # 设置环境变量并运行Python脚本
-            export MESSAGE="Repo: $REPO_NAME
-Workflow: $WORKFLOW_NAME
-Status: $STATUS
-Run Time: $RUN_TIME
-Run ID: ${{ github.run_id }}"
+            export MESSAGE="$MESSAGE"
             export REPO_NAME="$REPO_NAME"
             export WORKFLOW_NAME="$WORKFLOW_NAME"
             export STATUS="$STATUS"
