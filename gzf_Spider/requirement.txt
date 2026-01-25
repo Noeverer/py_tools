@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 requests
 selenium
-=======
-requests
->>>>>>> c4ba579a8612b4f108b5dbfd52860c8932752113
