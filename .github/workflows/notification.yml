@@ -1,0 +1,146 @@
+name: Deployment Notifications
+
+on:
+  workflow_run:
+    workflows: ["Auto Fix & Deploy"]
+    types: [completed]
+    statuses: [success, failure]
+
+env:
+  # Configure notification URLs via repository secrets
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+  DINGTALK_WEBHOOK_URL: ${{ secrets.DINGTALK_WEBHOOK_URL }}
+  WECHAT_WORK_WEBHOOK_URL: ${{ secrets.WECHAT_WORK_WEBHOOK_URL }}
+
+jobs:
+  notify-success:
+    name: Notify Success
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success'
+    
+    steps:
+      - name: Send Slack notification
+        if: env.SLACK_WEBHOOK_URL != ''
+        run: |
+          curl -X POST ${{ env.SLACK_WEBHOOK_URL }} \
+            -H 'Content-Type: application/json' \
+            -d '{
+              "text": "✅ Deployment Successful",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Deployment Successful*\n\n*Repository:* ${{ github.repository }}\n*Branch:* ${{ github.event.workflow_run.head_branch }}\n*Commit:* ${{ github.event.workflow_run.head_sha }}\n*Actor:* ${{ github.event.workflow_run.actor }}"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<${{ github.event.workflow_run.html_url }}|View Workflow>"
+                  }
+                }
+              ]
+            }'
+        continue-on-error: true
+      
+      - name: Send DingTalk notification
+        if: env.DINGTALK_WEBHOOK_URL != ''
+        run: |
+          curl -X POST ${{ env.DINGTALK_WEBHOOK_URL }} \
+            -H 'Content-Type: application/json' \
+            -d "{
+              \"msgtype\": \"markdown\",
+              \"markdown\": {
+                \"title\": \"部署成功\",
+                \"text\": \"### ✅ 部署成功\\n\\n> **仓库**: ${{ github.repository }}\\n> **分支**: ${{ github.event.workflow_run.head_branch }}\\n> **提交**: ${{ github.event.workflow_run.head_sha }}\\n> **操作人**: ${{ github.event.workflow_run.actor }}\\n\\n[查看工作流](${{ github.event.workflow_run.html_url }})\"
+              }
+            }"
+        continue-on-error: true
+      
+      - name: Send WeChat Work notification
+        if: env.WECHAT_WORK_WEBHOOK_URL != ''
+        run: |
+          curl -X POST ${{ env.WECHAT_WORK_WEBHOOK_URL }} \
+            -H 'Content-Type: application/json' \
+            -d "{
+              \"msgtype\": \"markdown\",
+              \"markdown\": {
+                \"content\": \"### ✅ 部署成功\\n\\n> **仓库**: <font color=\\\"info\\\">${{ github.repository }}</font>\\n> **分支**: <font color=\\\"warning\\\">${{ github.event.workflow_run.head_branch }}</font>\\n> **提交**: ${{ github.event.workflow_run.head_sha }}\\n> **操作人**: ${{ github.event.workflow_run.actor }}\\n\\n[查看工作流](${{ github.event.workflow_run.html_url }})\"
+              }
+            }"
+        continue-on-error: true
+
+  notify-failure:
+    name: Notify Failure
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'failure'
+    
+    steps:
+      - name: Send Slack notification
+        if: env.SLACK_WEBHOOK_URL != ''
+        run: |
+          curl -X POST ${{ env.SLACK_WEBHOOK_URL }} \
+            -H 'Content-Type: application/json' \
+            -d '{
+              "text": "❌ Deployment Failed",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Deployment Failed*\n\n*Repository:* ${{ github.repository }}\n*Branch:* ${{ github.event.workflow_run.head_branch }}\n*Commit:* ${{ github.event.workflow_run.head_sha }}\n*Actor:* ${{ github.event.workflow_run.actor }}"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<${{ github.event.workflow_run.html_url }}|View Workflow> | <${{ github.event.workflow_run.html_url }}?logs=true|View Logs>"
+                  }
+                }
+              ]
+            }'
+        continue-on-error: true
+      
+      - name: Send DingTalk notification
+        if: env.DINGTALK_WEBHOOK_URL != ''
+        run: |
+          curl -X POST ${{ env.DINGTALK_WEBHOOK_URL }} \
+            -H 'Content-Type: application/json' \
+            -d "{
+              \"msgtype\": \"markdown\",
+              \"markdown\": {
+                \"title\": \"部署失败\",
+                \"text\": \"### ❌ 部署失败\\n\\n> **仓库**: ${{ github.repository }}\\n> **分支**: ${{ github.event.workflow_run.head_branch }}\\n> **提交**: ${{ github.event.workflow_run.head_sha }}\\n> **操作人**: ${{ github.event.workflow_run.actor }}\\n\\n[查看工作流](${{ github.event.workflow_run.html_url }}) | [查看日志](${{ github.event.workflow_run.html_url }}?logs=true)\"
+              }
+            }"
+        continue-on-error: true
+      
+      - name: Send WeChat Work notification
+        if: env.WECHAT_WORK_WEBHOOK_URL != ''
+        run: |
+          curl -X POST ${{ env.WECHAT_WORK_WEBHOOK_URL }} \
+            -H 'Content-Type: application/json' \
+            -d "{
+              \"msgtype\": \"markdown\",
+              \"markdown\": {
+                \"content\": \"### ❌ 部署失败\\n\\n> **仓库**: <font color=\\\"info\\\">${{ github.repository }}</font>\\n> **分支**: <font color=\\\"warning\\\">${{ github.event.workflow_run.head_branch }}</font>\\n> **提交**: ${{ github.event.workflow_run.head_sha }}\\n> **操作人**: ${{ github.event.workflow_run.actor }}\\n\\n[查看工作流](${{ github.event.workflow_run.html_url }}) | [查看日志](${{ github.event.workflow_run.html_url }}?logs=true)\"
+              }
+            }"
+        continue-on-error: true
+      
+      - name: Create GitHub issue on failure
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `❌ Deployment failed on ${{ github.event.workflow_run.head_branch }}`,
+              body: `## Deployment Failed\n\n**Workflow**: [${{ github.event.workflow_run.name }}](${{ github.event.workflow_run.html_url }})\n**Branch**: ${{ github.event.workflow_run.head_branch }}\n**Commit**: ${{ github.event.workflow_run.head_sha }}\n**Actor**: ${{ github.event.workflow_run.actor }}\n\n[View Logs](${{ github.event.workflow_run.html_url }}?logs=true)\n\n---\n\n*Created by GitHub Actions*`,
+              labels: ['deployment', 'bug', 'automated']
+            })
+            console.log(`Created issue #${issue.data.number}`)
+        continue-on-error: true
