@@ -165,6 +165,7 @@ def main():
     # 检查运行环境，如果失败尝试自动安装
     if not check_environment(auto_install=True):
         print("环境检查失败，程序退出")
+        return
     
     # url = "https://select.pdgzf.com/villageLists"
     url = "https://select.pdgzf.com/houseLists"
@@ -178,4 +179,7 @@ def main():
 
 
 need_house = ["唐镇","张江","曹路","合庆","金桥"]
-main()
+
+# 只有在直接运行此脚本时才执行main函数
+if __name__ == "__main__":
+    main()

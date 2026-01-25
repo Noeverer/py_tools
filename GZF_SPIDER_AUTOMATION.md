@@ -18,10 +18,16 @@
 ```
 py_tools/
 ├── gzf_Spider/
+│   ├── main.py                 # 主入口脚本
 │   ├── src/
 │   │   ├── mySpider_gongzufang.py
 │   │   ├── conndb.py
-│   │   └── check_gzf.py
+│   │   ├── check_gzf.py
+│   │   └── ...
+│   ├── scripts/
+│   │   ├── send_bark_notification.py    # Bark通知脚本
+│   │   ├── send_notification_email.py   # 邮件通知脚本
+│   │   └── ...
 │   └── requirement.txt
 ├── .github/
 │   └── workflows/
@@ -113,6 +119,20 @@ concurrency:
 ```yaml
 timeout-minutes: 30
 ```
+
+## 代码工程规范化
+
+### 3.1 主程序入口
+
+- 使用 [main.py](file:///mnt/workspace/03-apps/py_tools/gzf_Spider/main.py) 作为统一入口
+- 支持命令行参数选择运行模式
+- 通过 `if __name__ == "__main__"` 防止模块导入时自动执行
+
+### 3.2 通知脚本分离
+
+- 将Bark和邮件通知功能分离到独立脚本
+- 使用环境变量传递配置参数
+- 增强代码可维护性和测试性
 
 ## 安全考虑
 

@@ -1,3 +1,111 @@
+import smtplib
+import os
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+def send_email():
+    smtp_server = os.environ.get("SMTP_SERVER", "smtp.gmail.com")
+    smtp_port = int(os.environ.get("SMTP_PORT", 587))
+    sender_email = os.environ.get("EMAIL_USER")
+    sender_password = os.environ.get("EMAIL_PASS")
+    receiver_email = os.environ.get("RECEIVER_EMAIL", sender_email)
+    
+    # Create message
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = f"[公租房爬虫]任务执行状态通知 - {os.environ.get('RUN_TIME')}"
+
+    body = f"""<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>公租房爬虫任务状态通知</title>
+</head>
+<body>
+    <div style="font-family: Arial, sans-serif; border: 1px solid #eaeaea; padding: 20px; border-radius: 8px;">
+        <h2 style="color: #2c3e50;">公租房爬虫任务执行状态通知</h2>
+        <table style="border-collapse: collapse; width: 100%;">
+            <tr style="background-color: #f8f9fa;">
+                <td style="padding: 8px; border: 1px solid #ddd;"><strong>项目名称</strong></td>
+                <td style="padding: 8px; border: 1px solid #ddd;">{os.environ.get('GITHUB_REPOSITORY')}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;"><strong>工作流名称</strong></td>
+                <td style="padding: 8px; border: 1px solid #ddd;">{os.environ.get('GITHUB_WORKFLOW')}</td>
+            </tr>
+            <tr style="background-color: #f8f9fa;">
+                <td style="padding: 8px; border: 1px solid #ddd;"><strong>执行状态</strong></td>
+                <td style="padding: 8px; border: 1px solid #ddd; color: {'#e74c3c' if os.environ.get('JOB_STATUS') == 'failure' else '#2ecc71'};">{os.environ.get('JOB_STATUS')}</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;"><strong>执行时间</strong></td>
+                <td style="padding: 8px; border: 1px solid #ddd;">{os.environ.get('RUN_TIME')}</td>
+            </tr>
+            <tr style="background-color: #f8f9fa;">
+                <td style="padding: 8px; border: 1px solid #ddd;"><strong>运行ID</strong></td>
+                <td style="padding: 8px; border: 1px solid #ddd;">{os.environ.get('GITHUB_RUN_ID')}</td>
+            </tr>
+        </table>
+        <br>
+        <p>请检查任务执行情况，如有问题请及时处理。</p>
+    </div>
+</body>
+</html>"""
+    
+    msg.attach(MIMEText(body, 'html', 'utf-8'))
+    
+    try:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login(sender_email, sender_password)
+        text = msg.as_string()
+        server.sendmail(sender_email, receiver_email, text)
+        server.quit()
+        print("Email notification sent successfully!")
+    except Exception as e:
+        print(f"Failed to send email: {str(e)}")
+
+if __name__ == "__main__":
+    send_email()
+import os
+import urllib.parse
+import requests
+
+def send_bark_notification():
+    bark_url = os.environ.get('BARK_URL')
+    message = os.environ.get('MESSAGE')
+    repo_name = os.environ.get('REPO_NAME')
+    workflow_name = os.environ.get('WORKFLOW_NAME')
+    status = os.environ.get('STATUS')
+    run_time = os.environ.get('RUN_TIME')
+    run_id = os.environ.get('RUN_ID')
+
+    # 构建通知标题和内容
+    title = f"公租房爬虫任务通知"
+    content = f"Repo: {repo_name}%0AWorkflow: {workflow_name}%0AStatus: {status}%0ARun Time: {run_time}%0ARun ID: {run_id}"
+    
+    # 确保Bark URL格式正确
+    if not bark_url.startswith(('http://', 'https://')):
+        if bark_url.startswith('api.day.app'):
+            bark_url = f"https://{bark_url}"
+        else:
+            bark_url = f"https://api.day.app/{bark_url}"
+    
+    # 构建完整的请求URL
+    request_url = f"{bark_url}/{urllib.parse.quote(title)}/{urllib.parse.quote(content)}?icon=https://raw.githubusercontent.com/azhuge233/Pixiv-Daily-Ranking/master/icon.png&group=公租房爬虫"
+    
+    try:
+        response = requests.get(request_url)
+        if response.status_code == 200:
+            print("Bark notification sent successfully!")
+        else:
+            print(f"Failed to send Bark notification. Status code: {response.status_code}")
+    except Exception as e:
+        print(f"Error sending Bark notification: {str(e)}")
+
+if __name__ == "__main__":
+    send_bark_notification()
 name: 公租房爬虫定时任务
 
 on:
@@ -43,7 +151,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r gzf_Spider/requirement.txt
-          pip install smtplib pillow  # 添加邮件发送相关依赖
+          pip install smtplib pillow requests  # 添加邮件发送和HTTP请求相关依赖
           
       - name: 安装Chrome浏览器
         run: |
@@ -150,47 +258,19 @@ jobs:
           echo "🔧 开始执行爬虫脚本"
           echo "=========================================="
           
-          # 进入爬虫目录并执行
-          cd gzf_Spider/src
-          
-          # 输出当前目录内容，方便调试
-          pwd
-          ls -la
+          # 进入项目目录并执行
+          cd gzf_Spider
           
           # 根据运行模式决定如何执行脚本
           if [ "${{ github.event.inputs.run_mode }}" = "debug" ]; then
             echo "🐛 启动调试模式..."
-            python -u mySpider_gongzufang.py
+            python -u main.py --mode debug
           elif [ "${{ github.event.inputs.run_mode }}" = "test" ]; then
             echo "🧪 启动测试模式..."
-            # 创建一个简化的测试版本，避免实际爬取
-            cat << 'EOF' > test_spider.py
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-# 导入原文件中的模块和函数
-from check_gzf import check_environment
-
-def test_main():
-    print("测试模式：模拟爬虫执行...")
-    print("检查环境...")
-    if check_environment(auto_install=True):
-        print("环境检查通过")
-    else:
-        print("环境检查失败")
-        
-    print("模拟访问网站...")
-    print("模拟获取数据...")
-    print("测试完成")
-
-if __name__ == "__main__":
-    test_main()
-EOF
-            python -u test_spider.py
+            python -u main.py --mode test
           else
             echo "🚀 启动正常模式..."
-            python -u mySpider_gongzufang.py
+            python -u main.py --mode normal
           fi
           
           echo ""
@@ -217,103 +297,41 @@ EOF
           REPO_NAME="${{ github.repository }}"
           WORKFLOW_NAME="${{ github.workflow }}"
           
-          # 构建通知消息
-          MESSAGE="Repo: $REPO_NAME
+          # 发送Bark通知（如果配置了BARK_URL）
+          if [[ -n "${{ secrets.BARK_URL }}" ]]; then
+            # 设置环境变量并运行Python脚本
+            export MESSAGE="Repo: $REPO_NAME
 Workflow: $WORKFLOW_NAME
 Status: $STATUS
 Run Time: $RUN_TIME
 Run ID: ${{ github.run_id }}"
-          
-          # 发送Bark通知（如果配置了BARK_URL）
-          if [[ -n "${{ secrets.BARK_URL }}" ]]; then
-            BARK_MESSAGE_URL="${{ secrets.BARK_URL }}/公租房爬虫任务通知/$MESSAGE?icon=https://raw.githubusercontent.com/azhuge233/Pixiv-Daily-Ranking/master/icon.png&group=公租房爬虫"
+            export REPO_NAME="$REPO_NAME"
+            export WORKFLOW_NAME="$WORKFLOW_NAME"
+            export STATUS="$STATUS"
+            export RUN_TIME="$RUN_TIME"
+            export RUN_ID="${{ github.run_id }}"
+            export BARK_URL="${{ secrets.BARK_URL }}"
             
-            echo "Sending Bark notification..."
-            curl -X GET "$BARK_MESSAGE_URL"
-            echo "Bark notification sent."
+            python gzf_Spider/scripts/send_bark_notification.py
           else
             echo "Bark URL not configured, skipping Bark notification."
           fi
           
           # 发送邮件通知（如果配置了邮件设置）
           if [[ -n "${{ secrets.EMAIL_USER }}" && -n "${{ secrets.EMAIL_PASS }}" && -n "${{ secrets.SMTP_SERVER }}" ]]; then
-            cat << EOF > send_notification_email.py
-import smtplib
-import os
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from email.header import Header
-
-def send_email():
-    smtp_server = "${{ secrets.SMTP_SERVER }}"
-    smtp_port = int(os.environ.get("SMTP_PORT", 587))
-    sender_email = "${{ secrets.EMAIL_USER }}"
-    sender_password = "${{ secrets.EMAIL_PASS }}"
-    receiver_email = os.environ.get("RECEIVER_EMAIL", sender_email)
-    
-    # Create message
-    msg = MIMEMultipart()
-    msg['From'] = sender_email
-    msg['To'] = receiver_email
-    msg['Subject'] = f"[公租房爬虫]任务执行状态通知 - {os.environ.get('RUN_TIME')}"
-
-    body = """<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>公租房爬虫任务状态通知</title>
-</head>
-<body>
-    <div style="font-family: Arial, sans-serif; border: 1px solid #eaeaea; padding: 20px; border-radius: 8px;">
-        <h2 style="color: #2c3e50;">公租房爬虫任务执行状态通知</h2>
-        <table style="border-collapse: collapse; width: 100%;">
-            <tr style="background-color: #f8f9fa;">
-                <td style="padding: 8px; border: 1px solid #ddd;"><strong>项目名称</strong></td>
-                <td style="padding: 8px; border: 1px solid #ddd;">${{ github.repository }}</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;"><strong>工作流名称</strong></td>
-                <td style="padding: 8px; border: 1px solid #ddd;">${{ github.workflow }}</td>
-            </tr>
-            <tr style="background-color: #f8f9fa;">
-                <td style="padding: 8px; border: 1px solid #ddd;"><strong>执行状态</strong></td>
-                <td style="padding: 8px; border: 1px solid #ddd; color: ${'#e74c3c' if job.status == 'failure' else '#2ecc71'};">${{ job.status }}</td>
-            </tr>
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ddd;"><strong>执行时间</strong></td>
-                <td style="padding: 8px; border: 1px solid #ddd;">$(date '+%Y-%m-%d %H:%M:%S')</td>
-            </tr>
-            <tr style="background-color: #f8f9fa;">
-                <td style="padding: 8px; border: 1px solid #ddd;"><strong>运行ID</strong></td>
-                <td style="padding: 8px; border: 1px solid #ddd;">${{ github.run_id }}</td>
-            </tr>
-        </table>
-        <br>
-        <p>请检查任务执行情况，如有问题请及时处理。</p>
-    </div>
-</body>
-</html>"""
-    
-    msg.attach(MIMEText(body, 'html', 'utf-8'))
-    
-    try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()
-        server.login(sender_email, sender_password)
-        text = msg.as_string()
-        server.sendmail(sender_email, receiver_email, text)
-        server.quit()
-        print("Email notification sent successfully!")
-    except Exception as e:
-        print(f"Failed to send email: {str(e)}")
-
-if __name__ == "__main__":
-    send_email()
-EOF
+            # 设置环境变量并运行Python脚本
+            export JOB_STATUS="$STATUS"
+            export RUN_TIME="$RUN_TIME"
+            export GITHUB_REPOSITORY="${{ github.repository }}"
+            export GITHUB_WORKFLOW="${{ github.workflow }}"
+            export GITHUB_RUN_ID="${{ github.run_id }}"
+            export SMTP_SERVER="${{ secrets.SMTP_SERVER || 'smtp.gmail.com' }}"
+            export SMTP_PORT="${{ secrets.SMTP_PORT || '587' }}"
+            export EMAIL_USER="${{ secrets.EMAIL_USER }}"
+            export EMAIL_PASS="${{ secrets.EMAIL_PASS }}"
+            export RECEIVER_EMAIL="${{ secrets.RECEIVER_EMAIL || secrets.EMAIL_USER }}"
             
-            echo "Sending email notification..."
-            python send_notification_email.py
-            echo "Email notification sent."
+            python gzf_Spider/scripts/send_notification_email.py
           else
             echo "Email settings not fully configured, skipping email notification."
           fi
