@@ -43,7 +43,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r gzf_Spider/requirement.txt
-          pip install smtplib pillow requests  # 添加邮件发送和HTTP请求相关依赖
+          pip install pillow requests  # 添加HTTP请求和图像处理相关依赖
           
       - name: 安装Chrome浏览器
         run: |
