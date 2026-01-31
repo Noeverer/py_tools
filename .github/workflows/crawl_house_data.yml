@@ -76,17 +76,23 @@ jobs:
         echo "LOGS_DIR = \"logs/\"" >> config/settings.py
         echo "DEFAULT_FILTERS = {" >> config/settings.py
         echo "    'min_rent': None," >> config/settings.py
-        echo "    'max_rent': None," >> config/settings.py
+        echo "    'max_rent': 5000," >> config/settings.py
         echo "    'area': None," >> config/settings.py
         echo "    'house_type': None" >> config/settings.py
         echo "}" >> config/settings.py
         echo "" >> config/settings.py
         echo "# 特定监控地点设置" >> config/settings.py
         echo "MONITORED_LOCATIONS = [" >> config/settings.py
-        echo "    # 在这里添加您想要监控的特定地点" >> config/settings.py
-        echo "    # 例如：" >> config/settings.py
-        echo "    # \"张江\"," >> config/settings.py
-        echo "    # \"唐镇\"," >> config/settings.py
+        echo "    \"张江\"," >> config/settings.py
+        echo "    \"唐镇\"," >> config/settings.py
+        echo "    \"曹路\"," >> config/settings.py
+        echo "    \"合庆\"," >> config/settings.py
+        echo "    \"金桥\"," >> config/settings.py
+        echo "    \"陆家嘴\"," >> config/settings.py
+        echo "    \"金杨新村\"," >> config/settings.py
+        echo "    \"洋泾\"," >> config/settings.py
+        echo "    \"花木\"," >> config/settings.py
+        echo "    \"康桥\"" >> config/settings.py
         echo "]" >> config/settings.py
         echo "" >> config/settings.py
         echo "# 特定地点推送配置" >> config/settings.py
