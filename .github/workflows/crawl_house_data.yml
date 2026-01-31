@@ -1,0 +1,69 @@
+name: Crawl House Data
+
+on:
+  schedule:
+    # 每小时执行一次（可以根据需要调整）
+    - cron: '0 * * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  crawl-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        # 安装Chrome浏览器和驱动
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        # 下载ChromeDriver
+        CHROME_VERSION=$(google-chrome-stable --version | cut -d ' ' -f 3 | cut -d '.' -f 1)
+        wget -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$(echo $CHROME_VERSION)/chromedriver_linux64.zip"
+        sudo unzip /tmp/chromedriver.zip -d /usr/local/bin/
+        sudo chmod +x /usr/local/bin/chromedriver
+
+    - name: Set up config
+      run: |
+        # 创建配置文件，使用GitHub Secrets中的BARK_KEY
+        echo "BARK_KEY = \"${{ secrets.BARK_KEY }}\"" > config/settings.py
+        echo "PUSH_GROUP = \"公租房通知\"" >> config/settings.py
+        echo "CRAWLER_DELAY = 5" >> config/settings.py
+        echo "MAX_RETRIES = 3" >> config/settings.py
+        echo "DATA_DIR = \"data/\"" >> config/settings.py
+        echo "LOGS_DIR = \"logs/\"" >> config/settings.py
+        echo "DEFAULT_FILTERS = {" >> config/settings.py
+        echo "    'min_rent': None," >> config/settings.py
+        echo "    'max_rent': None," >> config/settings.py
+        echo "    'area': None," >> config/settings.py
+        echo "    'house_type': None" >> config/settings.py
+        echo "}" >> config/settings.py
+
+    - name: Run crawler
+      run: |
+        python main.py
+      env:
+        PYTHONPATH: ${{ github.workspace }}
+
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        if [ -z "$(git status --porcelain)" ]; then
+          echo "No changes to commit"
+        else
+          git commit -m "Add new house data $(date +'%Y-%m-%d %H:%M:%S')"
+          git push
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
