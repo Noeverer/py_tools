@@ -11,6 +11,10 @@ BARK_KEY = "vWYmRcVLnFKWJP5AJKWADU"  # 替换为你的Bark Key
 # 推送分组
 PUSH_GROUP = "公租房通知"
 
+# 测试推送配置
+TEST_PUSH_ENABLED = True  # 是否启用测试推送
+TEST_PUSH_INTERVAL = 3600  # 测试推送间隔（秒），默认1小时
+
 # 爬虫设置
 CRAWLER_DELAY = 5  # 页面加载延迟（秒）
 MAX_RETRIES = 3    # 最大重试次数

@@ -1,7 +1,7 @@
 import requests
 import re
 from datetime import datetime
-from config.settings import BARK_KEY, PUSH_GROUP, MONITORED_LOCATIONS, LOCATION_BARK_KEYS, MONITORED_HOUSE_TYPES
+from config.settings import BARK_KEY, PUSH_GROUP, MONITORED_LOCATIONS, LOCATION_BARK_KEYS, MONITORED_HOUSE_TYPES, TEST_PUSH_ENABLED
 
 
 def clean_text(text):
@@ -13,6 +13,17 @@ def clean_text(text):
     return ""
 
 
+def send_test_push():
+    """
+    发送测试推送
+    """
+    if not TEST_PUSH_ENABLED:
+        return
+
+    test_message = f"【测试推送】服务运行正常 - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    push_single_message(test_message, is_test=True)
+
+
 def send_notification(house_data):
     """
     推送房屋信息到微信
@@ -20,6 +31,9 @@ def send_notification(house_data):
     Args:
         house_data (list): 房屋信息列表
     """
+    # 先发送测试推送
+    send_test_push()
+
     if not house_data:
         print("没有房屋数据需要推送")
         push_single_message("未查询到符合条件的房源信息")
@@ -69,28 +83,32 @@ def send_regular_notification(house_data):
     Args:
         house_data (list): 房屋信息列表
     """
-    # 构造推送消息
-    message_lines = [f"【最新房源信息】(共{len(house_data)}条)"]
+    # 构造推送消息 - 优化iOS显示效果
+    message_lines = [f"🏠【最新房源({len(house_data)}套)】"]
     for i, house in enumerate(house_data, 1):
-        # 构造房源信息
-        info_parts = []
+        # 构造房源信息，使用更简洁的格式
+        parts = []
         if house.get('house_name'):
-            info_parts.append(str(house['house_name']))
+            # 只保留小区名称的关键部分
+            name = str(house['house_name'])
+            # 如果名称过长，截取关键部分
+            if len(name) > 20:
+                name = name[:20] + "..."
+            parts.append(name)
         if house.get('house_type'):
-            info_parts.append(str(house['house_type']))
+            parts.append(f"户型:{house['house_type']}")
         if house.get('rent'):
-            info_parts.append(f"租金:{house['rent']}")
+            parts.append(f"💰{house['rent']}")
         if house.get('area'):
-            info_parts.append(f"面积:{house['area']}")
+            parts.append(f"📊{house['area']}")
         if house.get('floor'):
-            info_parts.append(f"楼层:{house['floor']}")
+            parts.append(f"🏢{house['floor']}")
         # 添加申请人数信息
         if 'applicant_count' in house and house.get('applicant_count', 0) > 0:
-            info_parts.append(f"申请人数:{house['applicant_count']}")
+            parts.append(f"👥{house['applicant_count']}人")
 
-        house_info = " | ".join(info_parts)
-        clean_house_info = clean_text(house_info)
-        message_lines.append(f"{i}. {clean_house_info}")
+        house_info = " | ".join(parts)
+        message_lines.append(f"{i}️⃣ {house_info}")
 
     full_message = "\\n".join(message_lines)
 
@@ -129,27 +147,32 @@ def send_special_location_notification(house_data):
 
     # 为每个地点分别推送
     for location, houses in location_groups.items():
-        message_lines = [f"【{location}特别房源】(共{len(houses)}条)"]
+        # 构造推送消息 - 优化iOS显示效果
+        message_lines = [f"🚨【{location}特惠({len(houses)}套)】"]
         for i, house in enumerate(houses, 1):
-            # 构造房源信息
-            info_parts = []
+            # 构造房源信息，使用更简洁的格式
+            parts = []
             if house.get('house_name'):
-                info_parts.append(str(house['house_name']))
+                # 只保留小区名称的关键部分
+                name = str(house['house_name'])
+                # 如果名称过长，截取关键部分
+                if len(name) > 20:
+                    name = name[:20] + "..."
+                parts.append(name)
             if house.get('house_type'):
-                info_parts.append(str(house['house_type']))
+                parts.append(f"户型:{house['house_type']}")
             if house.get('rent'):
-                info_parts.append(f"租金:{house['rent']}")
+                parts.append(f"💰{house['rent']}")
             if house.get('area'):
-                info_parts.append(f"面积:{house['area']}")
+                parts.append(f"📊{house['area']}")
             if house.get('floor'):
-                info_parts.append(f"楼层:{house['floor']}")
+                parts.append(f"🏢{house['floor']}")
             # 添加申请人数信息
             if 'applicant_count' in house and house.get('applicant_count', 0) > 0:
-                info_parts.append(f"申请人数:{house['applicant_count']}")
+                parts.append(f"👥{house['applicant_count']}人")
 
-            house_info = " | ".join(info_parts)
-            clean_house_info = clean_text(house_info)
-            message_lines.append(f"{i}. {clean_house_info}")
+            house_info = " | ".join(parts)
+            message_lines.append(f"{i}️⃣ {house_info}")
 
         full_message = "\\n".join(message_lines)
 
@@ -161,7 +184,7 @@ def send_special_location_notification(house_data):
         push_single_message(full_message, key=location_key, group=location_group)
 
 
-def push_single_message(message, key=BARK_KEY, group=PUSH_GROUP):
+def push_single_message(message, key=BARK_KEY, group=PUSH_GROUP, is_test=False):
     """
     推送单条消息到微信
 
@@ -169,6 +192,7 @@ def push_single_message(message, key=BARK_KEY, group=PUSH_GROUP):
         message (str): 要推送的消息
         key (str): Bark推送key
         group (str): 分组名称
+        is_test (bool): 是否为测试消息
     """
     if not key or key == "your_bark_key_here":
         print("请先在config/settings.py中配置BARK_KEY")
@@ -178,16 +202,26 @@ def push_single_message(message, key=BARK_KEY, group=PUSH_GROUP):
         clean_msg = clean_text(message)
         # URL编码
         encoded_msg = requests.utils.quote(clean_msg)
-        url = f"https://api.day.app/{key}/{encoded_msg}?group={group}"
+
+        # 为iOS优化推送参数
+        if is_test:
+            # 测试消息使用不同参数
+            url = f"https://api.day.app/{key}/{encoded_msg}?group={group}&icon=https://raw.githubusercontent.com/Finb/Bark/refs/heads/master/Server/assets/favicon.ico&level=passive"
+        else:
+            # 正常房源消息使用更醒目的参数
+            url = f"https://api.day.app/{key}/{encoded_msg}?group={group}&icon=https://raw.githubusercontent.com/Finb/Bark/refs/heads/master/Server/assets/favicon.ico&sound=telegraph&badge=+1&level=active"
 
         # 添加headers模拟真实请求
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1'
         }
 
         response = requests.get(url, headers=headers, timeout=10)
         if response.status_code == 200:
-            print(f"消息推送成功: {message[:50]}...")
+            if is_test:
+                print(f"测试消息推送成功: {message}")
+            else:
+                print(f"消息推送成功: {message[:50]}...")
         else:
             print(f"消息推送失败: {response.status_code}")
     except Exception as e:
@@ -211,10 +245,10 @@ def authenticate_bark(key):
     try:
         # 发送测试消息验证密钥
         test_msg = requests.utils.quote("推送服务连接测试")
-        url = f"https://api.day.app/{key}/{test_msg}?group=测试"
+        url = f"https://api.day.app/{key}/{test_msg}?group=测试&sound=calypso"
 
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1'
         }
 
         response = requests.get(url, headers=headers, timeout=10)
