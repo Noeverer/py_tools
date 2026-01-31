@@ -2,8 +2,8 @@ name: Crawl House Data
 
 on:
   schedule:
-    # 每小时执行一次（可以根据需要调整）
-    - cron: '0 * * * *'
+    # 每天8-11点每小时执行一次（8点、9点、10点、11点）
+    - cron: '0 8-11 * * *'
   workflow_dispatch: # 允许手动触发
 
 jobs:
