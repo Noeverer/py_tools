@@ -62,7 +62,13 @@ jobs:
     - name: Set up config
       run: |
         # 创建配置文件，使用GitHub Secrets中的BARK_KEY
-        echo "BARK_KEY = \"${{ secrets.BARK_KEY }}\"" > config/settings.py
+        echo "#!/usr/bin/env python3" > config/settings.py
+        echo "# -*- coding: utf-8 -*-" >> config/settings.py
+        echo '"""' >> config/settings.py
+        echo '配置文件' >> config/settings.py
+        echo '"""' >> config/settings.py
+        echo "" >> config/settings.py
+        echo "BARK_KEY = \"${{ secrets.BARK_KEY }}\"" >> config/settings.py
         echo "PUSH_GROUP = \"公租房通知\"" >> config/settings.py
         echo "CRAWLER_DELAY = 5" >> config/settings.py
         echo "MAX_RETRIES = 3" >> config/settings.py
@@ -74,6 +80,29 @@ jobs:
         echo "    'area': None," >> config/settings.py
         echo "    'house_type': None" >> config/settings.py
         echo "}" >> config/settings.py
+        echo "" >> config/settings.py
+        echo "# 特定监控地点设置" >> config/settings.py
+        echo "MONITORED_LOCATIONS = [" >> config/settings.py
+        echo "    # 在这里添加您想要监控的特定地点" >> config/settings.py
+        echo "    # 例如：" >> config/settings.py
+        echo "    # \"张江\"," >> config/settings.py
+        echo "    # \"唐镇\"," >> config/settings.py
+        echo "]" >> config/settings.py
+        echo "" >> config/settings.py
+        echo "# 特定地点推送配置" >> config/settings.py
+        echo "LOCATION_BARK_KEYS = {" >> config/settings.py
+        echo "    # 可以为不同的地点设置不同的推送密钥" >> config/settings.py
+        echo "    # \"张江\": \"your_zhangjiang_bark_key\"," >> config/settings.py
+        echo "    # 如果为空，则使用默认的BARK_KEY" >> config/settings.py
+        echo "}" >> config/settings.py
+        echo "" >> config/settings.py
+        echo "# 特定房型监控" >> config/settings.py
+        echo "MONITORED_HOUSE_TYPES = [" >> config/settings.py
+        echo "    # 在这里添加您想要监控的特定房型" >> config/settings.py
+        echo "    # 例如：" >> config/settings.py
+        echo "    # \"1室1厅\"," >> config/settings.py
+        echo "    # \"2室1厅\"" >> config/settings.py
+        echo "]" >> config/settings.py
 
     - name: Run crawler
       run: |
