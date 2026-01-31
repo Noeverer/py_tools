@@ -77,18 +77,18 @@ jobs:
         echo "DEFAULT_FILTERS = {" >> config/settings.py
         echo "    'min_rent': None," >> config/settings.py
         echo "    'max_rent': 5000," >> config/settings.py
+        echo "    'area': None," >> config/settings.py
+        echo "    'house_type': None" >> config/settings.py
+        echo "}" >> config/settings.py
         echo "" >> config/settings.py
         echo "# 测试推送配置" >> config/settings.py
         echo "TEST_PUSH_ENABLED = True" >> config/settings.py
         echo "TEST_PUSH_INTERVAL = 3600" >> config/settings.py
         echo "" >> config/settings.py
-        echo "    'area': None," >> config/settings.py
-        echo "    'house_type': None" >> config/settings.py
         echo "}" >> config/settings.py
         echo "" >> config/settings.py
         echo "# 特定监控地点设置" >> config/settings.py
         echo "MONITORED_LOCATIONS = [" >> config/settings.py
-        echo "    \"张江\"," >> config/settings.py
         echo "    \"唐镇\"," >> config/settings.py
         echo "    \"曹路\"," >> config/settings.py
         echo "    \"合庆\"," >> config/settings.py
