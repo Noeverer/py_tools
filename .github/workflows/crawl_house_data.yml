@@ -85,7 +85,6 @@ jobs:
         echo "TEST_PUSH_ENABLED = True" >> config/settings.py
         echo "TEST_PUSH_INTERVAL = 3600" >> config/settings.py
         echo "" >> config/settings.py
-        echo "}" >> config/settings.py
         echo "" >> config/settings.py
         echo "# 特定监控地点设置" >> config/settings.py
         echo "MONITORED_LOCATIONS = [" >> config/settings.py
