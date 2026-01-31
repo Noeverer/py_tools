@@ -4,27 +4,17 @@
 配置文件
 """
 
-# 微信推送配置
-# Bark推送服务的Key，需要在https://github.com/Finb/Bark申请
-BARK_KEY = "vWYmRcVLnFKWJP5AJKWADU"  # 替换为你的Bark Key
-
-# 推送分组
+BARK_KEY = "vWYmRcVLnFKWJP5AJKWADU"
 PUSH_GROUP = "公租房通知"
-
-# 爬虫设置
-CRAWLER_DELAY = 5  # 页面加载延迟（秒）
-MAX_RETRIES = 3    # 最大重试次数
-
-# 数据存储设置
+CRAWLER_DELAY = 5
+MAX_RETRIES = 3
 DATA_DIR = "data/"
 LOGS_DIR = "logs/"
-
-# 筛选条件设置
 DEFAULT_FILTERS = {
-    'min_rent': None,           # 最低租金(None表示不限制)
-    'max_rent': 5000,           # 最高租金(None表示不限制)
-    'area': None,               # 区域关键词(None表示不限制)
-    'house_type': None          # 房型关键词(None表示不限制)
+    'min_rent': None,
+    'max_rent': 5000,
+    'area': None,
+    'house_type': None
 }
 
 # 特定监控地点设置
@@ -45,7 +35,6 @@ MONITORED_LOCATIONS = [
 LOCATION_BARK_KEYS = {
     # 可以为不同的地点设置不同的推送密钥
     # "张江": "your_zhangjiang_bark_key",
-    # "唐镇": "your_tangzhen_bark_key",
     # 如果为空，则使用默认的BARK_KEY
 }
 
@@ -54,6 +43,5 @@ MONITORED_HOUSE_TYPES = [
     # 在这里添加您想要监控的特定房型
     # 例如：
     # "1室1厅",
-    # "2室1厅",
-    # "1室0厅"
+    # "2室1厅"
 ]
