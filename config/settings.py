@@ -6,7 +6,7 @@
 
 # 微信推送配置
 # Bark推送服务的Key，需要在https://github.com/Finb/Bark申请
-BARK_KEY = "your_bark_key_here"  # 替换为你的Bark Key
+BARK_KEY = "vWYmRcVLnFKWJP5AJKWADU"  # 替换为你的Bark Key
 
 # 推送分组
 PUSH_GROUP = "公租房通知"
