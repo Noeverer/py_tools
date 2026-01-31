@@ -40,6 +40,9 @@ def send_notification(house_data):
             info_parts.append(f"面积:{house['area']}")
         if house.get('floor'):
             info_parts.append(f"楼层:{house['floor']}")
+        # 添加申请人数信息
+        if 'applicant_count' in house and house.get('applicant_count', 0) > 0:
+            info_parts.append(f"申请人数:{house['applicant_count']}")
 
         house_info = " | ".join(info_parts)
         clean_house_info = clean_text(house_info)

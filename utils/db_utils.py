@@ -23,7 +23,7 @@ def save_house_data_to_csv(house_data, filename=None):
     # 如果没有提供文件名，则使用当前日期作为文件名
     if filename is None:
         today = datetime.now().strftime('%Y-%m-%d')
-        filename = f"data/house_data_{today}.csv"
+        filename = f"../data/house_data_{today}.csv"
 
     # 确保目录存在
     os.makedirs(os.path.dirname(filename), exist_ok=True)
@@ -33,7 +33,7 @@ def save_house_data_to_csv(house_data, filename=None):
 
     try:
         with open(filename, 'a', newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['timestamp', 'house_name', 'house_site', 'rent', 'house_type', 'floor', 'area']
+            fieldnames = ['timestamp', 'house_name', 'house_site', 'rent', 'house_type', 'floor', 'area', 'applicant_count']
 
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
@@ -49,7 +49,8 @@ def save_house_data_to_csv(house_data, filename=None):
                     'rent': house.get('rent', ''),
                     'house_type': house.get('house_type', ''),
                     'floor': house.get('floor', ''),
-                    'area': house.get('area', '')
+                    'area': house.get('area', ''),
+                    'applicant_count': house.get('applicant_count', 0)  # 添加申请人数
                 }
                 writer.writerow(house_record)
 

@@ -40,6 +40,31 @@ def start_selenium(url):
     return browser
 
 
+def get_applicant_count(driver, house_element):
+    """
+    尝试获取房源的申请人数
+    注意：这取决于网站的具体结构，可能需要根据实际情况调整
+    """
+    try:
+        # 尝试查找申请人数元素
+        # 这里需要根据实际网站的DOM结构来定位申请人数
+        # 以下是一些常见的查找方式，可能需要根据实际情况调整
+        applicant_elements = house_element.find_elements(By.XPATH, ".//span[contains(text(), '申请')] | .//div[contains(@class, 'applicant')] | .//span[contains(@class, 'count')]")
+
+        if applicant_elements:
+            # 提取数字
+            text = applicant_elements[0].text
+            numbers = re.findall(r'\d+', text)
+            if numbers:
+                return int(numbers[0])
+
+        # 如果没找到，返回0表示未知
+        return 0
+    except:
+        # 如果出错，返回0表示未知
+        return 0
+
+
 def get_house_content(driver):
     """从页面获取房源信息"""
     try:
@@ -81,6 +106,10 @@ def get_house_content(driver):
                             # 其他信息暂时跳过或进一步处理
                             pass
 
+                    # 尝试获取申请人数
+                    applicant_count = get_applicant_count(driver, house)
+                    househash["applicant_count"] = applicant_count
+
                     print(f"获取到第{i}条房源: {househash}")
                     houselist.append(househash)
                     i += 1
@@ -118,6 +147,10 @@ def get_house_content(driver):
                         househash["area"] = part.replace("建筑面积", "").strip()
                     elif "租金" in part:
                         househash["rent"] = part.replace("租金", "").strip()
+
+                # 尝试获取申请人数
+                applicant_count = get_applicant_count(driver, house)
+                househash["applicant_count"] = applicant_count
 
                 print(f"获取到第{i}条房源: {househash}")
                 houselist.append(househash)
