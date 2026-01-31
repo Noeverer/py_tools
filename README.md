@@ -78,19 +78,19 @@ python -m utils.data_analysis
 
 这将生成最近7天的房源数据报告，包括房源总数、每日房源数量、热门区域、热门房型和租金统计等信息。
 
-## Web界面
+## 数据展示
 
-项目包含一个Web界面，可以可视化展示收集到的房源数据：
+项目包含一个静态Web界面，可以通过GitHub Pages展示收集到的房源数据：
 
-```bash
-python run_web.py
-```
+1. 在仓库设置中启用GitHub Pages，选择`docs`文件夹作为源
+2. 访问 `https://noeverer.github.io/py_tools/` 查看房源信息
 
-然后在浏览器中访问 `http://localhost:5000` 查看房源信息。Web界面支持：
+Web界面支持：
 
 - 按日期查看房源数据
 - 统计信息展示（房源总数、平均租金等）
 - 申请人数显示（如果数据中有此信息）
+- 租金分布图表
 
 ## 申请人数功能
 

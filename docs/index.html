@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公租房信息展示系统</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .house-card {
+            margin-bottom: 15px;
+            border-left: 4px solid #007bff;
+            transition: transform 0.2s;
+        }
+        .house-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .date-selector {
+            margin-bottom: 20px;
+        }
+        .stats-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="text-center">🏠 公租房信息展示系统</h1>
+            <p class="text-center mb-0">实时监控浦东公租房房源信息</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="date-selector">
+                    <label for="dateSelect" class="form-label"><strong>选择日期:</strong></label>
+                    <select class="form-select" id="dateSelect">
+                        <option value="">加载中...</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">加载中...</span>
+            </div>
+            <p>正在加载数据...</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            <div class="stats-card">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <h4 id="total-count">0</h4>
+                        <p class="mb-0">当日房源总数</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 id="unique-houses">0</h4>
+                        <p class="mb-0">唯一房源数</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 id="avg-rent">0</h4>
+                        <p class="mb-0">平均租金</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 id="most-applied">0</h4>
+                        <p class="mb-0">最高申请人数</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="rentChart" height="100"></canvas>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 id="date-title">房源详情</h3>
+                    <div id="house-list">
+                        <!-- 房源列表将在这里动态加载 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // API基础URL（指向GitHub raw内容）
+        const API_BASE = 'https://raw.githubusercontent.com/Noeverer/py_tools/main/data';
+        
+        // 加载可用日期
+        async function loadDates() {
+            try {
+                // 由于GitHub不允许直接列出目录，我们使用预定义的日期范围
+                // 或者从一个索引文件获取日期列表
+                const dates = await fetchDatesFromIndex();
+                if (!dates || dates.length === 0) {
+                    // 如果无法获取索引，生成最近30天的日期
+                    const recentDates = [];
+                    for (let i = 0; i < 30; i++) {
+                        const date = new Date();
+                        date.setDate(date.getDate() - i);
+                        const dateString = date.toISOString().split('T')[0];
+                        recentDates.push(dateString);
+                    }
+                    populateDateSelector(recentDates);
+                } else {
+                    populateDateSelector(dates);
+                }
+            } catch (error) {
+                console.error('加载日期失败:', error);
+                // 生成最近30天的日期作为备选
+                const recentDates = [];
+                for (let i = 0; i < 30; i++) {
+                    const date = new Date();
+                    date.setDate(date.getDate() - i);
+                    const dateString = date.toISOString().split('T')[0];
+                    recentDates.push(dateString);
+                }
+                populateDateSelector(recentDates);
+            }
+        }
+        
+        // 从索引文件获取日期（如果存在）
+        async function fetchDatesFromIndex() {
+            try {
+                const response = await fetch(`${API_BASE}/dates_index.json`);
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.dates;
+                }
+            } catch (error) {
+                console.log('无法获取日期索引文件');
+            }
+            return null;
+        }
+        
+        // 填充日期选择器
+        function populateDateSelector(dates) {
+            const select = document.getElementById('dateSelect');
+            select.innerHTML = '';
+            
+            dates.forEach(date => {
+                const option = document.createElement('option');
+                option.value = date;
+                option.textContent = `${date} ${date === dates[0] ? '(最新)' : ''}`;
+                select.appendChild(option);
+            });
+            
+            if (dates.length > 0) {
+                select.value = dates[0];
+                loadDataForDate(dates[0]);
+            }
+            
+            select.onchange = function() {
+                loadDataForDate(this.value);
+            };
+        }
+        
+        // 加载指定日期的数据
+        async function loadDataForDate(date) {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('content').style.display = 'none';
+            
+            try {
+                const response = await fetch(`${API_BASE}/house_data_${date}.csv`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const csvText = await response.text();
+                const houses = parseCSV(csvText);
+                
+                displayHouses(houses, date);
+                calculateAndDisplayStats(houses);
+                createRentChart(houses);
+                
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } catch (error) {
+                console.error('加载数据失败:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">加载失败!</h4>
+                        <p>无法加载 ${date} 的数据: ${error.message}</p>
+                        <hr>
+                        <p class="mb-0">请稍后再试或检查数据文件是否存在。</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // 解析CSV数据
+        function parseCSV(csvText) {
+            const lines = csvText.trim().split(/\r?\n/);
+            if (lines.length < 2) return [];
+            
+            const headers = lines[0].split(',').map(header => header.replace(/^"|"$/g, ''));
+            const houses = [];
+            
+            for (let i = 1; i < lines.length; i++) {
+                const values = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/); // 处理带引号的值
+                if (values.length !== headers.length) continue;
+                
+                const house = {};
+                for (let j = 0; j < headers.length; j++) {
+                    house[headers[j]] = values[j].replace(/^"|"$/g, '');
+                }
+                houses.push(house);
+            }
+            
+            return houses;
+        }
+        
+        // 显示房源列表
+        function displayHouses(houses, date) {
+            const container = document.getElementById('house-list');
+            document.getElementById('date-title').textContent = `房源详情 (${date})`;
+            
+            if (houses.length === 0) {
+                container.innerHTML = `
+                    <div class="alert alert-warning">
+                        <h4>暂无数据</h4>
+                        <p>所选日期 "${date}" 暂无房源数据，请选择其他日期或等待数据更新。</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = `<div class="alert alert-info">共找到 ${houses.length} 条房源信息</div>`;
+            
+            houses.forEach((house, index) => {
+                html += `
+                <div class="card house-card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">${house.house_name || 'N/A'}</h5>
+                                <p class="card-text">
+                                    <strong>位置:</strong> ${house.house_site || 'N/A'}<br>
+                                    <strong>户型:</strong> ${house.house_type || 'N/A'}<br>
+                                    <strong>面积:</strong> ${house.area || 'N/A'}<br>
+                                    <strong>楼层:</strong> ${house.floor || 'N/A'}
+                                </p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">💰 ${house.rent || 'N/A'}</h5>
+                                <p class="text-muted mb-0">租金</p>
+                            </div>
+                            <div class="col-md-3">
+                                <small class="text-muted">更新时间: ${house.timestamp ? new Date(house.timestamp).toLocaleString() : 'N/A'}</small><br>
+                                <small class="text-success">👥 申请人数: 
+                                    ${house.applicant_count && parseInt(house.applicant_count) > 0 ? house.applicant_count : '-'}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // 计算并显示统计数据
+        function calculateAndDisplayStats(houses) {
+            document.getElementById('total-count').textContent = houses.length;
+            
+            // 计算唯一房源数（基于名称）
+            const uniqueHouses = [...new Set(houses.map(h => h.house_name))].length;
+            document.getElementById('unique-houses').textContent = uniqueHouses;
+            
+            // 计算平均租金
+            const rents = houses
+                .map(h => parseFloat((h.rent || '').replace(/[^\d.-]/g, '')))
+                .filter(r => !isNaN(r) && r > 0);
+            const avgRent = rents.length > 0 ? Math.round(rents.reduce((a, b) => a + b, 0) / rents.length) : 0;
+            document.getElementById('avg-rent').textContent = avgRent + '元';
+            
+            // 计算最高申请人数
+            const applicantCounts = houses
+                .map(h => parseInt(h.applicant_count || 0))
+                .filter(count => !isNaN(count) && count > 0);
+            const maxApplicants = applicantCounts.length > 0 ? Math.max(...applicantCounts) : 0;
+            document.getElementById('most-applied').textContent = maxApplicants;
+        }
+        
+        // 创建租金图表
+        function createRentChart(houses) {
+            const ctx = document.getElementById('rentChart').getContext('2d');
+            
+            // 清除之前的图表
+            if (window.rentChart) {
+                window.rentChart.destroy();
+            }
+            
+            // 准备数据
+            const rentData = houses
+                .map(h => parseFloat((h.rent || '').replace(/[^\d.-]/g, '')))
+                .filter(r => !isNaN(r) && r > 0);
+            
+            if (rentData.length === 0) {
+                document.querySelector('.chart-container').innerHTML = '<p class="text-center text-muted">暂无租金数据可显示图表</p>';
+                return;
+            }
+            
+            // 创建图表
+            window.rentChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Array.from({length: Math.min(rentData.length, 20)}, (_, i) => `房源${i+1}`),
+                    datasets: [{
+                        label: '租金 (元)',
+                        data: rentData.slice(0, 20), // 只显示前20个
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '房源租金分布图 (前20个)'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '租金 (元)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDates();
+        });
+    </script>
+</body>
+</html>

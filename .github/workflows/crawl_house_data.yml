@@ -81,6 +81,30 @@ jobs:
       env:
         PYTHONPATH: ${{ github.workspace }}
 
+    - name: Generate dates index
+      run: |
+        # 生成包含所有可用日期的索引文件
+        echo "{" > dates_index.json
+        echo "  \"dates\": [" >> dates_index.json
+        # 获取所有house_data_*.csv文件的日期部分
+        csv_files=$(ls ../data/house_data_*.csv 2>/dev/null | sort -r)
+        if [ -n "$csv_files" ]; then
+          first=true
+          for file in $csv_files; do
+            date_part=$(basename "$file" | sed 's/house_data_\([0-9-]*\)\.csv/\1/')
+            if [ "$first" = true ]; then
+              echo "    \"$date_part\"" >> dates_index.json
+              first=false
+            else
+              echo "    ,\"$date_part\"" >> dates_index.json
+            fi
+          done
+        fi
+        echo "  ]" >> dates_index.json
+        echo "}" >> dates_index.json
+        # 移动到data目录
+        mv dates_index.json ../data/
+
     - name: Commit and push if changed
       run: |
         git config --local user.email "action@github.com"
