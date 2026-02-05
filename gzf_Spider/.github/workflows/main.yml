@@ -1,0 +1,68 @@
+name: 🏠 公租房监控
+
+on:
+  schedule:
+    # 每天8-11点每小时执行（上海时间UTC 0-3点）
+    - cron: '0 0-3 * * *'
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+
+    - name: 设置Python环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: 安装依赖
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r gzf_Spider/requirements.txt
+
+    - name: 安装Chrome
+      run: |
+        sudo apt-get update
+        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+
+    - name: 安装ChromeDriver
+      run: |
+        CHROME_VERSION=$(google-chrome-stable --version | grep -oP '\d+\.\d+\.\d+')
+        cd /tmp
+        curl -s "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_$CHROME_VERSION" -o latest_release.txt
+        LATEST=$(cat latest_release.txt)
+        wget "https://storage.googleapis.com/chrome-for-testing-public/$LATEST/linux64/chromedriver-linux64.zip"
+        unzip chromedriver-linux64.zip
+        sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+        sudo chmod +x /usr/local/bin/chromedriver
+
+    - name: 创建必要目录
+      run: |
+        mkdir -p gzf_Spider/data gzf_Spider/logs
+
+    - name: 运行爬虫
+      run: |
+        cd gzf_Spider
+        python main.py
+      env:
+        BARK_KEY: ${{ secrets.BARK_KEY }}
+
+    - name: 提交数据
+      if: success()
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git commit -m "🏠 更新房源数据 $(date +'%Y-%m-%d %H:%M:%S')" || echo "无新数据"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

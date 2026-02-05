@@ -1,156 +1,173 @@
-# 公租房信息爬取与推送系统
+# 🏠 上海公租房信息监控平台
 
-这是一个用于监控上海浦东公租房信息的自动化工具，能够定期爬取房源信息并将更新推送到微信。
+## 📋 功能简介
 
-## 功能特点
+实时监控上海浦东公租房房源信息，支持自动筛选和iOS推送。
 
-- 自动爬取浦东公租房网站的房源信息
-- 将数据保存为CSV日志文件，便于后续分析
-- 支持通过Bark服务将房源信息推送到微信
-- 支持按租金、区域、房型等条件过滤房源
-- 可通过GitHub Actions实现定时自动运行
+### ✨ 核心功能
+- 🕷️ 自动爬取浦东公租房最新房源
+- 📱 Bark推送到iOS设备（支持分组显示）
+- 🎯 灵活筛选（地区、价格、房型）
+- ⏰ 定时推送控制（上海时间8-11点）
+- 📊 数据存储和分析
 
-## 项目结构
+## 🚀 快速开始
 
-```
-refactored_project/
-├── main.py                 # 主入口文件
-├── requirements.txt        # 项目依赖
-├── README.md              # 项目说明
-├── spiders/               # 爬虫模块
-│   └── house_spider.py    # 房源爬虫
-├── utils/                 # 工具模块
-│   └── db_utils.py        # 数据处理工具（CSV存储）
-├── services/              # 服务模块
-│   └── notification_service.py  # 通知服务
-├── config/                # 配置模块
-│   └── settings.py        # 配置文件
-├── data/                  # 数据存储目录
-└── logs/                  # 日志存储目录
-```
-
-## 安装依赖
-
+### 1. 配置环境
 ```bash
+# 克隆项目
+git clone https://github.com/Noeverer/py_tools.git
+cd py_tools-master/gzf_Spider
+
+# 安装依赖
 pip install -r requirements.txt
 ```
 
-## 配置
-
-1. 在 `config/settings.py` 中配置Bark推送服务的Key
-2. 设置需要监控的筛选条件
-
-## 使用方法
-
-### 本地运行
-
-```bash
-python main.py
-```
-
-### GitHub Actions 自动运行
-
-项目配置了GitHub Actions，可以定时自动运行爬虫任务：
-
-1. 在仓库的Settings -> Secrets and variables -> Actions中添加名为`BARK_KEY`的Secret
-2. Actions会在每小时自动运行一次爬虫
-3. 如需修改运行频率，编辑`.github/workflows/crawl_house_data.yml`文件中的cron表达式
-
-#### 配置GitHub Actions
-
-1. 在GitHub仓库中启用Actions
-2. 添加名为`BARK_KEY`的Secret，值为你的Bark推送密钥
-3. Actions将在设定的时间自动运行爬虫并将结果提交到仓库
-
-## 数据存储
-
-- 所有房源信息以CSV格式存储在 `data/` 目录下
-- 文件按日期命名，如 `house_data_2023-01-01.csv`
-- CSV包含以下字段：timestamp, house_name, house_site, rent, house_type, floor, area
-
-## 数据分析
-
-项目包含数据分析功能，可以对收集到的房源数据进行统计分析：
-
-```bash
-python -m utils.data_analysis
-```
-
-这将生成最近7天的房源数据报告，包括房源总数、每日房源数量、热门区域、热门房型和租金统计等信息。
-
-## 数据展示
-
-项目包含一个静态Web界面，可以直接在仓库中查看收集到的房源数据：
-
-1. 点击仓库中的 `viewer.html` 文件
-2. 用浏览器打开该文件
-3. 选择日期查看对应的房源数据
-
-Web界面支持：
-
-- 按日期查看房源数据
-- 统计信息展示（房源总数、平均租金等）
-- 申请人数显示（如果数据中有此信息）
-- 租金分布图表
-
-## 配置监控
-
-使用配置向导轻松设置您关心的地点和房型监控：
-
-1. 点击仓库中的 `configurator.html` 文件
-2. 用浏览器打开该文件
-3. 按照向导添加您关心的地点和房型
-4. 复制生成的配置代码到 `config/settings.py` 文件中
-
-或者直接编辑 `config/settings.py` 文件，修改以下配置：
-
-- `MONITORED_LOCATIONS`: 添加您关心的地点，如 "张江"、"唐镇" 等
-- `MONITORED_HOUSE_TYPES`: 添加您关心的房型，如 "1室1厅"、"2室1厅" 等
-
-## 运行时间
-
-爬虫每天在 8:00、9:00、10:00 和 11:00 各运行一次，收集最新的房源信息。
-
-## 推送通知优化
-
-推送通知现在包含以下优化：
-
-- **测试推送**: 每次爬虫运行时会先发送测试推送，确认服务正常
-- **iOS优化**: 推送消息针对iOS设备进行了优化，包含图标、声音和徽章
-- **消息格式**: 优化了消息格式，使其在手机上更易阅读
-- **特殊标记**: 特殊房源使用醒目的emoji标记
-
-## 申请人数功能
-
-爬虫现在尝试获取每个房源的申请人数信息，并将其保存到CSV文件中。如果网站提供了申请人数信息，它将显示在Web界面和推送通知中。
-
-## 特定地点监控
-
-您可以配置监控特定地点或房型的房源，并接收专门的推送通知：
-
-1. 编辑 `config/settings.py` 文件
-2. 在 `MONITORED_LOCATIONS` 数组中添加您关心的地点
-3. 在 `MONITORED_HOUSE_TYPES` 数组中添加您关心的房型
-4. （可选）在 `LOCATION_BARK_KEYS` 中为不同地点设置不同的推送密钥
-
-示例配置：
+### 2. 配置推送服务
+#### 方法一：修改配置文件
+编辑 `config/settings.py`：
 ```python
-MONITORED_LOCATIONS = [
-    "张江",
-    "唐镇",
-    "曹路"
-]
-
-MONITORED_HOUSE_TYPES = [
-    "1室1厅",
-    "2室1厅"
-]
+BARK_KEY = "your_bark_key_here"  # 替换为你的Bark Key
 ```
 
-当爬虫发现匹配的房源时，会发送特殊的推送通知，标题为【地点名特别房源】。
+#### 方法二：使用环境变量
+```bash
+export BARK_KEY=your_bark_key_here
+export ENABLED_PRESET_FILTERS=金桥低价,张江低价
+```
 
-## 注意事项
+### 3. 运行爬虫
+```bash
+# 正常模式
+python main.py
 
-- 请遵守网站的robots.txt协议和相关法律法规
-- 合理设置爬取频率，避免对服务器造成过大压力
-- 需要自行申请Bark推送服务的Key
+# 调试模式
+python main.py --mode debug
+
+# 测试模式（仅检查环境）
+python main.py --mode test
+```
+
+## ⚙️ 配置选项
+
+### 推送时间控制
+```bash
+# 推送时间段（支持多时间段）
+PUSH_TIME_SLOTS=8-11,19-21
+
+# 或单时间段
+PUSH_START_HOUR=8
+PUSH_END_HOUR=11
+```
+
+### 筛选方案
+```bash
+# 启用的筛选方案
+ENABLED_PRESET_FILTERS=金桥低价,张江低价
+
+# 自定义筛选
+PRESET_FILTER_我的筛选=area:金桥,max_rent:2500,house_type:1室1厅
+```
+
+### Bark推送配置
+```bash
+BARK_KEY=your_key_here
+BARK_DEFAULT_GROUP=公租房通知
+BARK_SOUND=telegraph
+```
+
+## 📱 iOS推送分组
+
+系统支持以下分组推送：
+- 🏠 **默认分组**: 普通房源信息
+- 📍 **地区分组**: 金桥、张江、唐镇等
+- 💰 **价格分组**: 低价房、高端房等
+- 📊 **监控分组**: 特定筛选结果
+
+## 🎯 预设筛选方案
+
+| 方案名称 | 筛选条件 | 说明 |
+|---------|---------|------|
+| 金桥低价 | 金桥地区 + <3000元 | 金桥地区便宜房源 |
+| 张江低价 | 张江地区 + <3000元 | 张江地区便宜房源 |
+| 唐镇低价 | 唐镇地区 + <3000元 | 唐镇地区便宜房源 |
+| 低价房 | 全区域 + <3000元 | 所有便宜房源 |
+| 金桥 | 金桥地区（不限价格） | 金桥地区所有房源 |
+
+## 🐳 Docker部署
+
+```bash
+# 构建镜像
+docker build -t gzf-monitor .
+
+# 运行容器
+docker run -d \
+  --name gzf-monitor \
+  -e BARK_KEY=your_key_here \
+  -e PUSH_TIME_SLOTS=8-11 \
+  -v $(pwd)/data:/app/data \
+  gzf-monitor
+```
+
+## 📋 数据字段
+
+| 字段 | 说明 | 示例 |
+|------|------|------|
+| house_name | 房源名称 | "张江高科技园人才公寓" |
+| house_site | 所属区域 | "张江" |
+| rent | 月租金 | "2800元/月" |
+| house_type | 户型 | "1室1厅" |
+| area | 建筑面积 | "45平方米" |
+| applicant_count | 申请人数 | 15 |
+
+## 🔧 高级配置
+
+### 环境变量配置
+参考 `.env.example` 文件，支持所有配置通过环境变量设置：
+
+```bash
+# 复制示例文件
+cp .env.example .env
+
+# 编辑配置
+vim .env
+
+# 加载环境变量
+export $(cat .env | xargs)
+```
+
+### 自定义筛选方案
+```bash
+# 格式：区域:区域名,max_rent:最高租金,min_rent:最低租金,house_type:房型
+PRESET_FILTER_我的方案=area:金桥,max_rent:3000,house_type:1室1厅
+```
+
+## 🛠 故障排除
+
+### 常见问题
+1. **ChromeDriver版本不匹配**
+   ```bash
+   # 更新ChromeDriver
+   google-chrome --version
+   # 下载对应版本的ChromeDriver
+   ```
+
+2. **推送失败**
+   ```bash
+   # 测试Bark服务
+   curl "https://api.day.app/your_key/test?group=测试"
+   ```
+
+3. **依赖问题**
+   ```bash
+   # 重新安装依赖
+   pip install --force-reinstall -r requirements.txt
+   ```
+
+## 📄 许可证
+
+本项目仅供学习交流使用，请遵守相关法律法规。
+
+---
+
+**🏠 持续为您寻找理想的家园**
