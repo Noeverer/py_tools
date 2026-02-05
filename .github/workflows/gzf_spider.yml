@@ -1,0 +1,232 @@
+name: 公租房爬虫定时任务
+
+on:
+  # 定时触发 - 每天北京时间 9:00 和 15:00 (UTC 1:00 和 7:00)
+  schedule:
+    - cron: '0 1,7 * * *'  # 每天两次，UTC时间1点和7点，即北京时间9点和15点
+  
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: '运行模式'
+        required: true
+        default: 'normal'
+        type: choice
+        options:
+          - normal    # 正常运行
+          - debug     # 调试模式
+          - test      # 测试模式
+
+# 并发控制：同一时间只运行一个爬虫任务
+concurrency:
+  group: gzf-spider
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    # 添加超时限制，防止任务卡死
+    timeout-minutes: 30
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+      
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: 安装依赖
+        run: |
+          pip install --upgrade pip
+          pip install -r gzf_Spider/requirement.txt
+          pip install pillow requests  # 添加HTTP请求和图像处理相关依赖
+          
+      - name: 安装Chrome浏览器
+        run: |
+          # 安装Chrome浏览器
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          
+          google-chrome --version
+          echo "Chrome安装完成"
+
+      - name: 安装ChromeDriver
+        run: |
+          # 获取Chrome版本
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' | head -c 2)
+          # 下载对应版本的ChromeDriver
+          if [ -z "$CHROME_VERSION" ]; then
+            CHROME_VERSION="114"  # 默认版本
+          fi
+          
+          CHROMEDRIVER_URL="https://storage.googleapis.com/chrome-for-testing-public/$CHROME_VERSION.0.0/chromedriver-linux64.zip"
+          echo "正在下载ChromeDriver: $CHROMEDRIVER_URL"
+          
+          wget -q $CHROMEDRIVER_URL -O /tmp/chromedriver.zip
+          sudo unzip -o /tmp/chromedriver.zip -d /opt/
+          sudo chmod +x /opt/chromedriver-linux64/chromedriver
+          sudo ln -sf /opt/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+          
+          chromedriver --version
+          echo "ChromeDriver安装完成"
+
+      - name: 准备数据库环境
+        run: |
+          # 如果需要数据库支持，可以在这里初始化
+          echo "准备数据库环境..."
+          # 检查SQL文件是否存在
+          if [ -f "gzf_Spider/src/house_init.sql" ]; then
+            echo "发现数据库初始化文件"
+          else
+            echo "未找到数据库初始化文件"
+          fi
+          
+      - name: 执行公租房爬虫
+        env:
+          # ==========================================
+          # 数据库配置（可选）
+          # ==========================================
+          DB_HOST: ${{ secrets.DB_HOST || 'localhost' }}
+          DB_PORT: ${{ secrets.DB_PORT || '3306' }}
+          DB_USER: ${{ secrets.DB_USER || 'root' }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME || 'house_data' }}
+          
+          # ==========================================
+          # 邮件通知配置（可选）
+          # ==========================================
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER || 'smtp.gmail.com' }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL || secrets.EMAIL_USER }}
+          
+          # ==========================================
+          # Bark通知配置（可选）
+          # ==========================================
+          BARK_URL: ${{ secrets.BARK_URL }}  # 如 https://api.day.app/your_bark_key
+          
+          # ==========================================
+          # 爬虫配置
+          # ==========================================
+          DEBUG_MODE: ${{ github.event.inputs.run_mode == 'debug' && 'true' || 'false' }}
+          
+        run: |
+          echo "=========================================="
+          echo "🕷️ 开始执行公租房爬虫任务"
+          echo "=========================================="
+          echo "⏰ 时间: $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+          echo "🎯 运行模式: ${{ github.event.inputs.run_mode || 'normal' }}"
+          echo "📋 检查依赖项..."
+          
+          # 检查Chrome浏览器
+          if command -v google-chrome-stable &> /dev/null; then
+              echo "✅ Chrome浏览器已安装: $(google-chrome-stable --version)"
+          else
+              echo "❌ Chrome浏览器未安装"
+              exit 1
+          fi
+          
+          # 检查ChromeDriver
+          if command -v chromedriver &> /dev/null; then
+              echo "✅ ChromeDriver已安装: $(chromedriver --version)"
+          else
+              echo "❌ ChromeDriver未安装"
+              exit 1
+          fi
+          
+          # 检查Python依赖
+          python -c "import selenium; print(f'✅ Selenium版本: {selenium.__version__}')"
+          python -c "import requests; print(f'✅ Requests版本: {requests.__version__}')"
+          
+          echo ""
+          echo "=========================================="
+          echo "🔧 开始执行爬虫脚本"
+          echo "=========================================="
+          
+          # 进入项目目录并执行
+          cd gzf_Spider
+          
+          # 根据运行模式决定如何执行脚本
+          if [ "${{ github.event.inputs.run_mode }}" = "debug" ]; then
+            echo "🐛 启动调试模式..."
+            python -u main.py --mode debug
+          elif [ "${{ github.event.inputs.run_mode }}" = "test" ]; then
+            echo "🧪 启动测试模式..."
+            python -u main.py --mode test
+          else
+            echo "🚀 启动正常模式..."
+            python -u main.py --mode normal
+          fi
+          
+          echo ""
+          echo "=========================================="
+          echo "✅ 爬虫任务执行完成"
+          echo "=========================================="
+      
+      - name: 上传日志文件
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gzf-spider-logs-${{ github.run_number }}
+          path: |
+            gzf_Spider/*.log
+            gzf_Spider/src/*.log
+          retention-days: 30
+      
+      - name: 发送通知
+        if: always()
+        run: |
+          # 获取任务状态
+          STATUS="${{ job.status }}"
+          RUN_TIME=$(date '+%Y-%m-%d %H:%M:%S')
+          REPO_NAME="${{ github.repository }}"
+          WORKFLOW_NAME="${{ github.workflow }}"
+          
+          # 构建通知消息
+          MESSAGE="Repo: $REPO_NAME
+          Workflow: $WORKFLOW_NAME
+          Status: $STATUS
+          Run Time: $RUN_TIME
+          Run ID: ${{ github.run_id }}"
+          
+          # 发送Bark通知（如果配置了BARK_URL）
+          if [[ -n "${{ secrets.BARK_URL }}" ]]; then
+            # 设置环境变量并运行Python脚本
+            export MESSAGE="$MESSAGE"
+            export REPO_NAME="$REPO_NAME"
+            export WORKFLOW_NAME="$WORKFLOW_NAME"
+            export STATUS="$STATUS"
+            export RUN_TIME="$RUN_TIME"
+            export RUN_ID="${{ github.run_id }}"
+            export BARK_URL="${{ secrets.BARK_URL }}"
+            
+            python gzf_Spider/scripts/send_bark_notification.py
+          else
+            echo "Bark URL not configured, skipping Bark notification."
+          fi
+          
+          # 发送邮件通知（如果配置了邮件设置）
+          if [[ -n "${{ secrets.EMAIL_USER }}" && -n "${{ secrets.EMAIL_PASS }}" && -n "${{ secrets.SMTP_SERVER }}" ]]; then
+            # 设置环境变量并运行Python脚本
+            export JOB_STATUS="$STATUS"
+            export RUN_TIME="$RUN_TIME"
+            export GITHUB_REPOSITORY="${{ github.repository }}"
+            export GITHUB_WORKFLOW="${{ github.workflow }}"
+            export GITHUB_RUN_ID="${{ github.run_id }}"
+            export SMTP_SERVER="${{ secrets.SMTP_SERVER || 'smtp.gmail.com' }}"
+            export SMTP_PORT="${{ secrets.SMTP_PORT || '587' }}"
+            export EMAIL_USER="${{ secrets.EMAIL_USER }}"
+            export EMAIL_PASS="${{ secrets.EMAIL_PASS }}"
+            export RECEIVER_EMAIL="${{ secrets.RECEIVER_EMAIL || secrets.EMAIL_USER }}"
+            
+            python gzf_Spider/scripts/send_notification_email.py
+          else
+            echo "Email settings not fully configured, skipping email notification."
+          fi
