@@ -2,11 +2,12 @@ import sys
 import subprocess
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time,os,re
+import time, os, re
 import datetime
-import conndb,requests
+import conndb, requests
 from sendmail_for_gzf import sendmail
 from selenium.webdriver.chrome.service import Service  # 导入 Service 类
+
 # 导入环境检查函数
 from check_gzf import check_environment
 
@@ -17,7 +18,7 @@ def start_selenium(url):
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--remote-debugging-port=9222")
-    
+
     # 确定 chromedriver 路径
     driver_path = "/usr/local/bin/chromedriver"
     if not os.path.exists(driver_path):
@@ -29,10 +30,10 @@ def start_selenium(url):
         else:
             # 尝试在PATH中查找
             driver_path = "chromedriver"
-    
+
     # 使用 Service 类指定 ChromeDriver 路径
     service = Service(executable_path=driver_path)
-    
+
     # 初始化 WebDriver
     browser = webdriver.Chrome(service=service, options=chrome_options)
 
@@ -46,41 +47,47 @@ def get_house_content(driver):
     try:
         # houses = driver.find_elements(By.CSS_SELECTOR, "[class='c-6  fs26']")  # 通过CSS selector获取对象
 
-        pages = driver.find_elements(By.XPATH, "//ul[@class='el-pager']/li")  # 获取pages
+        pages = driver.find_elements(
+            By.XPATH, "//ul[@class='el-pager']/li"
+        )  # 获取pages
         i = 1
-        dt = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         global houselist
         houselist = []
         # print(len(pages))
         if len(pages) > 1:
             for p in range(len(pages)):
-                houses = driver.find_elements(By.XPATH, "//ul[@class='village-house-lists']/li")  # 获取page_house 上
+                houses = driver.find_elements(
+                    By.XPATH, "//ul[@class='village-house-lists']/li"
+                )  # 获取page_house 上
                 for house in houses:
                     househash = {}
                     # 遍历房源列表写入数据库
                     # str(driver.find_elements(By.XPATH, "//ul[@class='village-house-lists']/li")[4].text).split('\n')
-                    for ind,one in enumerate(list(str(house.text).split('\n'))):
+                    for ind, one in enumerate(list(str(house.text).split("\n"))):
                         if ind == 0:
-                            househash["house_name"] = one if len(one) else 'null'
+                            househash["house_name"] = one if len(one) else "null"
                         elif one.find("所属区域"):
-                            househash["house_site"] = one if len(one) else 'null'
+                            househash["house_site"] = one if len(one) else "null"
                         elif one.find("所属户型"):
-                            househash["house_type"] = one if len(one) else 'null'
+                            househash["house_type"] = one if len(one) else "null"
                         elif one.find("楼层名称"):
-                            househash["flood"] = one if len(one) else 'null'
+                            househash["flood"] = one if len(one) else "null"
                         elif one.find("建筑面积"):
-                            househash["area"] = one if len(one) else 'null'
+                            househash["area"] = one if len(one) else "null"
                         elif one.find("租金"):
-                            househash["rent"] = one if len(one) else 'null'
+                            househash["rent"] = one if len(one) else "null"
                         else:
-                            print('=== other info === ',one)
-                    print("获取到{}条房源".format(i),'==',househash)
+                            print("=== other info === ", one)
+                    print("获取到{}条房源".format(i), "==", househash)
                     houselist.append(househash)
                     i += 1
                 print("成功抓取第{}页".format(p + 1))
                 driver.find_element(By.CSS_SELECTOR, "[class='btn-next']").click()
                 time.sleep(5)
-                houses = driver.find_elements(By.CSS_SELECTOR, "[class='c-6 fs26']")  # 获取下一页对象
+                houses = driver.find_elements(
+                    By.CSS_SELECTOR, "[class='c-6 fs26']"
+                )  # 获取下一页对象
         else:
             # for house in houses:
             #     # 遍历房源列表写入数据库
@@ -109,7 +116,7 @@ def get_house_content(driver):
 
 # 数据处理函数并写入数据库(获取全部数据入库)
 def process_content(time, houses, cur):
-    print("准备写入数据……",houses)
+    print("准备写入数据……", houses)
     for house in houses:
         # house_name = house.get('house_name') if house.get('house_name') else ''
         # house_site = house.get('house_site') if house.get('house_site') else ''
@@ -121,10 +128,15 @@ def process_content(time, houses, cur):
         # foold = house.get('foold') if house.get('foold') else ''
         # area = house.get('area') if house.get('area') else ''
         keys = ",".join(house.keys())
-        values = "','".join([house.get(k) for k in keys.split(",") if house.get(k) or 'null'])
-        fill_s = ''.join(["'%s'," for i in range(0,len(house))])[:-2]
+        values = "','".join(
+            [house.get(k) for k in keys.split(",") if house.get(k) or "null"]
+        )
+        fill_s = "".join(["'%s'," for i in range(0, len(house))])[:-2]
 
-        sql = "INSERT INTO HouseData(%s)  values ('%s') " % (keys ,values)  # 插入房源信息
+        sql = "INSERT INTO HouseData(%s)  values ('%s') " % (
+            keys,
+            values,
+        )  # 插入房源信息
         conndb.exe_update(cur, sql)
         # else:
         #     print("发现新房源[{}]，准备注册入库".format(house))
@@ -141,32 +153,42 @@ def process_content(time, houses, cur):
 
 
 # 判断是否有关注房源，如果有发邮件
-def checkbox_houses(houses,need_house,start_time,end_time):
+def checkbox_houses(houses, need_house, start_time, end_time):
     # 范围时间
-    d_time = datetime.datetime.strptime(str(datetime.datetime.now().date()) + start_time, '%Y-%m-%d%H:%M')
-    d_time1 = datetime.datetime.strptime(str(datetime.datetime.now().date()) + end_time, '%Y-%m-%d%H:%M')
+    d_time = datetime.datetime.strptime(
+        str(datetime.datetime.now().date()) + start_time, "%Y-%m-%d%H:%M"
+    )
+    d_time1 = datetime.datetime.strptime(
+        str(datetime.datetime.now().date()) + end_time, "%Y-%m-%d%H:%M"
+    )
     n_time = datetime.datetime.now()
     # 判断当前时间是否在范围时间内
     if n_time > d_time and n_time < d_time1:
         for one_house in houses:
             for one_need in need_house:
-                if one_house.get('house_type').find(one_need) != -1 and int(one_house.get('house_site').replace(' 月租金','')) < 5000:
-                    send_info = '<>'.join(one_house.values()) + '<>' +str(n_time)
-                    send_info = re.sub('[^\u4e00-\u9fa5^a-z^A-Z^0-9]','',send_info)
-                    receiver = "https://api.day.app/vWYmRcVLnFKWJP5AJKWADU/%s?group=%s" % (send_info, '公租房')
+                if (
+                    one_house.get("house_type").find(one_need) != -1
+                    and int(one_house.get("house_site").replace(" 月租金", "")) < 5000
+                ):
+                    send_info = "<>".join(one_house.values()) + "<>" + str(n_time)
+                    send_info = re.sub("[^\u4e00-\u9fa5^a-z^A-Z^0-9]", "", send_info)
+                    receiver = (
+                        "https://api.day.app/vWYmRcVLnFKWJP5AJKWADU/%s?group=%s"
+                        % (send_info, "公租房")
+                    )
                     # receiver = "https://api.day.app/vWYmRcVLnFKWJP5AJKWADU/%s?group=%s" % (send_info, '公租房')
                     resp = requests.get(receiver)
-                    print("+++ send to my iphone +++",send_info)
+                    print("+++ send to my iphone +++", send_info)
 
 
 def main():
     print("程序执行开始")
-    
+
     # 检查运行环境，如果失败尝试自动安装
     if not check_environment(auto_install=True):
         print("环境检查失败，程序退出")
         return
-    
+
     # url = "https://select.pdgzf.com/villageLists"
     url = "https://select.pdgzf.com/houseLists"
     # kill_chrome = os.system("ps -ef | grep chromedrive | awk -F ' ' '{print $2}' | xargs -i kill {}")
@@ -174,11 +196,22 @@ def main():
     driver = start_selenium(url)
     houselist = get_house_content(driver)
     # os.system("ps -ef | grep chromedrive | awk -F ' ' '{print $2}' | xargs -i kill {}")
-    checkbox_houses(houselist,need_house,'08:30','22:55')
+    checkbox_houses(houselist, need_house, "08:30", "22:55")
     print("程序执行结束")
 
 
-need_house = ["唐镇","张江","曹路","合庆","金桥"]
+# 监控地点配置
+need_house = [
+    "唐镇",
+    "张江",
+    "曹路",
+    "合庆",
+    "金桥",
+    "陆家嘴",
+    "金杨新村",
+    "洋泾",
+    "花木",
+]
 
 # 只有在直接运行此脚本时才执行main函数
 if __name__ == "__main__":
