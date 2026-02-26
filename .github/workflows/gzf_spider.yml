@@ -59,16 +59,9 @@ jobs:
       - name: 安装ChromeDriver
         run: |
           # 获取Chrome版本
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' | head -c 2)
-          # 下载对应版本的ChromeDriver
-          if [ -z "$CHROME_VERSION" ]; then
-            CHROME_VERSION="114"  # 默认版本
-          fi
-          
-          CHROMEDRIVER_URL="https://storage.googleapis.com/chrome-for-testing-public/$CHROME_VERSION.0.0/chromedriver-linux64.zip"
-          echo "正在下载ChromeDriver: $CHROMEDRIVER_URL"
-          
-          wget -q $CHROMEDRIVER_URL -O /tmp/chromedriver.zip
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' | head -1)
+          CDM_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_${CHROME_VERSION}")
+          wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CDM_VERSION}/linux64/chromedriver-linux64.zip" -O /tmp/chromedriver.zip
           sudo unzip -o /tmp/chromedriver.zip -d /opt/
           sudo chmod +x /opt/chromedriver-linux64/chromedriver
           sudo ln -sf /opt/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
