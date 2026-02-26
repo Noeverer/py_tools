@@ -86,16 +86,17 @@ def get_house_content(driver):
         i = 1
         dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         houselist = []
+        current_page = 1
 
-        for page_num in range(total_pages):
+        while current_page <= total_pages:
             # 获取当前页的房源
             houses = driver.find_elements(
                 By.XPATH, "//ul[@class='village-house-lists']/li"
             )
 
             if not houses:
-                print(f"第{page_num + 1}页未获取到房源")
-                continue
+                print(f"第{current_page}页未获取到房源")
+                break
 
             for house in houses:
                 househash = {}
@@ -129,18 +130,22 @@ def get_house_content(driver):
                 houselist.append(househash)
                 i += 1
 
-            # 翻页（如果不是最后一页）
-            if page_num < total_pages - 1:
-                print(f"成功抓取第{page_num + 1}页，准备翻页...")
+            # 翻页
+            if current_page < total_pages:
+                print(f"成功抓取第{current_page}页，准备翻页...")
                 try:
-                    next_btn = driver.find_element(
-                        By.CSS_SELECTOR, "[class='btn-next']"
-                    )
+                    next_btn = driver.find_element(By.CSS_SELECTOR, ".btn-next")
+                    if "disabled" in next_btn.get_attribute("class"):
+                        print("已到最后一页")
+                        break
                     next_btn.click()
                     time.sleep(3)
+                    current_page += 1
                 except Exception as e:
                     print(f"翻页失败: {e}")
                     break
+            else:
+                break
 
         if len(houselist) != 0:
             print(f"总共获取到 {len(houselist)} 条房源信息")
