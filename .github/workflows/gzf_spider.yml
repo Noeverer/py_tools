@@ -42,7 +42,7 @@ jobs:
       - name: 安装依赖
         run: |
           pip install --upgrade pip
-          pip install -r gzf_Spider/requirement.txt
+          pip install -r gzf_Spider/requirements.txt
           pip install pillow requests  # 添加HTTP请求和图像处理相关依赖
           
       - name: 安装Chrome浏览器
