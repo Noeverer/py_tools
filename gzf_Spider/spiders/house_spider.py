@@ -72,33 +72,40 @@ def get_applicant_count(driver, house_element):
 def get_house_content(driver):
     """从页面获取房源信息"""
     try:
+        # 首先获取总页数
+        page_elements = driver.find_elements(By.XPATH, "//ul[@class='el-pager']/li")
+        if page_elements:
+            total_pages = len(page_elements)
+            print(f"检测到总页数: {total_pages}")
+        else:
+            total_pages = 1
+            print("未检测到分页器，只有1页")
+
         i = 1
         dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         houselist = []
 
-        while True:
-            # 每次循环都获取当前页的房源
+        for page_num in range(total_pages):
+            # 获取当前页的房源
             houses = driver.find_elements(
                 By.XPATH, "//ul[@class='village-house-lists']/li"
-            )  # 获取page_house
+            )
 
             if not houses:
-                print("未获取到房源，可能已到最后一页或页面结构变化")
-                break
+                print(f"第{page_num + 1}页未获取到房源")
+                continue
 
             for house in houses:
                 househash = {}
-                # 解析房源信息
                 house_text = house.text
                 text_parts = house_text.split("\n")
 
-                # 根据文本内容解析房源信息
                 for idx, part in enumerate(text_parts):
                     part = part.strip()
                     if not part:
                         continue
 
-                    if idx == 0:  # 第一项通常是房屋名称
+                    if idx == 0:
                         househash["house_name"] = part
                     elif "所属区域" in part:
                         househash["house_site"] = part.replace("所属区域", "").strip()
@@ -111,10 +118,8 @@ def get_house_content(driver):
                     elif "租金" in part:
                         househash["rent"] = part.replace("租金", "").strip()
                     else:
-                        # 其他信息暂时跳过或进一步处理
                         pass
 
-                # 尝试获取申请人数
                 applicant_count = get_applicant_count(driver, house)
                 househash["applicant_count"] = applicant_count
 
@@ -122,26 +127,22 @@ def get_house_content(driver):
                 houselist.append(househash)
                 i += 1
 
-            # 检查是否有下一页
-            try:
-                next_btn = driver.find_element(By.CSS_SELECTOR, "[class='btn-next']")
-                # 检查是否禁用（最后一页）
-                if "disabled" in next_btn.get_attribute("class"):
-                    print("已到最后一页")
+            # 翻页（如果不是最后一页）
+            if page_num < total_pages - 1:
+                print(f"成功抓取第{page_num + 1}页，准备翻页...")
+                try:
+                    next_btn = driver.find_element(
+                        By.CSS_SELECTOR, "[class='btn-next']"
+                    )
+                    next_btn.click()
+                    time.sleep(3)
+                except Exception as e:
+                    print(f"翻页失败: {e}")
                     break
-                print(f"成功抓取第{i // 10 + 1}页，准备翻页...")
-                next_btn.click()
-                time.sleep(3)  # 等待页面加载
-            except Exception as e:
-                print(f"无法点击下一页: {e}")
-                break
 
         if len(houselist) != 0:
             print(f"总共获取到 {len(houselist)} 条房源信息")
-            # 保存到CSV文件
             save_house_data_to_csv(houselist)
-
-            # 发送通知
             send_notification(houselist)
         else:
             print("没有抓取到房源信息")
@@ -151,7 +152,7 @@ def get_house_content(driver):
         print(f"获取房源信息时发生错误: {e}")
         houselist = []
     finally:
-        driver.quit()  # 确保浏览器正确退出
+        driver.quit()
 
     return houselist
 
