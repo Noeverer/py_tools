@@ -36,14 +36,13 @@ jobs:
 
     - name: 安装ChromeDriver
       run: |
-        CHROME_VERSION=$(google-chrome-stable --version | grep -oP '\d+\.\d+\.\d+')
-        cd /tmp
-        curl -s "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_$CHROME_VERSION" -o latest_release.txt
-        LATEST=$(cat latest_release.txt)
-        wget "https://storage.googleapis.com/chrome-for-testing-public/$LATEST/linux64/chromedriver-linux64.zip"
-        unzip chromedriver-linux64.zip
+        CHROME_VERSION=$(google-chrome-stable --version | grep -oP '\d+\.\d+\.\d+' | head -1)
+        CDM_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_${CHROME_VERSION}")
+        wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CDM_VERSION}/linux64/chromedriver-linux64.zip"
+        unzip -o chromedriver-linux64.zip
         sudo mv chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
         sudo chmod +x /usr/local/bin/chromedriver
+        chromedriver --version
 
     - name: 创建必要目录
       run: |
