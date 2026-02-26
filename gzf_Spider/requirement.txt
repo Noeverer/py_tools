@@ -1,2 +1,4 @@
 requests
 selenium
+pytz
+pandas
