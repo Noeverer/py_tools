@@ -1,5 +1,6 @@
 import requests
 import re
+import time
 from datetime import datetime
 import pytz
 from config.settings import (
@@ -147,11 +148,13 @@ def send_notification(house_data):
     # 应用预设筛选方案
     filtered_results = apply_preset_filters(house_data)
 
-    # 推送各个筛选方案的结果
+    # 推送各个筛选方案的结果（分条推送）
     for filter_name, filtered_data in filtered_results.items():
         if filtered_data:
             print(f"筛选方案 '{filter_name}' 找到 {len(filtered_data)} 条房源")
-            send_preset_notification(filter_name, filtered_data)
+            push_houses_separately(
+                filtered_data, title=f"{filter_name}({len(filtered_data)}套)"
+            )
         else:
             print(f"筛选方案 '{filter_name}' 未找到符合条件的房源")
 
@@ -187,13 +190,13 @@ def send_notification(house_data):
             if not is_monitored_location and not is_monitored_type:
                 regular_houses.append(house)
 
-        # 推送普通房源信息
+        # 分条推送普通房源信息
         if regular_houses:
-            send_regular_notification(regular_houses)
+            push_houses_separately(regular_houses, title="最新房源")
 
-        # 推送特定地点房源信息
+        # 分条推送特定地点房源信息
         if special_location_houses:
-            send_special_location_notification(special_location_houses)
+            push_houses_separately(special_location_houses, title="重点关注")
 
 
 def apply_preset_filters(house_data):
@@ -450,7 +453,7 @@ def send_special_location_notification(house_data):
 
 def push_single_message(message, key=None, group=None, is_test=False, auto_group=True):
     """
-    推送单条消息到微信
+    推送单条消息到Bark
 
     Args:
         message (str): 要推送的消息
@@ -514,6 +517,54 @@ def push_single_message(message, key=None, group=None, is_test=False, auto_group
             print(f"消息推送失败: {response.status_code}")
     except Exception as e:
         print(f"推送过程中出错: {e}")
+
+
+def push_houses_separately(house_data, title="最新房源", key=None, group=None):
+    """
+    分条推送房源信息（每条房源单独推送一条）
+
+    Args:
+        house_data (list): 房源信息列表
+        title (str): 推送标题
+        key (str): Bark推送key
+        group (str): 分组名称
+    """
+    if not house_data:
+        return
+
+    if key is None:
+        key = BARK_CONFIG.KEY
+    if group is None:
+        group = BARK_CONFIG.DEFAULT_GROUP
+
+    print(f"开始分条推送 {len(house_data)} 条房源...")
+
+    for i, house in enumerate(house_data, 1):
+        # 构造单条房源信息
+        parts = []
+        if house.get("house_name"):
+            parts.append(str(house["house_name"])[:20])
+        if house.get("house_site"):
+            parts.append(f"📍{house['house_site']}")
+        if house.get("house_type"):
+            parts.append(f"🏠{house['house_type']}")
+        if house.get("rent"):
+            parts.append(f"💰{house['rent']}")
+        if house.get("area"):
+            parts.append(f"📐{house['area']}")
+        if house.get("floor"):
+            parts.append(f"🏢{house['floor']}")
+        if house.get("applicant_count") and house.get("applicant_count", 0) > 0:
+            parts.append(f"👥{house['applicant_count']}人申请")
+
+        message = " | ".join(parts)
+        push_single_message(message, key=key, group=group, auto_group=False)
+
+        # 避免推送太频繁
+        if i < len(house_data):
+            time.sleep(0.5)
+
+    print(f"分条推送完成，共推送 {len(house_data)} 条")
 
 
 def authenticate_bark(key):
