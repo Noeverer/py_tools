@@ -1,0 +1,76 @@
+{
+  "bark": {
+    "key": "vWYmRcVLnFKWJP5AJKWADU",
+    "server_url": "https://api.day.app",
+    "default_group": "公租房通知",
+    "default_params": {
+      "sound": "telegraph",
+      "icon": "https://raw.githubusercontent.com/Finb/Bark/refs/heads/master/Server/assets/favicon.ico",
+      "level": "active",
+      "category": "house_notification",
+      "automaticallyCopy": false
+    },
+    "test_params": {
+      "sound": "calypso",
+      "level": "passive"
+    }
+  },
+  "push_time": {
+    "enabled": true,
+    "timezone": "Asia/Shanghai",
+    "time_slots": ["8-11"]
+  },
+  "monitored_locations": [
+    "张江", "唐镇", "曹路", "合庆", "金桥", "陆家嘴", "金杨新村", "洋泾", "花木", "康桥"
+  ],
+  "preset_filters": {
+    "金桥低价": {
+      "area": "金桥",
+      "max_rent": 3000
+    },
+    "张江低价": {
+      "area": "张江",
+      "max_rent": 3000
+    },
+    "唐镇低价": {
+      "area": "唐镇",
+      "max_rent": 3000
+    },
+    "金桥": {
+      "area": "金桥"
+    },
+    "低价房": {
+      "max_rent": 3000
+    }
+  },
+  "enabled_preset_filters": ["金桥低价"],
+  "default_filters": {
+    "max_rent": 5000
+  },
+  "crawler": {
+    "target_url": "https://select.pdgzf.com/houseLists",
+    "delay": 5,
+    "max_retries": 3,
+    "timeout": 30,
+    "headless": true,
+    "no_sandbox": true
+  },
+  "data": {
+    "data_dir": "data/",
+    "logs_dir": "logs/",
+    "backup_days": 30
+  },
+  "test_push": {
+    "enabled": true,
+    "interval": 3600
+  },
+  "push_groups": {
+    "default": "公租房通知",
+    "金桥": "公租房通知-金桥",
+    "张江": "公租房通知-张江",
+    "唐镇": "公租房通知-唐镇",
+    "低价房": "公租房通知-低价",
+    "监控": "公租房通知-监控",
+    "测试": "公租房通知-测试"
+  }
+}
