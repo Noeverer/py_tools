@@ -72,14 +72,16 @@ def get_applicant_count(driver, house_element):
 def get_house_content(driver):
     """从页面获取房源信息"""
     try:
-        # 首先获取总页数
-        page_elements = driver.find_elements(By.XPATH, "//ul[@class='el-pager']/li")
-        if page_elements:
-            total_pages = len(page_elements)
-            print(f"检测到总页数: {total_pages}")
-        else:
-            total_pages = 1
-            print("未检测到分页器，只有1页")
+        # 获取总页数 - 查找分页器中的最大页码数字
+        total_pages = 1
+        try:
+            pager_text = driver.find_element(By.XPATH, "//ul[@class='el-pager']").text
+            page_numbers = [int(x) for x in pager_text.split() if x.isdigit()]
+            if page_numbers:
+                total_pages = max(page_numbers)
+                print(f"检测到总页数: {total_pages}")
+        except:
+            print("未检测到分页器，尝试逐页抓取")
 
         i = 1
         dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
