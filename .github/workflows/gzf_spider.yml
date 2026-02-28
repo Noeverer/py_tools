@@ -184,53 +184,25 @@ jobs:
             gzf_Spider/src/*.log
           retention-days: 30
       
-      - name: 发送通知
-        if: always()
-        run: |
-          # 获取任务状态
-          STATUS="${{ job.status }}"
-          RUN_TIME=$(date '+%Y-%m-%d %H:%M:%S')
-          REPO_NAME="${{ github.repository }}"
-          WORKFLOW_NAME="${{ github.workflow }}"
-          
-          # 构建通知消息
-          MESSAGE="Repo: $REPO_NAME
-          Workflow: $WORKFLOW_NAME
-          Status: $STATUS
-          Run Time: $RUN_TIME
-          Run ID: ${{ github.run_id }}"
-          
-          # 发送Bark通知（如果配置了BARK_URL）
-          if [[ -n "${{ secrets.BARK_URL }}" ]]; then
-            # 设置环境变量并运行Python脚本
-            export MESSAGE="$MESSAGE"
-            export REPO_NAME="$REPO_NAME"
-            export WORKFLOW_NAME="$WORKFLOW_NAME"
-            export STATUS="$STATUS"
-            export RUN_TIME="$RUN_TIME"
-            export RUN_ID="${{ github.run_id }}"
-            export BARK_URL="${{ secrets.BARK_URL }}"
+      - name: 发送通知邮件
+        if: always() && failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.icloud.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_PASS }}
+          from: GitHub Action <${{ secrets.EMAIL_USER }}>
+          to: ante0327@icloud.com
+          subject: "GitHub Action 失败: ${{ github.workflow }} - ${{ job.status }}"
+          body: |
+            GitHub Action 执行失败详情:
             
-            python gzf_Spider/scripts/send_bark_notification.py
-          else
-            echo "Bark URL not configured, skipping Bark notification."
-          fi
-          
-          # 发送邮件通知（如果配置了邮件设置）
-          if [[ -n "${{ secrets.EMAIL_USER }}" && -n "${{ secrets.EMAIL_PASS }}" && -n "${{ secrets.SMTP_SERVER }}" ]]; then
-            # 设置环境变量并运行Python脚本
-            export JOB_STATUS="$STATUS"
-            export RUN_TIME="$RUN_TIME"
-            export GITHUB_REPOSITORY="${{ github.repository }}"
-            export GITHUB_WORKFLOW="${{ github.workflow }}"
-            export GITHUB_RUN_ID="${{ github.run_id }}"
-            export SMTP_SERVER="${{ secrets.SMTP_SERVER || 'smtp.gmail.com' }}"
-            export SMTP_PORT="${{ secrets.SMTP_PORT || '587' }}"
-            export EMAIL_USER="${{ secrets.EMAIL_USER }}"
-            export EMAIL_PASS="${{ secrets.EMAIL_PASS }}"
-            export RECEIVER_EMAIL="${{ secrets.RECEIVER_EMAIL || secrets.EMAIL_USER }}"
+            仓库: ${{ github.repository }}
+            工作流: ${{ github.workflow }}
+            状态: ${{ job.status }}
+            运行时间: ${{ github.run_started_at }}
+            运行ID: ${{ github.run_id }}
             
-            python gzf_Spider/scripts/send_notification_email.py
-          else
-            echo "Email settings not fully configured, skipping email notification."
-          fi
+            请查看 GitHub Actions 日志获取详细错误信息。
+          content_type: text/plain
