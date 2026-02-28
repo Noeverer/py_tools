@@ -119,6 +119,13 @@ jobs:
           echo "🎯 运行模式: ${{ github.event.inputs.run_mode || 'normal' }}"
           echo "📋 检查依赖项..."
           
+          # 检查BARK_KEY是否配置
+          if [[ -n "$BARK_KEY" ]]; then
+            echo "✅ BARK_KEY已配置: ${BARK_KEY:0:5}..."
+          else
+            echo "❌ BARK_KEY未配置"
+          fi
+          
           # 检查Chrome浏览器
           if command -v google-chrome-stable &> /dev/null; then
               echo "✅ Chrome浏览器已安装: $(google-chrome-stable --version)"
@@ -138,6 +145,9 @@ jobs:
           # 检查Python依赖
           python -c "import selenium; print(f'✅ Selenium版本: {selenium.__version__}')"
           python -c "import requests; print(f'✅ Requests版本: {requests.__version__}')"
+          
+          # 测试Bark推送
+          python -c "import os,requests; k=os.getenv('BARK_KEY',''); print('BARK_KEY:',k); t='https://api.day.app/'+k+'/GitHubActionTest?group=测试'; r=requests.get(t,timeout=10); print('Bark response:',r.status_code,r.text[:200])"
           
           echo ""
           echo "=========================================="
