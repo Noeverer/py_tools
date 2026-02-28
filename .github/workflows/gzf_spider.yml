@@ -147,7 +147,7 @@ jobs:
           python -c "import requests; print(f'✅ Requests版本: {requests.__version__}')"
           
           # 测试Bark推送
-          python -c "import os,requests; k=os.getenv('BARK_KEY',''); print('BARK_KEY:',k); t='https://api.day.app/'+k+'/GitHubActionTest?group=测试'; r=requests.get(t,timeout=10); print('Bark response:',r.status_code,r.text[:200])"
+          python -c "import os,requests; k=os.getenv('BARK_KEY',''); print('BARK_KEY:',k); t1='https://api.day.app/'+k+'/Test1'; r1=requests.get(t1,timeout=10); print('Test1 Status:',r1.status_code,'Response:',r1.text[:200]); t2='https://api.day.app/'+k+'/Test2?group=Test'; r2=requests.get(t2,timeout=10); print('Test2 Status:',r2.status_code,'Response:',r2.text[:200])"
           
           echo ""
           echo "=========================================="
