@@ -101,9 +101,10 @@ jobs:
           RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL || secrets.EMAIL_USER }}
           
           # ==========================================
-          # Bark通知配置（可选）
+          # Bark通知配置（必填）
           # ==========================================
-          BARK_URL: ${{ secrets.BARK_URL }}  # 如 https://api.day.app/your_bark_key
+          BARK_KEY: ${{ secrets.BARK_KEY }}
+          BARK_URL: ${{ secrets.BARK_URL }}
           
           # ==========================================
           # 爬虫配置

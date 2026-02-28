@@ -34435,3 +34435,723 @@ web握手成功
 数据写入完成
 断开数据库
 程序执行结束
+程序执行开始
+开始检查运行环境...
+Chrome浏览器版本: Google Chrome 139.0.7258.138
+chromedriver版本: ChromeDriver 139.0.7258.138 (884e54ea8d42947ed636779015c5b4815e069838-refs/branch-heads/7258@{#2631})
+环境检查通过
+web握手成功
+获取到1条房源 == {'house_name': '通济路1279弄/05号/02楼/204', 'house_type': '所属区域：惠南镇', 'house_site': '1899 月租金'}
+获取到2条房源 == {'house_name': '拱乐路2400弄/14号/03楼/304', 'house_type': '所属区域：惠南镇', 'house_site': '1863 月租金'}
+获取到3条房源 == {'house_name': '拱乐路2400弄/13号/07楼/704', 'house_type': '所属区域：惠南镇', 'house_site': '1873 月租金'}
+获取到4条房源 == {'house_name': '拱乐路2400弄/05号/03楼/304', 'house_type': '所属区域：惠南镇', 'house_site': '1857 月租金'}
+获取到5条房源 == {'house_name': '拱海路459弄/09号/14楼/1401', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}
+获取到6条房源 == {'house_name': '拱海路459弄/04号/01楼/104', 'house_type': '所属区域：惠南镇', 'house_site': '2153 月租金'}
+获取到7条房源 == {'house_name': '拱海路459弄/03号/18楼/1801', 'house_type': '所属区域：惠南镇', 'house_site': '2228 月租金'}
+获取到8条房源 == {'house_name': '拱海路459弄/02号/07楼/704', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}
+获取到9条房源 == {'house_name': '拱海路459弄/01号/11楼/1104', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}
+获取到10条房源 == {'house_name': '拱川路411弄/18号/04楼/401', 'house_type': '所属区域：惠南镇', 'house_site': '1904 月租金'}
+成功抓取第1页
+获取到11条房源 == {'house_name': '拱川路411弄/16号/05楼/502', 'house_type': '所属区域：惠南镇', 'house_site': '1923 月租金'}
+获取到12条房源 == {'house_name': '拱川路411弄/07号/09楼/903', 'house_type': '所属区域：惠南镇', 'house_site': '1904 月租金'}
+获取到13条房源 == {'house_name': '拱川路411弄/03号/06楼/601', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}
+获取到14条房源 == {'house_name': '拱川路411弄/01号/16楼/1604', 'house_type': '所属区域：惠南镇', 'house_site': '1950 月租金'}
+获取到15条房源 == {'house_name': '拱川路411弄/01号/06楼/604', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}
+获取到16条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/405', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到17条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/908', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+获取到18条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/608', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+获取到19条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/204', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}
+获取到20条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/907', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+成功抓取第2页
+获取到21条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/403', 'house_type': '所属区域：康桥镇', 'house_site': '3613 月租金'}
+获取到22条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/605', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+获取到23条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/208', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到24条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/104', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到25条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/704', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}
+获取到26条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/705', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到27条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/805', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到28条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/303', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到29条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/105', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到30条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/408', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+成功抓取第3页
+获取到31条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/106', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到32条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/109', 'house_type': '所属区域：康桥镇', 'house_site': '3568 月租金'}
+获取到33条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/809', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}
+获取到34条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/510', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}
+获取到35条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/103', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到36条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/505', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到37条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/101', 'house_type': '所属区域：康桥镇', 'house_site': '3591 月租金'}
+获取到38条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/305', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到39条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/706', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到40条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/509', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}
+成功抓取第4页
+获取到41条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/904', 'house_type': '所属区域：康桥镇', 'house_site': '3146 月租金'}
+获取到42条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/309', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到43条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/404', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}
+获取到44条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/803', 'house_type': '所属区域：康桥镇', 'house_site': '3641 月租金'}
+获取到45条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/606', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+获取到46条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/409', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}
+获取到47条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/504', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}
+获取到48条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/507', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到49条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/910', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}
+获取到50条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/905', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+成功抓取第5页
+获取到51条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/306', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到52条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/609', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}
+获取到53条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/108', 'house_type': '所属区域：康桥镇', 'house_site': '3597 月租金'}
+获取到54条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/308', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到55条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/207', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到56条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/205', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到57条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/304', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到58条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/410', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}
+获取到59条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/707', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到60条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/708', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+成功抓取第6页
+获取到61条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/202', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到62条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/210', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到63条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/508', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到64条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/607', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+获取到65条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/610', 'house_type': '所属区域：康桥镇', 'house_site': '3634 月租金'}
+获取到66条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/107', 'house_type': '所属区域：康桥镇', 'house_site': '3097 月租金'}
+获取到67条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/407', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到68条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/406', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到69条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/506', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到70条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/709', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}
+成功抓取第7页
+获取到71条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/209', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}
+获取到72条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/307', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到73条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/203', 'house_type': '所属区域：康桥镇', 'house_site': '3598 月租金'}
+获取到74条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/806', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到75条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/501', 'house_type': '所属区域：康桥镇', 'house_site': '3596 月租金'}
+获取到76条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/906', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+获取到77条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/807', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到78条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/502', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}
+获取到79条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/206', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到80条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/902', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}
+成功抓取第8页
+连接数据库……
+数据库连接成功
+准备写入数据…… [{'house_name': '通济路1279弄/05号/02楼/204', 'house_type': '所属区域：惠南镇', 'house_site': '1899 月租金'}, {'house_name': '拱乐路2400弄/14号/03楼/304', 'house_type': '所属区域：惠南镇', 'house_site': '1863 月租金'}, {'house_name': '拱乐路2400弄/13号/07楼/704', 'house_type': '所属区域：惠南镇', 'house_site': '1873 月租金'}, {'house_name': '拱乐路2400弄/05号/03楼/304', 'house_type': '所属区域：惠南镇', 'house_site': '1857 月租金'}, {'house_name': '拱海路459弄/09号/14楼/1401', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}, {'house_name': '拱海路459弄/04号/01楼/104', 'house_type': '所属区域：惠南镇', 'house_site': '2153 月租金'}, {'house_name': '拱海路459弄/03号/18楼/1801', 'house_type': '所属区域：惠南镇', 'house_site': '2228 月租金'}, {'house_name': '拱海路459弄/02号/07楼/704', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}, {'house_name': '拱海路459弄/01号/11楼/1104', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}, {'house_name': '拱川路411弄/18号/04楼/401', 'house_type': '所属区域：惠南镇', 'house_site': '1904 月租金'}, {'house_name': '拱川路411弄/16号/05楼/502', 'house_type': '所属区域：惠南镇', 'house_site': '1923 月租金'}, {'house_name': '拱川路411弄/07号/09楼/903', 'house_type': '所属区域：惠南镇', 'house_site': '1904 月租金'}, {'house_name': '拱川路411弄/03号/06楼/601', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}, {'house_name': '拱川路411弄/01号/16楼/1604', 'house_type': '所属区域：惠南镇', 'house_site': '1950 月租金'}, {'house_name': '拱川路411弄/01号/06楼/604', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/405', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/908', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/608', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/204', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/907', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/403', 'house_type': '所属区域：康桥镇', 'house_site': '3613 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/605', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/208', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/104', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/704', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/705', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/805', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/303', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/105', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/408', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/106', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/109', 'house_type': '所属区域：康桥镇', 'house_site': '3568 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/809', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/510', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/103', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/505', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/101', 'house_type': '所属区域：康桥镇', 'house_site': '3591 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/305', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/706', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/509', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/904', 'house_type': '所属区域：康桥镇', 'house_site': '3146 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/309', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/404', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/803', 'house_type': '所属区域：康桥镇', 'house_site': '3641 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/606', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/409', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/504', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/507', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/910', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/905', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/306', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/609', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/108', 'house_type': '所属区域：康桥镇', 'house_site': '3597 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/308', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/207', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/205', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/304', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/410', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/707', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/708', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/202', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/210', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/508', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/607', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/610', 'house_type': '所属区域：康桥镇', 'house_site': '3634 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/107', 'house_type': '所属区域：康桥镇', 'house_site': '3097 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/407', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/406', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/506', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/709', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/209', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/307', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/203', 'house_type': '所属区域：康桥镇', 'house_site': '3598 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/806', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/501', 'house_type': '所属区域：康桥镇', 'house_site': '3596 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/906', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/807', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/502', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/206', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/902', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}]
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('通济路1279弄/05号/02楼/204','所属区域：惠南镇','1899 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱乐路2400弄/14号/03楼/304','所属区域：惠南镇','1863 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱乐路2400弄/13号/07楼/704','所属区域：惠南镇','1873 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱乐路2400弄/05号/03楼/304','所属区域：惠南镇','1857 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/09号/14楼/1401','所属区域：惠南镇','2201 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/04号/01楼/104','所属区域：惠南镇','2153 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/03号/18楼/1801','所属区域：惠南镇','2228 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/02号/07楼/704','所属区域：惠南镇','2180 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/01号/11楼/1104','所属区域：惠南镇','2201 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/18号/04楼/401','所属区域：惠南镇','1904 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/16号/05楼/502','所属区域：惠南镇','1923 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/07号/09楼/903','所属区域：惠南镇','1904 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/03号/06楼/601','所属区域：惠南镇','1912 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/01号/16楼/1604','所属区域：惠南镇','1950 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/01号/06楼/604','所属区域：惠南镇','1912 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/405','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/908','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/608','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/204','所属区域：康桥镇','3103 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/907','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/403','所属区域：康桥镇','3613 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/605','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/208','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/104','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/704','所属区域：康桥镇','3134 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/705','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/805','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/303','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/105','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/408','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/106','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/109','所属区域：康桥镇','3568 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/809','所属区域：康桥镇','3140 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/510','所属区域：康桥镇','3627 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/103','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/505','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/101','所属区域：康桥镇','3591 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/305','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/706','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/509','所属区域：康桥镇','3122 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/904','所属区域：康桥镇','3146 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/309','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/404','所属区域：康桥镇','3116 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/803','所属区域：康桥镇','3641 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/606','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/409','所属区域：康桥镇','3116 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/504','所属区域：康桥镇','3122 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/507','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/910','所属区域：康桥镇','3656 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/905','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/306','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/609','所属区域：康桥镇','3128 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/108','所属区域：康桥镇','3597 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/308','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/207','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/205','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/304','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/410','所属区域：康桥镇','3620 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/707','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/708','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/202','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/210','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/508','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/607','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/610','所属区域：康桥镇','3634 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/107','所属区域：康桥镇','3097 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/407','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/406','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/506','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/709','所属区域：康桥镇','3134 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/209','所属区域：康桥镇','3103 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/307','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/203','所属区域：康桥镇','3598 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/806','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/501','所属区域：康桥镇','3596 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/906','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/807','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/502','所属区域：康桥镇','3627 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/206','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/902','所属区域：康桥镇','3656 月租金') 
+数据写入完成
+断开数据库
+程序执行结束
+程序执行开始
+开始检查运行环境...
+Chrome浏览器版本: Google Chrome 139.0.7258.138
+chromedriver版本: ChromeDriver 139.0.7258.138 (884e54ea8d42947ed636779015c5b4815e069838-refs/branch-heads/7258@{#2631})
+环境检查通过
+web握手成功
+获取到1条房源 == {'house_name': '通济路1279弄/05号/02楼/204', 'house_type': '所属区域：惠南镇', 'house_site': '1899 月租金'}
+获取到2条房源 == {'house_name': '拱海路459弄/09号/14楼/1401', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}
+获取到3条房源 == {'house_name': '拱海路459弄/05号/07楼/701', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}
+获取到4条房源 == {'house_name': '拱海路459弄/04号/01楼/104', 'house_type': '所属区域：惠南镇', 'house_site': '2153 月租金'}
+获取到5条房源 == {'house_name': '拱海路459弄/03号/18楼/1801', 'house_type': '所属区域：惠南镇', 'house_site': '2228 月租金'}
+获取到6条房源 == {'house_name': '拱海路459弄/02号/07楼/704', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}
+获取到7条房源 == {'house_name': '拱海路459弄/01号/11楼/1104', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}
+获取到8条房源 == {'house_name': '拱川路411弄/18号/04楼/401', 'house_type': '所属区域：惠南镇', 'house_site': '1904 月租金'}
+获取到9条房源 == {'house_name': '拱川路411弄/16号/05楼/502', 'house_type': '所属区域：惠南镇', 'house_site': '1923 月租金'}
+获取到10条房源 == {'house_name': '拱川路411弄/03号/06楼/601', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}
+成功抓取第1页
+获取到11条房源 == {'house_name': '拱川路411弄/01号/16楼/1604', 'house_type': '所属区域：惠南镇', 'house_site': '1950 月租金'}
+获取到12条房源 == {'house_name': '拱川路411弄/01号/06楼/604', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}
+获取到13条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/908', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+获取到14条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/204', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}
+获取到15条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/402', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}
+获取到16条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/403', 'house_type': '所属区域：康桥镇', 'house_site': '3613 月租金'}
+获取到17条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/605', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+获取到18条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/208', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到19条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/104', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到20条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/704', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}
+成功抓取第2页
+获取到21条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/302', 'house_type': '所属区域：康桥镇', 'house_site': '3612 月租金'}
+获取到22条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/705', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到23条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/805', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到24条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/303', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到25条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/105', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到26条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/408', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到27条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/106', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到28条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/109', 'house_type': '所属区域：康桥镇', 'house_site': '3568 月租金'}
+获取到29条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/809', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}
+获取到30条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/510', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}
+成功抓取第3页
+获取到31条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/103', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到32条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/505', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到33条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/101', 'house_type': '所属区域：康桥镇', 'house_site': '3591 月租金'}
+获取到34条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/305', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到35条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/706', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到36条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/509', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}
+获取到37条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/904', 'house_type': '所属区域：康桥镇', 'house_site': '3146 月租金'}
+获取到38条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/309', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到39条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/404', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}
+获取到40条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/606', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+成功抓取第4页
+获取到41条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/409', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}
+获取到42条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/504', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}
+获取到43条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/507', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到44条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/910', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}
+获取到45条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/905', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+获取到46条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/306', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到47条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/609', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}
+获取到48条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/108', 'house_type': '所属区域：康桥镇', 'house_site': '3597 月租金'}
+获取到49条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/308', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到50条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/207', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+成功抓取第5页
+获取到51条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/205', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到52条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/304', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到53条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/410', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}
+获取到54条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/707', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到55条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/708', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到56条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/202', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到57条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/210', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到58条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/508', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到59条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/607', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+获取到60条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/610', 'house_type': '所属区域：康桥镇', 'house_site': '3634 月租金'}
+成功抓取第6页
+获取到61条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/107', 'house_type': '所属区域：康桥镇', 'house_site': '3097 月租金'}
+获取到62条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/407', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到63条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/406', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到64条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/506', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到65条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/709', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}
+获取到66条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/209', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}
+获取到67条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/307', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到68条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/203', 'house_type': '所属区域：康桥镇', 'house_site': '3598 月租金'}
+获取到69条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/806', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到70条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/906', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+成功抓取第7页
+获取到71条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/807', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到72条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/502', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}
+获取到73条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/206', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到74条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/902', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}
+获取到75条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/604', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}
+获取到76条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/804', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}
+获取到77条房源 == {'house_name': '华贵路366弄（锦绣云澜）/08号/17楼/1701', 'house_type': '所属区域：川沙新镇', 'house_site': '2657 月租金'}
+获取到78条房源 == {'house_name': '华贵路366弄（锦绣云澜）/08号/04楼/402', 'house_type': '所属区域：川沙新镇', 'house_site': '2512 月租金'}
+获取到79条房源 == {'house_name': '华贵路366弄（锦绣云澜）/07号/18楼/1803', 'house_type': '所属区域：川沙新镇', 'house_site': '2583 月租金'}
+获取到80条房源 == {'house_name': '华贵路366弄（锦绣云澜）/07号/05楼/504', 'house_type': '所属区域：川沙新镇', 'house_site': '2595 月租金'}
+成功抓取第8页
+连接数据库……
+数据库连接成功
+准备写入数据…… [{'house_name': '通济路1279弄/05号/02楼/204', 'house_type': '所属区域：惠南镇', 'house_site': '1899 月租金'}, {'house_name': '拱海路459弄/09号/14楼/1401', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}, {'house_name': '拱海路459弄/05号/07楼/701', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}, {'house_name': '拱海路459弄/04号/01楼/104', 'house_type': '所属区域：惠南镇', 'house_site': '2153 月租金'}, {'house_name': '拱海路459弄/03号/18楼/1801', 'house_type': '所属区域：惠南镇', 'house_site': '2228 月租金'}, {'house_name': '拱海路459弄/02号/07楼/704', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}, {'house_name': '拱海路459弄/01号/11楼/1104', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}, {'house_name': '拱川路411弄/18号/04楼/401', 'house_type': '所属区域：惠南镇', 'house_site': '1904 月租金'}, {'house_name': '拱川路411弄/16号/05楼/502', 'house_type': '所属区域：惠南镇', 'house_site': '1923 月租金'}, {'house_name': '拱川路411弄/03号/06楼/601', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}, {'house_name': '拱川路411弄/01号/16楼/1604', 'house_type': '所属区域：惠南镇', 'house_site': '1950 月租金'}, {'house_name': '拱川路411弄/01号/06楼/604', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/908', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/204', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/402', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/403', 'house_type': '所属区域：康桥镇', 'house_site': '3613 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/605', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/208', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/104', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/704', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/302', 'house_type': '所属区域：康桥镇', 'house_site': '3612 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/705', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/805', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/303', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/105', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/408', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/106', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/109', 'house_type': '所属区域：康桥镇', 'house_site': '3568 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/809', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/510', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/103', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/505', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/101', 'house_type': '所属区域：康桥镇', 'house_site': '3591 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/305', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/706', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/509', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/904', 'house_type': '所属区域：康桥镇', 'house_site': '3146 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/309', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/404', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/606', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/409', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/504', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/507', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/910', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/905', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/306', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/609', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/108', 'house_type': '所属区域：康桥镇', 'house_site': '3597 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/308', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/207', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/205', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/304', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/410', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/707', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/708', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/202', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/210', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/508', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/607', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/610', 'house_type': '所属区域：康桥镇', 'house_site': '3634 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/107', 'house_type': '所属区域：康桥镇', 'house_site': '3097 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/407', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/406', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/506', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/709', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/209', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/307', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/203', 'house_type': '所属区域：康桥镇', 'house_site': '3598 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/806', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/906', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/807', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/502', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/206', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/902', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/604', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/804', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/08号/17楼/1701', 'house_type': '所属区域：川沙新镇', 'house_site': '2657 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/08号/04楼/402', 'house_type': '所属区域：川沙新镇', 'house_site': '2512 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/07号/18楼/1803', 'house_type': '所属区域：川沙新镇', 'house_site': '2583 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/07号/05楼/504', 'house_type': '所属区域：川沙新镇', 'house_site': '2595 月租金'}]
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('通济路1279弄/05号/02楼/204','所属区域：惠南镇','1899 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/09号/14楼/1401','所属区域：惠南镇','2201 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/05号/07楼/701','所属区域：惠南镇','2180 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/04号/01楼/104','所属区域：惠南镇','2153 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/03号/18楼/1801','所属区域：惠南镇','2228 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/02号/07楼/704','所属区域：惠南镇','2180 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/01号/11楼/1104','所属区域：惠南镇','2201 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/18号/04楼/401','所属区域：惠南镇','1904 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/16号/05楼/502','所属区域：惠南镇','1923 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/03号/06楼/601','所属区域：惠南镇','1912 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/01号/16楼/1604','所属区域：惠南镇','1950 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/01号/06楼/604','所属区域：惠南镇','1912 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/908','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/204','所属区域：康桥镇','3103 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/402','所属区域：康桥镇','3620 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/403','所属区域：康桥镇','3613 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/605','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/208','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/104','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/704','所属区域：康桥镇','3134 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/302','所属区域：康桥镇','3612 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/705','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/805','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/303','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/105','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/408','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/106','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/109','所属区域：康桥镇','3568 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/809','所属区域：康桥镇','3140 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/510','所属区域：康桥镇','3627 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/103','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/505','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/101','所属区域：康桥镇','3591 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/305','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/706','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/509','所属区域：康桥镇','3122 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/904','所属区域：康桥镇','3146 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/309','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/404','所属区域：康桥镇','3116 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/606','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/409','所属区域：康桥镇','3116 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/504','所属区域：康桥镇','3122 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/507','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/910','所属区域：康桥镇','3656 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/905','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/306','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/609','所属区域：康桥镇','3128 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/108','所属区域：康桥镇','3597 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/308','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/207','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/205','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/304','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/410','所属区域：康桥镇','3620 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/707','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/708','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/202','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/210','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/508','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/607','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/610','所属区域：康桥镇','3634 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/107','所属区域：康桥镇','3097 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/407','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/406','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/506','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/709','所属区域：康桥镇','3134 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/209','所属区域：康桥镇','3103 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/307','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/203','所属区域：康桥镇','3598 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/806','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/906','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/807','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/502','所属区域：康桥镇','3627 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/206','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/902','所属区域：康桥镇','3656 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/604','所属区域：康桥镇','3128 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/804','所属区域：康桥镇','3140 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/08号/17楼/1701','所属区域：川沙新镇','2657 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/08号/04楼/402','所属区域：川沙新镇','2512 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/07号/18楼/1803','所属区域：川沙新镇','2583 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/07号/05楼/504','所属区域：川沙新镇','2595 月租金') 
+数据写入完成
+断开数据库
+程序执行结束
+程序执行开始
+开始检查运行环境...
+Chrome浏览器版本: Google Chrome 139.0.7258.138
+chromedriver版本: ChromeDriver 139.0.7258.138 (884e54ea8d42947ed636779015c5b4815e069838-refs/branch-heads/7258@{#2631})
+环境检查通过
+web握手成功
+获取到1条房源 == {'house_name': '通济路1279弄/05号/02楼/204', 'house_type': '所属区域：惠南镇', 'house_site': '1899 月租金'}
+获取到2条房源 == {'house_name': '拱海路459弄/09号/14楼/1401', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}
+获取到3条房源 == {'house_name': '拱海路459弄/05号/07楼/701', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}
+获取到4条房源 == {'house_name': '拱海路459弄/04号/01楼/104', 'house_type': '所属区域：惠南镇', 'house_site': '2153 月租金'}
+获取到5条房源 == {'house_name': '拱海路459弄/03号/18楼/1801', 'house_type': '所属区域：惠南镇', 'house_site': '2228 月租金'}
+获取到6条房源 == {'house_name': '拱海路459弄/02号/07楼/704', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}
+获取到7条房源 == {'house_name': '拱海路459弄/01号/11楼/1104', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}
+获取到8条房源 == {'house_name': '拱川路411弄/18号/04楼/401', 'house_type': '所属区域：惠南镇', 'house_site': '1904 月租金'}
+获取到9条房源 == {'house_name': '拱川路411弄/16号/05楼/502', 'house_type': '所属区域：惠南镇', 'house_site': '1923 月租金'}
+获取到10条房源 == {'house_name': '拱川路411弄/03号/06楼/601', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}
+成功抓取第1页
+获取到11条房源 == {'house_name': '拱川路411弄/01号/16楼/1604', 'house_type': '所属区域：惠南镇', 'house_site': '1950 月租金'}
+获取到12条房源 == {'house_name': '拱川路411弄/01号/06楼/604', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}
+获取到13条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/908', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+获取到14条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/204', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}
+获取到15条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/402', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}
+获取到16条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/403', 'house_type': '所属区域：康桥镇', 'house_site': '3613 月租金'}
+获取到17条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/605', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+获取到18条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/208', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到19条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/104', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到20条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/704', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}
+成功抓取第2页
+获取到21条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/302', 'house_type': '所属区域：康桥镇', 'house_site': '3612 月租金'}
+获取到22条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/705', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到23条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/805', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到24条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/303', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到25条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/105', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到26条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/408', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到27条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/106', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到28条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/109', 'house_type': '所属区域：康桥镇', 'house_site': '3568 月租金'}
+获取到29条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/809', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}
+获取到30条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/510', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}
+成功抓取第3页
+获取到31条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/103', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到32条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/505', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到33条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/101', 'house_type': '所属区域：康桥镇', 'house_site': '3591 月租金'}
+获取到34条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/305', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到35条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/706', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到36条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/509', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}
+获取到37条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/904', 'house_type': '所属区域：康桥镇', 'house_site': '3146 月租金'}
+获取到38条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/309', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到39条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/404', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}
+获取到40条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/606', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+成功抓取第4页
+获取到41条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/409', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}
+获取到42条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/504', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}
+获取到43条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/507', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到44条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/910', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}
+获取到45条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/905', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+获取到46条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/306', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到47条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/609', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}
+获取到48条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/108', 'house_type': '所属区域：康桥镇', 'house_site': '3597 月租金'}
+获取到49条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/308', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到50条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/207', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+成功抓取第5页
+获取到51条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/205', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到52条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/304', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到53条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/410', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}
+获取到54条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/707', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到55条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/708', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到56条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/202', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到57条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/210', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到58条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/508', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到59条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/607', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+获取到60条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/610', 'house_type': '所属区域：康桥镇', 'house_site': '3634 月租金'}
+成功抓取第6页
+获取到61条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/107', 'house_type': '所属区域：康桥镇', 'house_site': '3097 月租金'}
+获取到62条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/407', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到63条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/406', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到64条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/506', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到65条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/709', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}
+获取到66条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/209', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}
+获取到67条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/307', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到68条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/203', 'house_type': '所属区域：康桥镇', 'house_site': '3598 月租金'}
+获取到69条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/806', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到70条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/906', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+成功抓取第7页
+获取到71条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/807', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到72条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/502', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}
+获取到73条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/206', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到74条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/902', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}
+获取到75条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/604', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}
+获取到76条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/804', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}
+获取到77条房源 == {'house_name': '华贵路366弄（锦绣云澜）/08号/17楼/1701', 'house_type': '所属区域：川沙新镇', 'house_site': '2657 月租金'}
+获取到78条房源 == {'house_name': '华贵路366弄（锦绣云澜）/08号/04楼/402', 'house_type': '所属区域：川沙新镇', 'house_site': '2512 月租金'}
+获取到79条房源 == {'house_name': '华贵路366弄（锦绣云澜）/07号/18楼/1803', 'house_type': '所属区域：川沙新镇', 'house_site': '2583 月租金'}
+获取到80条房源 == {'house_name': '华贵路366弄（锦绣云澜）/07号/05楼/504', 'house_type': '所属区域：川沙新镇', 'house_site': '2595 月租金'}
+成功抓取第8页
+连接数据库……
+数据库连接成功
+准备写入数据…… [{'house_name': '通济路1279弄/05号/02楼/204', 'house_type': '所属区域：惠南镇', 'house_site': '1899 月租金'}, {'house_name': '拱海路459弄/09号/14楼/1401', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}, {'house_name': '拱海路459弄/05号/07楼/701', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}, {'house_name': '拱海路459弄/04号/01楼/104', 'house_type': '所属区域：惠南镇', 'house_site': '2153 月租金'}, {'house_name': '拱海路459弄/03号/18楼/1801', 'house_type': '所属区域：惠南镇', 'house_site': '2228 月租金'}, {'house_name': '拱海路459弄/02号/07楼/704', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}, {'house_name': '拱海路459弄/01号/11楼/1104', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}, {'house_name': '拱川路411弄/18号/04楼/401', 'house_type': '所属区域：惠南镇', 'house_site': '1904 月租金'}, {'house_name': '拱川路411弄/16号/05楼/502', 'house_type': '所属区域：惠南镇', 'house_site': '1923 月租金'}, {'house_name': '拱川路411弄/03号/06楼/601', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}, {'house_name': '拱川路411弄/01号/16楼/1604', 'house_type': '所属区域：惠南镇', 'house_site': '1950 月租金'}, {'house_name': '拱川路411弄/01号/06楼/604', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/908', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/204', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/402', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/403', 'house_type': '所属区域：康桥镇', 'house_site': '3613 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/605', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/208', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/104', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/704', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/302', 'house_type': '所属区域：康桥镇', 'house_site': '3612 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/705', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/805', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/303', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/105', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/408', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/106', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/109', 'house_type': '所属区域：康桥镇', 'house_site': '3568 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/809', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/510', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/103', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/505', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/101', 'house_type': '所属区域：康桥镇', 'house_site': '3591 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/305', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/706', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/509', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/904', 'house_type': '所属区域：康桥镇', 'house_site': '3146 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/309', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/404', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/606', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/409', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/504', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/507', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/910', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/905', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/306', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/609', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/108', 'house_type': '所属区域：康桥镇', 'house_site': '3597 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/308', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/207', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/205', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/304', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/410', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/707', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/708', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/202', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/210', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/508', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/607', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/610', 'house_type': '所属区域：康桥镇', 'house_site': '3634 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/107', 'house_type': '所属区域：康桥镇', 'house_site': '3097 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/407', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/406', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/506', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/709', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/209', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/307', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/203', 'house_type': '所属区域：康桥镇', 'house_site': '3598 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/806', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/906', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/807', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/502', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/206', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/902', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/604', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/804', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/08号/17楼/1701', 'house_type': '所属区域：川沙新镇', 'house_site': '2657 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/08号/04楼/402', 'house_type': '所属区域：川沙新镇', 'house_site': '2512 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/07号/18楼/1803', 'house_type': '所属区域：川沙新镇', 'house_site': '2583 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/07号/05楼/504', 'house_type': '所属区域：川沙新镇', 'house_site': '2595 月租金'}]
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('通济路1279弄/05号/02楼/204','所属区域：惠南镇','1899 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/09号/14楼/1401','所属区域：惠南镇','2201 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/05号/07楼/701','所属区域：惠南镇','2180 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/04号/01楼/104','所属区域：惠南镇','2153 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/03号/18楼/1801','所属区域：惠南镇','2228 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/02号/07楼/704','所属区域：惠南镇','2180 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/01号/11楼/1104','所属区域：惠南镇','2201 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/18号/04楼/401','所属区域：惠南镇','1904 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/16号/05楼/502','所属区域：惠南镇','1923 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/03号/06楼/601','所属区域：惠南镇','1912 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/01号/16楼/1604','所属区域：惠南镇','1950 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/01号/06楼/604','所属区域：惠南镇','1912 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/908','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/204','所属区域：康桥镇','3103 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/402','所属区域：康桥镇','3620 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/403','所属区域：康桥镇','3613 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/605','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/208','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/104','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/704','所属区域：康桥镇','3134 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/302','所属区域：康桥镇','3612 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/705','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/805','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/303','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/105','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/408','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/106','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/109','所属区域：康桥镇','3568 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/809','所属区域：康桥镇','3140 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/510','所属区域：康桥镇','3627 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/103','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/505','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/101','所属区域：康桥镇','3591 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/305','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/706','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/509','所属区域：康桥镇','3122 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/904','所属区域：康桥镇','3146 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/309','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/404','所属区域：康桥镇','3116 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/606','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/409','所属区域：康桥镇','3116 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/504','所属区域：康桥镇','3122 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/507','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/910','所属区域：康桥镇','3656 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/905','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/306','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/609','所属区域：康桥镇','3128 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/108','所属区域：康桥镇','3597 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/308','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/207','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/205','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/304','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/410','所属区域：康桥镇','3620 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/707','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/708','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/202','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/210','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/508','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/607','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/610','所属区域：康桥镇','3634 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/107','所属区域：康桥镇','3097 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/407','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/406','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/506','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/709','所属区域：康桥镇','3134 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/209','所属区域：康桥镇','3103 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/307','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/203','所属区域：康桥镇','3598 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/806','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/906','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/807','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/502','所属区域：康桥镇','3627 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/206','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/902','所属区域：康桥镇','3656 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/604','所属区域：康桥镇','3128 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/804','所属区域：康桥镇','3140 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/08号/17楼/1701','所属区域：川沙新镇','2657 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/08号/04楼/402','所属区域：川沙新镇','2512 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/07号/18楼/1803','所属区域：川沙新镇','2583 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/07号/05楼/504','所属区域：川沙新镇','2595 月租金') 
+数据写入完成
+断开数据库
+程序执行结束
+程序执行开始
+开始检查运行环境...
+Chrome浏览器版本: Google Chrome 139.0.7258.138
+chromedriver版本: ChromeDriver 139.0.7258.138 (884e54ea8d42947ed636779015c5b4815e069838-refs/branch-heads/7258@{#2631})
+环境检查通过
+web握手成功
+获取到1条房源 == {'house_name': '通济路1279弄/05号/02楼/204', 'house_type': '所属区域：惠南镇', 'house_site': '1899 月租金'}
+获取到2条房源 == {'house_name': '拱海路459弄/09号/14楼/1401', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}
+获取到3条房源 == {'house_name': '拱海路459弄/05号/07楼/701', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}
+获取到4条房源 == {'house_name': '拱海路459弄/04号/01楼/104', 'house_type': '所属区域：惠南镇', 'house_site': '2153 月租金'}
+获取到5条房源 == {'house_name': '拱海路459弄/03号/18楼/1801', 'house_type': '所属区域：惠南镇', 'house_site': '2228 月租金'}
+获取到6条房源 == {'house_name': '拱海路459弄/02号/07楼/704', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}
+获取到7条房源 == {'house_name': '拱海路459弄/01号/11楼/1104', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}
+获取到8条房源 == {'house_name': '拱川路411弄/18号/04楼/401', 'house_type': '所属区域：惠南镇', 'house_site': '1904 月租金'}
+获取到9条房源 == {'house_name': '拱川路411弄/16号/05楼/502', 'house_type': '所属区域：惠南镇', 'house_site': '1923 月租金'}
+获取到10条房源 == {'house_name': '拱川路411弄/03号/06楼/601', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}
+成功抓取第1页
+获取到11条房源 == {'house_name': '拱川路411弄/01号/16楼/1604', 'house_type': '所属区域：惠南镇', 'house_site': '1950 月租金'}
+获取到12条房源 == {'house_name': '拱川路411弄/01号/06楼/604', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}
+获取到13条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/908', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+获取到14条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/204', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}
+获取到15条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/402', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}
+获取到16条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/403', 'house_type': '所属区域：康桥镇', 'house_site': '3613 月租金'}
+获取到17条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/605', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+获取到18条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/208', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到19条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/104', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到20条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/704', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}
+成功抓取第2页
+获取到21条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/302', 'house_type': '所属区域：康桥镇', 'house_site': '3612 月租金'}
+获取到22条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/705', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到23条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/805', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到24条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/303', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到25条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/105', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到26条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/408', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到27条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/106', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到28条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/109', 'house_type': '所属区域：康桥镇', 'house_site': '3568 月租金'}
+获取到29条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/809', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}
+获取到30条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/510', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}
+成功抓取第3页
+获取到31条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/103', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}
+获取到32条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/505', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到33条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/101', 'house_type': '所属区域：康桥镇', 'house_site': '3591 月租金'}
+获取到34条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/305', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到35条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/706', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到36条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/509', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}
+获取到37条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/904', 'house_type': '所属区域：康桥镇', 'house_site': '3146 月租金'}
+获取到38条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/309', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到39条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/404', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}
+获取到40条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/606', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+成功抓取第4页
+获取到41条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/409', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}
+获取到42条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/504', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}
+获取到43条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/507', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到44条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/910', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}
+获取到45条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/905', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+获取到46条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/306', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到47条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/609', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}
+获取到48条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/108', 'house_type': '所属区域：康桥镇', 'house_site': '3597 月租金'}
+获取到49条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/308', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到50条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/207', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+成功抓取第5页
+获取到51条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/205', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到52条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/304', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到53条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/410', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}
+获取到54条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/707', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到55条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/708', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}
+获取到56条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/202', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到57条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/210', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}
+获取到58条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/508', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到59条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/607', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}
+获取到60条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/610', 'house_type': '所属区域：康桥镇', 'house_site': '3634 月租金'}
+成功抓取第6页
+获取到61条房源 == {'house_name': '沔新路488弄（金茂府）/01号/01楼/107', 'house_type': '所属区域：康桥镇', 'house_site': '3097 月租金'}
+获取到62条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/407', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到63条房源 == {'house_name': '沔新路488弄（金茂府）/01号/04楼/406', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}
+获取到64条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/506', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}
+获取到65条房源 == {'house_name': '沔新路488弄（金茂府）/01号/07楼/709', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}
+获取到66条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/209', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}
+获取到67条房源 == {'house_name': '沔新路488弄（金茂府）/01号/03楼/307', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}
+获取到68条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/203', 'house_type': '所属区域：康桥镇', 'house_site': '3598 月租金'}
+获取到69条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/806', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到70条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/906', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}
+成功抓取第7页
+获取到71条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/807', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}
+获取到72条房源 == {'house_name': '沔新路488弄（金茂府）/01号/05楼/502', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}
+获取到73条房源 == {'house_name': '沔新路488弄（金茂府）/01号/02楼/206', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}
+获取到74条房源 == {'house_name': '沔新路488弄（金茂府）/01号/09楼/902', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}
+获取到75条房源 == {'house_name': '沔新路488弄（金茂府）/01号/06楼/604', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}
+获取到76条房源 == {'house_name': '沔新路488弄（金茂府）/01号/08楼/804', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}
+获取到77条房源 == {'house_name': '华贵路366弄（锦绣云澜）/08号/17楼/1701', 'house_type': '所属区域：川沙新镇', 'house_site': '2657 月租金'}
+获取到78条房源 == {'house_name': '华贵路366弄（锦绣云澜）/08号/04楼/402', 'house_type': '所属区域：川沙新镇', 'house_site': '2512 月租金'}
+获取到79条房源 == {'house_name': '华贵路366弄（锦绣云澜）/07号/18楼/1803', 'house_type': '所属区域：川沙新镇', 'house_site': '2583 月租金'}
+获取到80条房源 == {'house_name': '华贵路366弄（锦绣云澜）/07号/05楼/504', 'house_type': '所属区域：川沙新镇', 'house_site': '2595 月租金'}
+成功抓取第8页
+连接数据库……
+数据库连接成功
+准备写入数据…… [{'house_name': '通济路1279弄/05号/02楼/204', 'house_type': '所属区域：惠南镇', 'house_site': '1899 月租金'}, {'house_name': '拱海路459弄/09号/14楼/1401', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}, {'house_name': '拱海路459弄/05号/07楼/701', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}, {'house_name': '拱海路459弄/04号/01楼/104', 'house_type': '所属区域：惠南镇', 'house_site': '2153 月租金'}, {'house_name': '拱海路459弄/03号/18楼/1801', 'house_type': '所属区域：惠南镇', 'house_site': '2228 月租金'}, {'house_name': '拱海路459弄/02号/07楼/704', 'house_type': '所属区域：惠南镇', 'house_site': '2180 月租金'}, {'house_name': '拱海路459弄/01号/11楼/1104', 'house_type': '所属区域：惠南镇', 'house_site': '2201 月租金'}, {'house_name': '拱川路411弄/18号/04楼/401', 'house_type': '所属区域：惠南镇', 'house_site': '1904 月租金'}, {'house_name': '拱川路411弄/16号/05楼/502', 'house_type': '所属区域：惠南镇', 'house_site': '1923 月租金'}, {'house_name': '拱川路411弄/03号/06楼/601', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}, {'house_name': '拱川路411弄/01号/16楼/1604', 'house_type': '所属区域：惠南镇', 'house_site': '1950 月租金'}, {'house_name': '拱川路411弄/01号/06楼/604', 'house_type': '所属区域：惠南镇', 'house_site': '1912 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/908', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/204', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/402', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/403', 'house_type': '所属区域：康桥镇', 'house_site': '3613 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/605', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/208', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/104', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/704', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/302', 'house_type': '所属区域：康桥镇', 'house_site': '3612 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/705', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/805', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/303', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/105', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/408', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/106', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/109', 'house_type': '所属区域：康桥镇', 'house_site': '3568 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/809', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/510', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/103', 'house_type': '所属区域：康桥镇', 'house_site': '3104 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/505', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/101', 'house_type': '所属区域：康桥镇', 'house_site': '3591 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/305', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/706', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/509', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/904', 'house_type': '所属区域：康桥镇', 'house_site': '3146 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/309', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/404', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/606', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/409', 'house_type': '所属区域：康桥镇', 'house_site': '3116 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/504', 'house_type': '所属区域：康桥镇', 'house_site': '3122 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/507', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/910', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/905', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/306', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/609', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/108', 'house_type': '所属区域：康桥镇', 'house_site': '3597 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/308', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/207', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/205', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/304', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/410', 'house_type': '所属区域：康桥镇', 'house_site': '3620 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/707', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/708', 'house_type': '所属区域：康桥镇', 'house_site': '3142 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/202', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/210', 'house_type': '所属区域：康桥镇', 'house_site': '3605 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/508', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/607', 'house_type': '所属区域：康桥镇', 'house_site': '3136 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/610', 'house_type': '所属区域：康桥镇', 'house_site': '3634 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/01楼/107', 'house_type': '所属区域：康桥镇', 'house_site': '3097 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/407', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/04楼/406', 'house_type': '所属区域：康桥镇', 'house_site': '3123 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/506', 'house_type': '所属区域：康桥镇', 'house_site': '3129 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/07楼/709', 'house_type': '所属区域：康桥镇', 'house_site': '3134 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/209', 'house_type': '所属区域：康桥镇', 'house_site': '3103 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/03楼/307', 'house_type': '所属区域：康桥镇', 'house_site': '3117 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/203', 'house_type': '所属区域：康桥镇', 'house_site': '3598 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/806', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/906', 'house_type': '所属区域：康桥镇', 'house_site': '3155 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/807', 'house_type': '所属区域：康桥镇', 'house_site': '3148 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/05楼/502', 'house_type': '所属区域：康桥镇', 'house_site': '3627 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/02楼/206', 'house_type': '所属区域：康桥镇', 'house_site': '3110 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/09楼/902', 'house_type': '所属区域：康桥镇', 'house_site': '3656 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/06楼/604', 'house_type': '所属区域：康桥镇', 'house_site': '3128 月租金'}, {'house_name': '沔新路488弄（金茂府）/01号/08楼/804', 'house_type': '所属区域：康桥镇', 'house_site': '3140 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/08号/17楼/1701', 'house_type': '所属区域：川沙新镇', 'house_site': '2657 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/08号/04楼/402', 'house_type': '所属区域：川沙新镇', 'house_site': '2512 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/07号/18楼/1803', 'house_type': '所属区域：川沙新镇', 'house_site': '2583 月租金'}, {'house_name': '华贵路366弄（锦绣云澜）/07号/05楼/504', 'house_type': '所属区域：川沙新镇', 'house_site': '2595 月租金'}]
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('通济路1279弄/05号/02楼/204','所属区域：惠南镇','1899 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/09号/14楼/1401','所属区域：惠南镇','2201 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/05号/07楼/701','所属区域：惠南镇','2180 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/04号/01楼/104','所属区域：惠南镇','2153 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/03号/18楼/1801','所属区域：惠南镇','2228 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/02号/07楼/704','所属区域：惠南镇','2180 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱海路459弄/01号/11楼/1104','所属区域：惠南镇','2201 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/18号/04楼/401','所属区域：惠南镇','1904 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/16号/05楼/502','所属区域：惠南镇','1923 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/03号/06楼/601','所属区域：惠南镇','1912 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/01号/16楼/1604','所属区域：惠南镇','1950 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('拱川路411弄/01号/06楼/604','所属区域：惠南镇','1912 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/908','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/204','所属区域：康桥镇','3103 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/402','所属区域：康桥镇','3620 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/403','所属区域：康桥镇','3613 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/605','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/208','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/104','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/704','所属区域：康桥镇','3134 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/302','所属区域：康桥镇','3612 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/705','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/805','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/303','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/105','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/408','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/106','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/109','所属区域：康桥镇','3568 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/809','所属区域：康桥镇','3140 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/510','所属区域：康桥镇','3627 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/103','所属区域：康桥镇','3104 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/505','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/101','所属区域：康桥镇','3591 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/305','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/706','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/509','所属区域：康桥镇','3122 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/904','所属区域：康桥镇','3146 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/309','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/404','所属区域：康桥镇','3116 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/606','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/409','所属区域：康桥镇','3116 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/504','所属区域：康桥镇','3122 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/507','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/910','所属区域：康桥镇','3656 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/905','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/306','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/609','所属区域：康桥镇','3128 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/108','所属区域：康桥镇','3597 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/308','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/207','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/205','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/304','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/410','所属区域：康桥镇','3620 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/707','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/708','所属区域：康桥镇','3142 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/202','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/210','所属区域：康桥镇','3605 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/508','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/607','所属区域：康桥镇','3136 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/610','所属区域：康桥镇','3634 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/01楼/107','所属区域：康桥镇','3097 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/407','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/04楼/406','所属区域：康桥镇','3123 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/506','所属区域：康桥镇','3129 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/07楼/709','所属区域：康桥镇','3134 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/209','所属区域：康桥镇','3103 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/03楼/307','所属区域：康桥镇','3117 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/203','所属区域：康桥镇','3598 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/806','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/906','所属区域：康桥镇','3155 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/807','所属区域：康桥镇','3148 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/05楼/502','所属区域：康桥镇','3627 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/02楼/206','所属区域：康桥镇','3110 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/09楼/902','所属区域：康桥镇','3656 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/06楼/604','所属区域：康桥镇','3128 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('沔新路488弄（金茂府）/01号/08楼/804','所属区域：康桥镇','3140 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/08号/17楼/1701','所属区域：川沙新镇','2657 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/08号/04楼/402','所属区域：川沙新镇','2512 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/07号/18楼/1803','所属区域：川沙新镇','2583 月租金') 
+===exe_update=== INSERT INTO HouseData(house_name,house_type,house_site)  values ('华贵路366弄（锦绣云澜）/07号/05楼/504','所属区域：川沙新镇','2595 月租金') 
+数据写入完成
+断开数据库
+程序执行结束
