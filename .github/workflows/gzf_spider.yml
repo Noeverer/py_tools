@@ -186,23 +186,15 @@ jobs:
       
       - name: 发送通知邮件
         if: always() && failure()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.icloud.com
-          server_port: 587
-          username: ${{ secrets.EMAIL_USER }}
-          password: ${{ secrets.EMAIL_PASS }}
-          from: GitHub Action <${{ secrets.EMAIL_USER }}>
-          to: ante0327@icloud.com
-          subject: "GitHub Action 失败: ${{ github.workflow }} - ${{ job.status }}"
-          body: |
-            GitHub Action 执行失败详情:
-            
-            仓库: ${{ github.repository }}
-            工作流: ${{ github.workflow }}
-            状态: ${{ job.status }}
-            运行时间: ${{ github.run_started_at }}
-            运行ID: ${{ github.run_id }}
-            
-            请查看 GitHub Actions 日志获取详细错误信息。
-          content_type: text/plain
+        run: |
+          echo "GitHub Action 执行失败"
+          echo "仓库: ${{ github.repository }}"
+          echo "工作流: ${{ github.workflow }}"
+          echo "状态: ${{ job.status }}"
+          echo "运行ID: ${{ github.run_id }}"
+          
+          # 输出失败日志摘要
+          echo "=== 错误摘要 ==="
+          if [ -f gzf_spider.log ]; then
+            tail -50 gzf_spider.log
+          fi
