@@ -1,9 +1,9 @@
 name: 公租房爬虫定时任务
 
 on:
-  # 定时触发 - 每天北京时间 9:00 和 15:00 (UTC 1:00 和 7:00)
+  # 定时触发 - 每天北京时间 8:00、9:00、10:00 (UTC 0:00、1:00、2:00)
   schedule:
-    - cron: '0 1,7 * * *'  # 每天两次，UTC时间1点和7点，即北京时间9点和15点
+    - cron: '0 0,1,2 * * *'  # 每天上午三次，UTC时间0点、1点、2点，即北京时间8点、9点、10点
   
   # 手动触发
   workflow_dispatch:
@@ -187,6 +187,12 @@ jobs:
           echo "✅ 爬虫任务执行完成"
           echo "=========================================="
       
+      - name: 生成仪表板数据
+        run: |
+          echo "📊 生成GitHub Pages展示数据..."
+          cd gzf_Spider
+          python scripts/generate_dashboard.py
+      
       - name: 上传日志文件
         uses: actions/upload-artifact@v4
         if: always()
@@ -195,6 +201,15 @@ jobs:
           path: |
             gzf_Spider/*.log
             gzf_Spider/src/*.log
+          retention-days: 30
+      
+      - name: 上传仪表板数据
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dashboard-data-${{ github.run_number }}
+          path: |
+            docs/**/*.json
           retention-days: 30
       
       - name: 发送通知邮件

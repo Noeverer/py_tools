@@ -1,0 +1,161 @@
+# ==============================================================================
+# 公租房筛选条件配置文件
+# ==============================================================================
+# 
+# 使用说明：
+# 1. 在 enabled_filters 中列出要启用的筛选方案名称
+# 2. 在 filter_rules 中定义每个筛选方案的具体规则
+# 3. 每次运行会应用所有启用的筛选方案，重复房源会被去重
+#
+# ==============================================================================
+
+# 启用的筛选方案（支持多个，用逗号分隔）
+enabled_filters:
+  - 金桥低价
+  - 张江低价
+  - 一室户优选
+
+# 筛选规则定义
+filter_rules:
+  # 方案1: 金桥低价房
+  - name: 金桥低价
+    description: 金桥地区，月租低于3000元
+    conditions:
+      area: 金桥          # 区域关键词
+      max_rent: 3000      # 最高租金
+      min_rent: 0         # 最低租金
+      house_type: ""      # 户型（空表示不限）
+      enabled: true
+
+  # 方案2: 张江低价房
+  - name: 张江低价
+    description: 张江地区，月租低于3000元
+    conditions:
+      area: 张江
+      max_rent: 3000
+      min_rent: 0
+      house_type: ""
+      enabled: true
+
+  # 方案3: 一室户优选
+  - name: 一室户优选
+    description: 所有区域，一室一厅，月租低于3500元
+    conditions:
+      area: ""             # 区域不限
+      max_rent: 3500
+      min_rent: 0
+      house_type: "1室1厅"
+      enabled: true
+
+  # 方案4: 唐镇低价房（未启用）
+  - name: 唐镇低价
+    description: 唐镇地区，月租低于3000元
+    conditions:
+      area: 唐镇
+      max_rent: 3000
+      min_rent: 0
+      house_type: ""
+      enabled: false
+
+  # 方案5: 极低价房（未启用）
+  - name: 极低价房
+    description: 所有区域，月租低于2500元
+    conditions:
+      area: ""
+      max_rent: 2500
+      min_rent: 0
+      house_type: ""
+      enabled: false
+
+  # 方案6: 两室户（未启用）
+  - name: 两室户优选
+    description: 所有区域，两室，月租低于4500元
+    conditions:
+      area: ""
+      max_rent: 4500
+      min_rent: 0
+      house_type: "2室"
+      enabled: false
+
+# ==============================================================================
+# 推送渠道配置
+# ==============================================================================
+
+# 推送渠道设置
+notification_channels:
+  # Bark推送（iOS）
+  bark:
+    enabled: true
+    push_type: individual      # individual: 分条推送, summary: 汇总推送, both: 两种都推送
+    max_houses_per_push: 5     # 分条推送时，每条最多推送多少个房源
+    group_prefix: 公租房       # 分组前缀
+    
+  # 邮件推送（可选）
+  email:
+    enabled: false
+    smtp_server: smtp.gmail.com
+    smtp_port: 587
+    sender_email: ""
+    sender_password: ""
+    receiver_emails: []
+    
+  # 企业微信（可选）
+  wechat_work:
+    enabled: false
+    webhook_url: ""
+    mentioned_list: ["@all"]
+
+# ==============================================================================
+# 推送时间控制
+# ==============================================================================
+
+push_time_control:
+  enabled: true
+  # 允许推送的时间段（24小时制）
+  time_slots:
+    - start: 8
+      end: 11
+      description: 上午黄金时段
+    - start: 19
+      end: 21
+      description: 晚间黄金时段
+  
+  # 时区
+  timezone: Asia/Shanghai
+  
+  # 超出时间段的处理方式: skip(跳过推送) or queue(排队等待)
+  out_of_range_action: skip
+
+# ==============================================================================
+# 数据展示配置
+# ==============================================================================
+
+# GitHub Pages展示配置
+github_pages:
+  enabled: true
+  
+  # 每日数据展示
+  daily_summary:
+    enabled: true
+    show_new_houses: true
+    show_filtered_houses: true
+    show_statistics: true
+    
+  # 历史数据统计
+  history_statistics:
+    enabled: true
+    days_to_keep: 30      # 保留最近30天的数据
+    
+  # 数据可视化
+  charts:
+    enabled: true
+    show_price_distribution: true     # 价格分布图
+    show_area_distribution: true      # 区域分布图
+    show_trend_chart: true            # 价格趋势图
+    
+  # 每日报告格式
+  daily_report:
+    format: markdown    # markdown or html
+    include_filtered_count: true
+    include_top_lowest_price: true
+    include_new_arrivals: true
