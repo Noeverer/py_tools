@@ -161,22 +161,7 @@ jobs:
           python -c "import requests; print(f'✅ Requests版本: {requests.__version__}')"
           
           # 测试Bark推送
-          python -c "
-import os
-import requests
-BARK_KEY = os.getenv('BARK_KEY', '')
-print(f'BARK_KEY configured: {bool(BARK_KEY)}')
-if BARK_KEY:
-    test_url1 = f'https://api.day.app/{BARK_KEY}/GitHub_Action_Test'
-    try:
-        response1 = requests.get(test_url1, timeout=10)
-        print(f'Test 1 - Status: {response1.status_code}, Response: {response1.text[:200]}')
-    except Exception as e:
-        print(f'Test 1 - Error: {str(e)}')
-else:
-    print('⚠️ BARK_KEY not configured, skipping push test')
-"
-          
+          python -c "import os,requests; BARK_KEY=os.getenv('BARK_KEY',''); print(f'BARK_KEY configured: {bool(BARK_KEY)}'); (r:=requests.get(f'https://api.day.app/{BARK_KEY}/GitHub_Action_Test',timeout=10) if BARK_KEY else None) and print(f'Test - Status: {r.status_code}, Response: {r.text[:200]}') if BARK_KEY else print('⚠️ BARK_KEY not configured, skipping push test')"
           echo ""
           echo "=========================================="
           echo "🔧 开始执行爬虫脚本"
