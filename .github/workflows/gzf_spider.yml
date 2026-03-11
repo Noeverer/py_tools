@@ -60,14 +60,25 @@ jobs:
         run: |
           # 获取Chrome版本
           CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' | head -1)
-          CDM_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_${CHROME_VERSION}")
-          wget -q "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${CDM_VERSION}/linux64/chromedriver-linux64.zip" -O /tmp/chromedriver.zip
-          sudo unzip -o /tmp/chromedriver.zip -d /opt/
-          sudo chmod +x /opt/chromedriver-linux64/chromedriver
-          sudo ln -sf /opt/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
+          echo "Chrome版本: $CHROME_VERSION"
           
+          # 使用Chrome for Testing API获取对应版本的ChromeDriver
+          CDM_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_${CHROME_VERSION}")
+          echo "ChromeDriver版本: $CDM_VERSION"
+          
+          # 下载并安装ChromeDriver
+          DRIVER_URL="https://storage.googleapis.com/chrome-for-testing-public/${CDM_VERSION}/linux64/chromedriver-linux64.zip"
+          echo "下载ChromeDriver从: $DRIVER_URL"
+          wget -q "$DRIVER_URL" -O /tmp/chromedriver.zip
+          sudo unzip -o /tmp/chromedriver.zip -d /tmp/
+          
+          # 复制到系统路径并设置权限
+          sudo cp /tmp/chromedriver-linux64/chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+          
+          # 验证安装
           chromedriver --version
-          echo "ChromeDriver安装完成"
+          echo "✅ ChromeDriver安装完成"
 
       - name: 准备数据库环境
         run: |
@@ -104,7 +115,10 @@ jobs:
           # Bark通知配置（必填）
           # ==========================================
           BARK_KEY: ${{ secrets.BARK_KEY }}
-          BARK_URL: ${{ secrets.BARK_URL }}
+          BARK_DEFAULT_GROUP: ${{ secrets.BARK_DEFAULT_GROUP || '公租房通知' }}
+          BARK_SERVER_URL: ${{ secrets.BARK_SERVER_URL || 'https://api.day.app' }}
+          BARK_SOUND: ${{ secrets.BARK_SOUND || 'telegraph' }}
+          BARK_LEVEL: ${{ secrets.BARK_LEVEL || 'active' }}
           
           # ==========================================
           # 爬虫配置
@@ -123,7 +137,7 @@ jobs:
           if [[ -n "$BARK_KEY" ]]; then
             echo "✅ BARK_KEY已配置: ${BARK_KEY:0:5}..."
           else
-            echo "❌ BARK_KEY未配置"
+            echo "⚠️ BARK_KEY未配置 - 推送功能将不可用"
           fi
           
           # 检查Chrome浏览器
@@ -147,7 +161,24 @@ jobs:
           python -c "import requests; print(f'✅ Requests版本: {requests.__version__}')"
           
           # 测试Bark推送
-          python -c "import os,requests; k=os.getenv('BARK_KEY',''); print('BARK_KEY:',k); t1='https://api.day.app/'+k+'/Test1'; r1=requests.get(t1,timeout=10); print('Test1 Status:',r1.status_code,'Response:',r1.text[:200]); t2='https://api.day.app/'+k+'/Test2?group=Test'; r2=requests.get(t2,timeout=10); print('Test2 Status:',r2.status_code,'Response:',r2.text[:200])"
+          python -c "
+import os
+import requests
+
+BARK_KEY = os.getenv('BARK_KEY', '')
+print(f'BARK_KEY configured: {bool(BARK_KEY)}')
+
+if BARK_KEY:
+    # 测试基本推送
+    test_url1 = f'https://api.day.app/{BARK_KEY}/GitHub_Action_Test'
+    try:
+        response1 = requests.get(test_url1, timeout=10)
+        print(f'Test 1 - Status: {response1.status_code}, Response: {response1.text[:200]}')
+    except Exception as e:
+        print(f'Test 1 - Error: {str(e)}')
+else:
+    print('⚠️ BARK_KEY not configured, skipping push test')
+"
           
           echo ""
           echo "=========================================="
@@ -195,6 +226,12 @@ jobs:
           
           # 输出失败日志摘要
           echo "=== 错误摘要 ==="
-          if [ -f gzf_spider.log ]; then
-            tail -50 gzf_spider.log
+          if [ -f "gzf_Spider/gzf_spider.log" ]; then
+            echo "从 gzf_Spider/gzf_spider.log 读取日志:"
+            tail -50 gzf_Spider/gzf_spider.log
+          elif [ -f "gzf_Spider/src/*.log" ]; then
+            echo "从 gzf_Spider/src/ 目录读取日志:"
+            tail -50 gzf_Spider/src/*.log
+          else
+            echo "未找到日志文件"
           fi
