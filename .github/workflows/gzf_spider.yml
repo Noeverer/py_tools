@@ -164,12 +164,9 @@ jobs:
           python -c "
 import os
 import requests
-
 BARK_KEY = os.getenv('BARK_KEY', '')
 print(f'BARK_KEY configured: {bool(BARK_KEY)}')
-
 if BARK_KEY:
-    # 测试基本推送
     test_url1 = f'https://api.day.app/{BARK_KEY}/GitHub_Action_Test'
     try:
         response1 = requests.get(test_url1, timeout=10)
