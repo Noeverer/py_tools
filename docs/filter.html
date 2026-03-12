@@ -17,6 +17,47 @@
             background: #f5f5f7;
             padding: 20px;
             padding-bottom: 100px;
+            padding-top: max(20px, env(safe-area-inset-top));
+        }
+        
+        .quick-actions {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 16px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        
+        .quick-actions h3 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        
+        .quick-actions-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        
+        .quick-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quick-btn:active {
+            transform: scale(0.95);
         }
         
         .header {
@@ -281,7 +322,18 @@
     </style>
 </head>
 <body>
-    <div class="container">
+        <div class="container">
+        <!-- 快速操作栏 -->
+        <div class="quick-actions">
+            <h3>⚡ 快速操作</h3>
+            <div class="quick-actions-buttons">
+                <button class="quick-btn" onclick="enableQuick('金桥低价')">金桥</button>
+                <button class="quick-btn" onclick="enableQuick('张江低价')">张江</button>
+                <button class="quick-btn" onclick="enableQuick('一室户优选')">一室</button>
+                <button class="quick-btn" onclick="openQuickPage()">更多</button>
+            </div>
+        </div>
+        
         <!-- 头部 -->
         <div class="header">
             <h1>🎯 公租房筛选</h1>

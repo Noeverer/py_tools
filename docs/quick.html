@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>快速筛选</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 320px;
+            width: 100%;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .btn-grid {
+            display: grid;
+            gap: 12px;
+        }
+        
+        .btn {
+            background: white;
+            border: none;
+            border-radius: 16px;
+            padding: 18px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn.primary {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .btn.danger {
+            background: #f44336;
+            color: white;
+        }
+        
+        .btn.info {
+            background: #2196f3;
+            color: white;
+        }
+        
+        .btn .icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .btn .label {
+            font-size: 15px;
+            font-weight: 600;
+        }
+        
+        .btn .subtitle {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+            font-weight: normal;
+        }
+        
+        .btn.primary .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn.danger .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn.info .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .status {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .status h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .status p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 20px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+        
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-size: 14px;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .toast.show {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                top: -50px;
+                opacity: 0;
+            }
+            to {
+                top: 20px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="toast" id="toast"></div>
+    
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>🎯 快速筛选</h1>
+            <p>点击按钮快速操作</p>
+        </div>
+        
+        <!-- 当前状态 -->
+        <div class="status" id="status-display">
+            <h3 id="status-title">加载中...</h3>
+            <p id="status-desc">正在获取筛选状态</p>
+        </div>
+        
+        <!-- 快速启用 -->
+        <div class="section-title">快速启用</div>
+        <div class="btn-grid">
+            <button class="btn primary" onclick="enableFilter('金桥低价')">
+                <span class="icon">🏠</span>
+                <span class="label">金桥低价</span>
+                <span class="subtitle"><3000元</span>
+            </button>
+            
+            <button class="btn primary" onclick="enableFilter('张江低价')">
+                <span class="icon">🏢</span>
+                <span class="label">张江低价</span>
+                <span class="subtitle"><3000元</span>
+            </button>
+            
+            <button class="btn primary" onclick="enableFilter('一室户优选')">
+                <span class="icon">🏘️</span>
+                <span class="label">一室户</span>
+                <span class="subtitle"><3500元</span>
+            </button>
+        </div>
+        
+        <!-- 批量操作 -->
+        <div class="divider"></div>
+        <div class="section-title">批量操作</div>
+        <div class="btn-grid">
+            <button class="btn info" onclick="enableAll()">
+                <span class="icon">✅</span>
+                <span class="label">一键全启用</span>
+            </button>
+            
+            <button class="btn danger" onclick="disableAll()">
+                <span class="icon">❌</span>
+                <span class="label">一键全禁用</span>
+            </button>
+        </div>
+        
+        <!-- 查看结果 -->
+        <div class="divider"></div>
+        <div class="section-title">查看</div>
+        <div class="btn-grid">
+            <button class="btn" onclick="openFilterPage()">
+                <span class="icon">⚙️</span>
+                <span class="label">详细筛选</span>
+                <span class="subtitle">完整配置</span>
+            </button>
+            
+            <button class="btn" onclick="openDashboard()">
+                <span class="icon">📊</span>
+                <span class="label">房源仪表板</span>
+                <span class="subtitle">今日数据</span>
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // 显示提示
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+        
+        // 加载当前筛选状态
+        function loadStatus() {
+            const statusTitle = document.getElementById('status-title');
+            const statusDesc = document.getElementById('status-desc');
+            
+            // 从本地存储读取
+            const enabledFilters = JSON.parse(localStorage.getItem('enabledFilters') || '[]');
+            
+            if (enabledFilters.length === 0) {
+                statusTitle.textContent = '⚠️ 无启用筛选';
+                statusDesc.textContent = '点击上方按钮快速启用';
+            } else {
+                statusTitle.textContent = `✅ 已启用 ${enabledFilters.length} 个筛选`;
+                statusDesc.textContent = enabledFilters.join(', ');
+            }
+        }
+        
+        // 启用筛选
+        function enableFilter(filterName) {
+            let enabledFilters = JSON.parse(localStorage.getItem('enabledFilters') || '[]');
+            
+            if (enabledFilters.includes(filterName)) {
+                showToast(`"${filterName}" 已启用`);
+            } else {
+                enabledFilters.push(filterName);
+                localStorage.setItem('enabledFilters', JSON.stringify(enabledFilters));
+                showToast(`已启用 "${filterName}"`);
+                loadStatus();
+            }
+        }
+        
+        // 禁用筛选
+        function disableFilter(filterName) {
+            let enabledFilters = JSON.parse(localStorage.getItem('enabledFilters') || '[]');
+            enabledFilters = enabledFilters.filter(f => f !== filterName);
+            localStorage.setItem('enabledFilters', JSON.stringify(enabledFilters));
+            showToast(`已禁用 "${filterName}"`);
+            loadStatus();
+        }
+        
+        // 一键全启用
+        function enableAll() {
+            const allFilters = ['金桥低价', '张江低价', '一室户优选', '唐镇低价'];
+            localStorage.setItem('enabledFilters', JSON.stringify(allFilters));
+            showToast('已启用所有筛选方案');
+            loadStatus();
+        }
+        
+        // 一键全禁用
+        function disableAll() {
+            localStorage.setItem('enabledFilters', JSON.stringify([]));
+            showToast('已禁用所有筛选方案');
+            loadStatus();
+        }
+        
+        // 打开详细筛选页面
+        function openFilterPage() {
+            window.location.href = 'filter.html';
+        }
+        
+        // 打开仪表板
+        function openDashboard() {
+            window.location.href = 'index.html';
+        }
+        
+        // 解析URL参数
+        function parseAction() {
+            const params = new URLSearchParams(window.location.search);
+            const action = params.get('action');
+            const filter = params.get('filter');
+            
+            if (action === 'enable' && filter) {
+                enableFilter(filter);
+            } else if (action === 'disable' && filter) {
+                disableFilter(filter);
+            } else if (action === 'disable-all') {
+                disableAll();
+            } else if (action === 'enable-all') {
+                enableAll();
+            }
+        }
+        
+        // 页面加载时初始化
+        window.addEventListener('DOMContentLoaded', () => {
+            parseAction();
+            loadStatus();
+        });
+        
+        // 添加到主屏幕提示
+        if ('standalone' in window.navigator && window.navigator.standalone) {
+            // 已添加到主屏幕
+            document.body.style.paddingTop = '0';
+        }
+    </script>
+</body>
+</html>
