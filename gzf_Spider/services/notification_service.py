@@ -125,7 +125,7 @@ def is_push_time_enabled():
 
 def send_notification(house_data):
     """
-    推送房屋信息到微信
+    推送房屋信息到Bark
 
     Args:
         house_data (list): 房屋信息列表
@@ -135,68 +135,46 @@ def send_notification(house_data):
         print("不在推送时间范围内，跳过推送")
         return
 
-    # 先发送测试推送
-    send_test_push()
-
     if not house_data:
         print("没有房屋数据需要推送")
-        # 只有在推送时间内才发送无房源消息
-        if is_push_time_enabled():
-            push_single_message("未查询到符合条件的房源信息")
+        push_single_message("🏠 未查询到新的房源信息")
         return
+
+    print(f"📊 总共获取到 {len(house_data)} 条房源")
 
     # 应用预设筛选方案
     filtered_results = apply_preset_filters(house_data)
 
+    # 统计推送的房源数（去重）
+    pushed_houses = set()
+
     # 推送各个筛选方案的结果（分条推送）
     for filter_name, filtered_data in filtered_results.items():
         if filtered_data:
-            print(f"筛选方案 '{filter_name}' 找到 {len(filtered_data)} 条房源")
-            push_houses_separately(
-                filtered_data, title=f"{filter_name}({len(filtered_data)}套)"
-            )
+            print(f"🎯 筛选方案 '{filter_name}' 找到 {len(filtered_data)} 条房源")
+            
+            # 去重并推送
+            unique_houses = []
+            for house in filtered_data:
+                house_key = f"{house.get('house_name', '')}-{house.get('rent', 0)}"
+                if house_key not in pushed_houses:
+                    pushed_houses.add(house_key)
+                    unique_houses.append(house)
+            
+            print(f"✅ 实际推送 {len(unique_houses)} 条房源（去重后）")
+            
+            # 分条推送每个房源
+            for house in unique_houses:
+                push_house_message(house, filter_name)
         else:
-            print(f"筛选方案 '{filter_name}' 未找到符合条件的房源")
+            print(f"⚠️ 筛选方案 '{filter_name}' 未找到符合条件的房源")
 
-    # 如果没有启用预设筛选，则使用原有逻辑
-    if not FILTER_CONFIG.ENABLED_PRESET_FILTERS:
-        # 分别处理普通推送和特定地点推送
-        regular_houses = []
-        special_location_houses = []
-
-        for house in house_data:
-            # 检查是否是监控的特定地点
-            is_monitored_location = False
-            if MONITORED_LOCATIONS:
-                for location in MONITORED_LOCATIONS:
-                    if location in house.get("house_site", "") or location in house.get(
-                        "house_name", ""
-                    ):
-                        is_monitored_location = True
-                        special_location_houses.append(house)
-                        break
-
-            # 检查是否是监控的特定房型
-            is_monitored_type = False
-            if MONITORED_HOUSE_TYPES:
-                for house_type in MONITORED_HOUSE_TYPES:
-                    if house_type in house.get("house_type", ""):
-                        is_monitored_type = True
-                        if not is_monitored_location:  # 避免重复添加
-                            special_location_houses.append(house)
-                        break
-
-            # 如果不是特殊监控的，则加入普通列表
-            if not is_monitored_location and not is_monitored_type:
-                regular_houses.append(house)
-
-        # 分条推送普通房源信息
-        if regular_houses:
-            push_houses_separately(regular_houses, title="最新房源")
-
-        # 分条推送特定地点房源信息
-        if special_location_houses:
-            push_houses_separately(special_location_houses, title="重点关注")
+    # 如果有推送的房源，发送汇总消息
+    if pushed_houses:
+        summary = f"📊 今日推送汇总: {len(pushed_houses)} 套符合条件房源"
+        push_single_message(summary, group="汇总")
+    else:
+        push_single_message("⚠️ 今日暂无符合筛选条件的房源", group="汇总")
 
 
 def apply_preset_filters(house_data):
@@ -517,6 +495,60 @@ def push_single_message(message, key=None, group=None, is_test=False, auto_group
             print(f"消息推送失败: {response.status_code}")
     except Exception as e:
         print(f"推送过程中出错: {e}")
+
+
+def push_house_message(house, filter_name="", key=None, group=None):
+    """
+    推送单个房源信息
+
+    Args:
+        house (dict): 房源信息字典
+        filter_name (str): 匹配的筛选方案名称
+        key (str): Bark推送key
+        group (str): 分组名称
+    """
+    if key is None:
+        key = BARK_CONFIG.KEY
+    if group is None:
+        group = BARK_CONFIG.DEFAULT_GROUP
+
+    # 构造推送消息
+    parts = []
+    
+    # 房源名称
+    if house.get("house_name"):
+        name = str(house["house_name"])
+        parts.append(f"🏠 {name}")
+    
+    # 匹配的筛选方案
+    if filter_name:
+        parts.append(f"🎯 {filter_name}")
+    
+    # 租金
+    if house.get("rent"):
+        parts.append(f"💰 ¥{house['rent']}/月")
+    
+    # 区域
+    if house.get("house_site"):
+        parts.append(f"📍 {house['house_site']}")
+    
+    # 户型
+    if house.get("house_type"):
+        parts.append(f"🏢 {house['house_type']}")
+    
+    # 面积
+    if house.get("area"):
+        parts.append(f"📐 {house['area']}㎡")
+    
+    # 组合消息
+    message = "\n".join(parts)
+    
+    # 使用筛选方案作为分组
+    if filter_name:
+        group = f"{BARK_CONFIG.DEFAULT_GROUP}-{filter_name}"
+    
+    # 推送
+    push_single_message(message, key=key, group=group)
 
 
 def push_houses_separately(house_data, title="最新房源", key=None, group=None):

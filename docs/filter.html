@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>公租房筛选设置</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f5f5f7;
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .card h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 16px;
+        }
+        
+        .filter-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+        
+        .filter-item.active {
+            border-left-color: #4caf50;
+            background: #e8f5e9;
+        }
+        
+        .filter-item.disabled {
+            border-left-color: #ccc;
+            background: #f5f5f5;
+            opacity: 0.6;
+        }
+        
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .filter-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .filter-desc {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .filter-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 28px;
+            background: #ccc;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .toggle-switch.active {
+            background: #4caf50;
+        }
+        
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: left 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .toggle-switch.active::after {
+            left: 24px;
+        }
+        
+        .house-preview {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .house-preview .name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        
+        .house-preview .info {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .house-preview .price {
+            color: #f44336;
+            font-weight: 600;
+        }
+        
+        .preview-summary {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn:active {
+            transform: scale(0.98);
+        }
+        
+        .fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 16px;
+            box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        
+        .status-bar {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .status-bar.error {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        .custom-filter {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .fixed-bottom {
+                max-width: 600px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>🎯 公租房筛选</h1>
+            <p>简单设置，精准推送</p>
+        </div>
+        
+        <!-- 状态提示 -->
+        <div id="status-bar" class="status-bar" style="display: none;">
+            配置已保存！
+        </div>
+        
+        <!-- 筛选结果预览 -->
+        <div class="card" id="preview-card" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <h2>📊 筛选结果预览</h2>
+                <button onclick="closePreview()" style="background: none; border: none; font-size: 24px; cursor: pointer;">×</button>
+            </div>
+            <div id="preview-content">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+        
+        <!-- 预设筛选方案 -->
+        <div class="card">
+            <h2>⚡ 快速筛选</h2>
+            <div id="filter-list">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+        
+        <!-- 自定义筛选 -->
+        <div class="card">
+            <h2>✨ 自定义筛选</h2>
+            <div class="custom-filter">
+                <div class="form-group">
+                    <label>区域（可选）</label>
+                    <select id="custom-area">
+                        <option value="">不限</option>
+                        <option value="金桥">金桥</option>
+                        <option value="张江">张江</option>
+                        <option value="唐镇">唐镇</option>
+                        <option value="曹路">曹路</option>
+                        <option value="陆家嘴">陆家嘴</option>
+                        <option value="康桥">康桥</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>最高租金（元）</label>
+                    <input type="number" id="custom-max-rent" placeholder="例如: 3000">
+                </div>
+                <div class="form-group">
+                    <label>户型（可选）</label>
+                    <select id="custom-house-type">
+                        <option value="">不限</option>
+                        <option value="1室1厅">1室1厅</option>
+                        <option value="2室1厅">2室1厅</option>
+                        <option value="1室">1室</option>
+                        <option value="2室">2室</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="addCustomFilter()">添加自定义筛选</button>
+            </div>
+        </div>
+        
+        <!-- 推送时间 -->
+        <div class="card">
+            <h2>⏰ 推送时间</h2>
+            <div class="filter-tags" style="margin-bottom: 12px;">
+                <span class="filter-tag">上午 8:00-11:00</span>
+                <span class="filter-tag">晚上 19:00-21:00</span>
+            </div>
+            <p style="font-size: 13px; color: #666; margin-top: 8px;">
+                只在这些时间段内推送房源信息
+            </p>
+        </div>
+        
+        <!-- 固定底部按钮 -->
+        <div class="fixed-bottom">
+            <button class="btn btn-primary" onclick="saveConfig()">保存设置</button>
+            <button class="btn btn-secondary" onclick="testFilter()">测试筛选</button>
+        </div>
+    </div>
+    
+    <script>
+        // 筛选方案数据
+        let filters = [
+            {
+                id: '金桥低价',
+                name: '金桥低价',
+                description: '金桥地区，月租低于3000元',
+                tags: ['金桥', '<3000元'],
+                enabled: true
+            },
+            {
+                id: '张江低价',
+                name: '张江低价',
+                description: '张江地区，月租低于3000元',
+                tags: ['张江', '<3000元'],
+                enabled: true
+            },
+            {
+                id: '一室户优选',
+                name: '一室户优选',
+                description: '一室一厅，月租低于3500元',
+                tags: ['1室1厅', '<3500元'],
+                enabled: true
+            },
+            {
+                id: '唐镇低价',
+                name: '唐镇低价',
+                description: '唐镇地区，月租低于3000元',
+                tags: ['唐镇', '<3000元'],
+                enabled: false
+            }
+        ];
+        
+        // 加载筛选方案列表
+        function loadFilters() {
+            const container = document.getElementById('filter-list');
+            container.innerHTML = '';
+            
+            filters.forEach(filter => {
+                const item = document.createElement('div');
+                item.className = `filter-item ${filter.enabled ? 'active' : 'disabled'}`;
+                item.innerHTML = `
+                    <div class="filter-header">
+                        <div>
+                            <div class="filter-name">${filter.name}</div>
+                            <div class="filter-desc">${filter.description}</div>
+                        </div>
+                        <div class="toggle-switch ${filter.enabled ? 'active' : ''}" 
+                             onclick="toggleFilter('${filter.id}')"></div>
+                    </div>
+                    <div class="filter-tags">
+                        ${filter.tags.map(tag => `<span class="filter-tag">${tag}</span>`).join('')}
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+        
+        // 切换筛选方案
+        function toggleFilter(filterId) {
+            const filter = filters.find(f => f.id === filterId);
+            if (filter) {
+                filter.enabled = !filter.enabled;
+                loadFilters();
+            }
+        }
+        
+        // 添加自定义筛选
+        function addCustomFilter() {
+            const area = document.getElementById('custom-area').value;
+            const maxRent = document.getElementById('custom-max-rent').value;
+            const houseType = document.getElementById('custom-house-type').value;
+            
+            if (!maxRent) {
+                showStatus('请输入最高租金', true);
+                return;
+            }
+            
+            const name = area ? `${area}低价` : `自定义${filters.length + 1}`;
+            const descParts = [];
+            if (area) descParts.push(area);
+            descParts.push(`月租<${maxRent}元`);
+            if (houseType) descParts.push(houseType);
+            
+            const newFilter = {
+                id: `custom_${Date.now()}`,
+                name: name,
+                description: descParts.join('，'),
+                tags: [area || '不限', `<${maxRent}元`].filter(t => t),
+                enabled: true
+            };
+            
+            filters.push(newFilter);
+            loadFilters();
+            showStatus('自定义筛选已添加');
+            
+            // 清空表单
+            document.getElementById('custom-area').value = '';
+            document.getElementById('custom-max-rent').value = '';
+            document.getElementById('custom-house-type').value = '';
+        }
+        
+        // 保存配置
+        function saveConfig() {
+            const enabledFilters = filters
+                .filter(f => f.enabled)
+                .map(f => f.id);
+            
+            // 保存到本地存储
+            localStorage.setItem('enabledFilters', JSON.stringify(enabledFilters));
+            localStorage.setItem('customFilters', JSON.stringify(filters));
+            
+            showStatus('配置已保存！');
+        }
+        
+        // 测试筛选
+        function testFilter() {
+            const enabledFilters = filters.filter(f => f.enabled);
+            if (enabledFilters.length === 0) {
+                showStatus('请先启用至少一个筛选方案', true);
+                return;
+            }
+            
+            // 加载今日数据并预览
+            loadTodayData().then(houses => {
+                if (!houses || houses.length === 0) {
+                    showStatus('暂无房源数据', true);
+                    return;
+                }
+                
+                previewResults(houses, enabledFilters);
+            }).catch(err => {
+                console.error('加载数据失败:', err);
+                showStatus('加载房源数据失败', true);
+            });
+        }
+        
+        // 加载今日房源数据
+        async function loadTodayData() {
+            try {
+                const response = await fetch('data/today.json');
+                const data = await response.json();
+                return data.houses || [];
+            } catch (err) {
+                console.error('加载数据失败:', err);
+                return [];
+            }
+        }
+        
+        // 预览筛选结果
+        function previewResults(houses, enabledFilters) {
+            // 显示预览卡片
+            const previewCard = document.getElementById('preview-card');
+            const previewContent = document.getElementById('preview-content');
+            previewCard.style.display = 'block';
+            
+            // 合并所有启用的筛选条件
+            let filteredHouses = houses;
+            
+            // 简化预览逻辑：显示所有房源，标记匹配的筛选
+            filteredHouses = houses.map(house => {
+                const matchedFilters = [];
+                enabledFilters.forEach(filter => {
+                    // 简单匹配逻辑
+                    if (filter.id.includes('金桥') && house.house_site.includes('金桥')) {
+                        matchedFilters.push(filter.name);
+                    } else if (filter.id.includes('张江') && house.house_site.includes('张江')) {
+                        matchedFilters.push(filter.name);
+                    } else if (filter.id.includes('唐镇') && house.house_site.includes('唐镇')) {
+                        matchedFilters.push(filter.name);
+                    } else if (filter.id.includes('一室') && house.house_type.includes('1室')) {
+                        matchedFilters.push(filter.name);
+                    }
+                });
+                
+                return {
+                    ...house,
+                    matchedFilters
+                };
+            });
+            
+            // 只显示有匹配筛选的房源
+            const matchedHouses = filteredHouses.filter(h => h.matchedFilters.length > 0);
+            
+            if (matchedHouses.length === 0) {
+                previewContent.innerHTML = `
+                    <div style="text-align: center; padding: 30px; color: #999;">
+                        <p>今日暂无符合筛选条件的房源</p>
+                        <p style="font-size: 13px; margin-top: 10px;">已扫描 ${houses.length} 套房源</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // 显示预览结果
+            previewContent.innerHTML = `
+                <div class="preview-summary">
+                    ✅ 已扫描 ${houses.length} 套房源，找到 ${matchedHouses.length} 套符合条件
+                </div>
+                ${matchedHouses.slice(0, 5).map(house => `
+                    <div class="house-preview">
+                        <div class="name">${house.house_name}</div>
+                        <div class="info">
+                            <div class="price">¥${house.rent}/月</div>
+                            <div>📍 ${house.house_site}</div>
+                            <div>🏢 ${house.house_type}</div>
+                            <div>📐 ${house.area}㎡</div>
+                            ${house.matchedFilters.length > 0 ? `
+                                <div style="margin-top: 8px;">
+                                    <span style="color: #666; font-size: 12px;">匹配:</span>
+                                    ${house.matchedFilters.map(f => 
+                                        `<span class="filter-tag">${f}</span>`
+                                    ).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('')}
+                ${matchedHouses.length > 5 ? `
+                    <div style="text-align: center; padding: 10px; color: #999; font-size: 13px;">
+                        还有 ${matchedHouses.length - 5} 套房源...
+                    </div>
+                ` : ''}
+            `;
+            
+            // 滚动到预览区域
+            previewCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // 关闭预览
+        function closePreview() {
+            document.getElementById('preview-card').style.display = 'none';
+        }
+        
+        // 显示状态提示
+        function showStatus(message, isError = false) {
+            const statusBar = document.getElementById('status-bar');
+            statusBar.textContent = message;
+            statusBar.className = `status-bar ${isError ? 'error' : ''}`;
+            statusBar.style.display = 'block';
+            
+            setTimeout(() => {
+                statusBar.style.display = 'none';
+            }, 3000);
+        }
+        
+        // 加载保存的配置
+        function loadSavedConfig() {
+            const saved = localStorage.getItem('customFilters');
+            if (saved) {
+                filters = JSON.parse(saved);
+                loadFilters();
+            } else {
+                loadFilters();
+            }
+        }
+        
+        // 页面加载时初始化
+        loadSavedConfig();
+    </script>
+</body>
+</html>

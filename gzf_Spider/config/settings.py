@@ -6,6 +6,7 @@
 """
 
 import os
+import yaml
 from typing import Dict, List, Optional
 
 
@@ -89,11 +90,19 @@ class FilterConfig:
             "area": os.getenv("FILTER_AREA") or None,
             "house_type": os.getenv("FILTER_HOUSE_TYPE") or None,
         }
-        self.PRESET_FILTERS = self._load_preset_filters()
-        enabled_filters = os.getenv("ENABLED_PRESET_FILTERS", "金桥低价")
-        self.ENABLED_PRESET_FILTERS = [
-            f.strip() for f in enabled_filters.split(",") if f.strip()
-        ]
+        # 优先从YAML文件加载，否则从环境变量加载
+        yaml_filters = self._load_yaml_filters()
+        if yaml_filters:
+            self.PRESET_FILTERS = yaml_filters
+            # 从YAML读取启用的筛选方案
+            enabled_filters = yaml_filters.get('_enabled_filters', '金桥低价')
+            self.ENABLED_PRESET_FILTERS = enabled_filters if isinstance(enabled_filters, list) else [enabled_filters]
+        else:
+            self.PRESET_FILTERS = self._load_preset_filters()
+            enabled_filters = os.getenv("ENABLED_PRESET_FILTERS", "金桥低价")
+            self.ENABLED_PRESET_FILTERS = [
+                f.strip() for f in enabled_filters.split(",") if f.strip()
+            ]
 
     def _parse_number(self, value: Optional[str]) -> Optional[float]:
         if value is None or value.lower() == "none":
@@ -102,6 +111,30 @@ class FilterConfig:
             return float(value)
         except ValueError:
             return None
+
+    def _load_yaml_filters(self) -> Optional[Dict[str, Dict]]:
+        """从YAML文件加载筛选配置"""
+        yaml_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', 'filters.yaml')
+        try:
+            if os.path.exists(yaml_file):
+                with open(yaml_file, 'r', encoding='utf-8') as f:
+                    config = yaml.safe_load(f)
+                
+                # 转换YAML格式为内部格式
+                filters = {}
+                if config and 'filter_rules' in config:
+                    for rule in config['filter_rules']:
+                        if rule.get('enabled', True):
+                            filters[rule['name']] = rule['conditions']
+                
+                # 保存启用的筛选方案列表
+                filters['_enabled_filters'] = config.get('enabled_filters', [])
+                
+                print(f"✅ 从YAML加载筛选配置: {len([k for k in filters.keys() if k != '_enabled_filters'])} 个方案")
+                return filters
+        except Exception as e:
+            print(f"⚠️ 加载YAML筛选配置失败: {e}")
+        return None
 
     def _load_preset_filters(self) -> Dict[str, Dict]:
         presets = {
