@@ -19,6 +19,7 @@ from utils.db_utils import read_recent_house_data, filter_house_data
 from config.settings import DEFAULT_FILTERS
 from services.notification_service import authenticate_bark, push_single_message
 from config.settings import BARK_KEY
+import subprocess
 
 
 def main():
@@ -62,9 +63,16 @@ def main():
     if house_data:
         print(f"✅ 成功获取到 {len(house_data)} 条房源信息")
 
-        # 可以选择应用过滤器
-        # filtered_data = filter_house_data(house_data, DEFAULT_FILTERS)
-        # print(f"过滤后剩余 {len(filtered_data)} 条房源信息")
+        # 应用过滤器
+        filtered_data = filter_house_data(house_data, DEFAULT_FILTERS)
+        print(f"过滤后剩余 {len(filtered_data)} 条房源信息")
+
+        # 生成仪表板数据
+        print("📊 生成仪表板数据...")
+        try:
+            subprocess.run([sys.executable, 'scripts/generate_dashboard.py'], check=True, cwd=current_dir)
+        except subprocess.CalledProcessError as e:
+            print(f"⚠️ 生成仪表板数据失败: {e}")
     else:
         print("❌ 未获取到房源信息")
         if args.mode != "debug":

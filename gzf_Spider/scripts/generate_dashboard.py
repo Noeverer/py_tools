@@ -6,10 +6,17 @@
 """
 
 import os
+import sys
 import json
 import yaml
 from datetime import datetime, timezone, timedelta
 from typing import Dict, List, Any
+
+# 添加项目根目录到路径
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+
+from utils.db_utils import read_recent_house_data, filter_house_data
+from config.settings import DEFAULT_FILTERS
 
 # 配置文件路径
 DOCS_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'docs')
@@ -201,32 +208,32 @@ def main():
     print("=" * 50)
     print("📊 生成GitHub Pages仪表板数据")
     print("=" * 50)
-    
-    # 这里应该从实际爬虫获取数据
-    # 暂时使用示例数据
-    sample_house_data = [
-        {
-            'house_name': '示例房源1',
-            'house_site': '金桥',
-            'rent': 2800,
-            'house_type': '1室1厅',
-            'area': 45
-        }
-    ]
-    
-    sample_filtered_data = [
-        {
-            'house_name': '示例房源1',
-            'house_site': '金桥',
-            'rent': 2800,
-            'house_type': '1室1厅',
-            'area': 45
-        }
-    ]
-    
+
+    # 从数据库读取房源数据
+    try:
+        house_data = read_recent_house_data(limit_days=7)
+        print(f"✅ 从数据库读取到 {len(house_data)} 条房源数据")
+    except Exception as e:
+        print(f"⚠️ 读取数据库失败: {e}")
+        house_data = []
+
+    # 应用筛选条件
+    try:
+        filtered_data = filter_house_data(house_data, DEFAULT_FILTERS)
+        print(f"✅ 筛选后符合条件: {len(filtered_data)} 条")
+    except Exception as e:
+        print(f"⚠️ 筛选失败: {e}")
+        filtered_data = house_data
+
+    # 如果没有数据，生成空数据结构
+    if not house_data:
+        print("⚠️ 没有房源数据，生成空仪表板")
+        house_data = []
+        filtered_data = []
+
     # 更新仪表板
-    today_data = update_dashboard(sample_house_data, sample_filtered_data)
-    
+    today_data = update_dashboard(house_data, filtered_data)
+
     print("=" * 50)
     print("✅ 仪表板数据生成完成")
     print(f"- 总房源: {today_data['total']}")

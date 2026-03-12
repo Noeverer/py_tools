@@ -190,12 +190,6 @@ jobs:
           echo "✅ 爬虫任务执行完成"
           echo "=========================================="
       
-      - name: 生成仪表板数据
-        run: |
-          echo "📊 生成GitHub Pages展示数据..."
-          cd gzf_Spider
-          python scripts/generate_dashboard.py
-      
       - name: 上传日志文件
         uses: actions/upload-artifact@v4
         if: always()
