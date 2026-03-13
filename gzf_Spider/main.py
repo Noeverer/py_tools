@@ -17,8 +17,8 @@ sys.path.insert(0, current_dir)
 from spiders.house_spider import main as spider_main
 from utils.db_utils import read_recent_house_data, filter_house_data
 from config.settings import DEFAULT_FILTERS
-from services.notification_service import authenticate_bark, push_single_message
-from config.settings import BARK_KEY
+from services.notification_service import authenticate_bark, push_single_message, send_notification
+from config.settings import BARK_KEY, ENABLED_PRESET_FILTERS
 import subprocess
 
 
@@ -63,16 +63,21 @@ def main():
     if house_data:
         print(f"✅ 成功获取到 {len(house_data)} 条房源信息")
 
-        # 应用过滤器
-        filtered_data = filter_house_data(house_data, DEFAULT_FILTERS)
-        print(f"过滤后剩余 {len(filtered_data)} 条房源信息")
+        # 显示启用的筛选方案
+        print(f"📋 启用的筛选方案: {', '.join(ENABLED_PRESET_FILTERS)}")
 
-        # 生成仪表板数据
+        # 生成仪表板数据（包含所有筛选结果）
         print("📊 生成仪表板数据...")
         try:
             subprocess.run([sys.executable, 'scripts/generate_dashboard.py'], check=True, cwd=current_dir)
+            print("✅ 仪表板数据生成成功")
         except subprocess.CalledProcessError as e:
             print(f"⚠️ 生成仪表板数据失败: {e}")
+
+        # 发送推送通知（使用预设筛选方案）
+        print("📤 发送推送通知...")
+        send_notification(house_data)
+        print("✅ 推送通知发送完成")
     else:
         print("❌ 未获取到房源信息")
         if args.mode != "debug":

@@ -58,93 +58,125 @@ def save_history(history: List[Dict[str, Any]]):
 
 def generate_dashboard_data(house_data: List[Dict[str, Any]], filtered_data: List[Dict[str, Any]]) -> Dict[str, Any]:
     """生成前端展示数据"""
-    
+
     # 获取当前时间（北京时间）
     beijing_tz = timezone(timedelta(hours=8))
     now = datetime.now(beijing_tz)
-    
+
     # 计算统计数据
     total_count = len(house_data)
     filtered_count = len(filtered_data)
-    
-    # 计算平均租金
+
+    # 计算平均租金（需要从租金字符串中提取数字）
     avg_price = 0
     if house_data:
-        total_price = sum(h.get('rent', 0) for h in house_data)
-        avg_price = round(total_price / len(house_data), 0)
-    
+        total_price = 0
+        count = 0
+        for h in house_data:
+            rent_str = str(h.get('rent', '0'))
+            # 提取租金数字
+            import re
+            match = re.search(r'(\d+)', rent_str)
+            if match:
+                total_price += int(match.group(1))
+                count += 1
+        if count > 0:
+            avg_price = round(total_price / count, 0)
+
     # 获取筛选配置
     filters_config = load_filters_config()
-    
+
     # 统计每个筛选方案匹配的房源数量
     filter_stats = []
     enabled_filters = filters_config.get('enabled_filters', [])
     filter_rules = {r['name']: r for r in filters_config.get('filter_rules', [])}
-    
+
     for filter_name in enabled_filters:
         if filter_name in filter_rules:
             rule = filter_rules[filter_name]
-            # 简单的匹配逻辑（实际应该使用与爬虫相同的筛选逻辑）
-            matched_count = 0
-            for house in filtered_data:
-                if rule['conditions'].get('area') and rule['conditions']['area'] in house.get('house_site', ''):
-                    matched_count += 1
-                elif not rule['conditions'].get('area'):
-                    matched_count += 1
-            
+            # 使用正确的筛选逻辑
+            matched_houses = filter_house_data(house_data, rule['conditions'])
+            matched_count = len(matched_houses)
+
             filter_stats.append({
                 'name': filter_name,
                 'description': rule['description'],
-                'count': matched_count
+                'count': matched_count,
+                'enabled': rule.get('enabled', True)
             })
-    
+
     # 为每个房源添加匹配的筛选方案
     houses_with_filters = []
-    for house in filtered_data[:20]:  # 限制显示前20个房源
+    for house in house_data[:50]:  # 显示前50个房源
         matched = []
         for stat in filter_stats:
             if stat['count'] > 0:
-                # 简化的匹配逻辑
                 rule = filter_rules[stat['name']]
-                if rule['conditions'].get('area') and rule['conditions']['area'] in house.get('house_site', ''):
+                matched_houses = filter_house_data([house], rule['conditions'])
+                if matched_houses:
                     matched.append(stat['name'])
-                elif not rule['conditions'].get('area'):
-                    matched.append(stat['name'])
-        
+
+        # 提取租金数字
+        rent_str = str(house.get('rent', '0'))
+        import re
+        rent_match = re.search(r'(\d+)', rent_str)
+        rent_value = int(rent_match.group(1)) if rent_match else 0
+
         houses_with_filters.append({
             **house,
-            'matched_filters': matched
+            'matched_filters': matched,
+            'rent_value': rent_value  # 添加数字化的租金，方便排序
         })
-    
+
+    # 按租金排序
+    houses_with_filters.sort(key=lambda x: x.get('rent_value', 0))
+
     # 生成今日数据
     today_data = {
         'update_time': now.isoformat(),
         'date': now.strftime('%Y-%m-%d'),
-        'total': total_count,
-        'filtered': filtered_count,
-        'new': min(3, filtered_count),  # 简化的新增数量逻辑
+        'time': now.strftime('%H:%M:%S'),
+        'total_count': total_count,
+        'filtered_count': filtered_count,
+        'new_count': len(house_data) if house_data else 0,  # 新增数量 = 总数量
         'avg_price': avg_price,
         'filters': filter_stats,
-        'houses': houses_with_filters
+        'houses': houses_with_filters,
+        'enabled_filters': enabled_filters,
+        'all_filters': filter_rules
     }
-    
+
     return today_data
 
 
 def update_dashboard(house_data: List[Dict[str, Any]], filtered_data: List[Dict[str, Any]]):
     """更新仪表板数据"""
-    
+
     ensure_directories()
-    
+
     # 生成今日数据
     today_data = generate_dashboard_data(house_data, filtered_data)
-    
+
     # 保存今日数据
     with open(TODAY_FILE, 'w', encoding='utf-8') as f:
         json.dump(today_data, f, ensure_ascii=False, indent=2)
-    
+
     print(f"✅ 已生成今日数据: {TODAY_FILE}")
-    
+    print(f"   - 总房源: {today_data['total_count']}")
+    print(f"   - 筛选结果: {today_data['filtered_count']}")
+    print(f"   - 平均租金: ¥{today_data['avg_price']}")
+
+    # 保存筛选配置供前端使用
+    filters_data = {
+        'enabled_filters': today_data['enabled_filters'],
+        'all_filters': today_data['all_filters'],
+        'filter_stats': today_data['filters']
+    }
+    filters_file = os.path.join(DATA_DIR, 'filters.json')
+    with open(filters_file, 'w', encoding='utf-8') as f:
+        json.dump(filters_data, f, ensure_ascii=False, indent=2)
+    print(f"✅ 已生成筛选配置: {filters_file}")
+
     # 更新历史数据
     history = load_history()
     
@@ -209,35 +241,31 @@ def main():
     print("📊 生成GitHub Pages仪表板数据")
     print("=" * 50)
 
-    # 从数据库读取房源数据
+    # 从CSV文件读取房源数据
     try:
-        house_data = read_recent_house_data(limit_days=7)
-        print(f"✅ 从数据库读取到 {len(house_data)} 条房源数据")
-    except Exception as e:
-        print(f"⚠️ 读取数据库失败: {e}")
-        house_data = []
+        house_data = read_recent_house_data(limit_days=1)
+        print(f"✅ 从CSV文件读取到 {len(house_data)} 条房源数据")
 
-    # 应用筛选条件
-    try:
-        filtered_data = filter_house_data(house_data, DEFAULT_FILTERS)
-        print(f"✅ 筛选后符合条件: {len(filtered_data)} 条")
+        # 如果有数据，显示前几条
+        if house_data:
+            print(f"   示例数据: {house_data[0].get('house_name', 'N/A')} - {house_data[0].get('rent', 'N/A')}")
     except Exception as e:
-        print(f"⚠️ 筛选失败: {e}")
-        filtered_data = house_data
+        print(f"⚠️ 读取CSV文件失败: {e}")
+        import traceback
+        traceback.print_exc()
+        house_data = []
 
     # 如果没有数据，生成空数据结构
     if not house_data:
         print("⚠️ 没有房源数据，生成空仪表板")
-        house_data = []
-        filtered_data = []
 
-    # 更新仪表板
-    today_data = update_dashboard(house_data, filtered_data)
+    # 更新仪表板（使用所有数据，不应用额外筛选）
+    today_data = update_dashboard(house_data, house_data)
 
     print("=" * 50)
     print("✅ 仪表板数据生成完成")
-    print(f"- 总房源: {today_data['total']}")
-    print(f"- 符合条件: {today_data['filtered']}")
+    print(f"- 总房源: {today_data['total_count']}")
+    print(f"- 启用筛选: {', '.join(today_data['enabled_filters'])}")
     print(f"- 平均租金: ¥{today_data['avg_price']}")
     print("=" * 50)
 
