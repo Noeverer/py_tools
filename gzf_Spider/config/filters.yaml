@@ -12,17 +12,16 @@
 # 启用的筛选方案（支持多个，用逗号分隔）
 enabled_filters:
   - 金桥低价
-  - 张江低价
   - 一室户优选
 
 # 筛选规则定义
 filter_rules:
   # 方案1: 金桥低价房
   - name: 金桥低价
-    description: 金桥地区，月租低于3000元
+    description: 金桥地区，月租低于5000元
     conditions:
       area: 金桥          # 区域关键词
-      max_rent: 3000      # 最高租金
+      max_rent: 5000      # 最高租金
       min_rent: 0         # 最低租金
       house_type: ""      # 户型（空表示不限）
       enabled: true
