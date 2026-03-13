@@ -1,0 +1,69 @@
+name: GitHub Pages 部署
+
+on:
+  # 每次推送到 master 分支时触发
+  push:
+    branches: [ master ]
+  # 手动触发
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: |
+          pip install pyyaml pandas requests pillow
+
+      - name: 生成数据文件
+        run: |
+          echo "生成仪表板数据..."
+          python gzf_Spider/scripts/generate_dashboard.py || echo "数据生成脚本执行失败，继续..."
+
+      - name: 准备部署文件
+        run: |
+          # 确保 docs 目录存在
+          mkdir -p docs/data
+
+          # 创建必要的目录
+          mkdir -p docs/data
+
+          # 如果有生成的 JSON 文件，复制到 docs/data
+          if [ -f "docs/dashboard.json" ]; then
+            cp docs/dashboard.json docs/data/
+          fi
+
+          echo "部署文件准备完成"
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
