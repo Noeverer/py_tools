@@ -87,16 +87,29 @@ def get_house_content(driver):
         dt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         houselist = []
         current_page = 1
+        max_pages = 50  # 最大抓取页数，防止无限循环
+        consecutive_empty_pages = 0  # 连续空页数计数
+        seen_house_ids = set()  # 记录已抓取的房源ID，防止重复
 
-        while current_page <= total_pages:
+        while current_page <= total_pages and current_page <= max_pages:
             # 获取当前页的房源
             houses = driver.find_elements(
                 By.XPATH, "//ul[@class='village-house-lists']/li"
             )
 
             if not houses:
-                print(f"第{current_page}页未获取到房源")
-                break
+                print(f"⚠️ 第{current_page}页未获取到房源")
+                print(f"检查页面URL: {driver.current_url}")
+                print(f"尝试重新获取房源...")
+                time.sleep(2)
+                houses = driver.find_elements(
+                    By.XPATH, "//ul[@class='village-house-lists']/li"
+                )
+                if not houses:
+                    print(f"❌ 第{current_page}页确实无房源，停止抓取")
+                    break
+
+            consecutive_empty_pages = 0  # 重置连续空页计数
 
             for house in houses:
                 househash = {}
@@ -108,9 +121,8 @@ def get_house_content(driver):
                     if not part:
                         continue
 
-                    if idx == 0:
-                        househash["house_name"] = part
-                    elif "所属区域" in part:
+                    # 使用关键词匹配而不是索引，避免顺序问题
+                    if "所属区域" in part:
                         househash["house_site"] = part.replace("所属区域", "").strip()
                     elif "所属户型" in part:
                         househash["house_type"] = part.replace("所属户型", "").strip()
@@ -121,18 +133,27 @@ def get_house_content(driver):
                     elif "租金" in part:
                         househash["rent"] = part.replace("租金", "").strip()
                     else:
-                        pass
+                        # 第一行通常是房源名称
+                        if not househash.get("house_name"):
+                            househash["house_name"] = part
 
                 applicant_count = get_applicant_count(driver, house)
                 househash["applicant_count"] = applicant_count
 
-                print(f"获取到第{i}条房源: {househash}")
+                # 检查房源是否重复
+                house_id = househash.get('house_name', '') + str(househash.get('floor', ''))
+                if house_id in seen_house_ids:
+                    print(f"⚠️ 发现重复房源，跳过: {househash.get('house_name', '未知')}")
+                    continue
+                seen_house_ids.add(house_id)
+
+                print(f"获取到第{i}条房源: 名称={househash.get('house_name', '未知')}, 区域={househash.get('house_site', '未知')}, 租金={househash.get('rent', '未知')}")
                 houselist.append(househash)
                 i += 1
 
             # 翻页
+            print(f"成功抓取第{current_page}页，准备翻页...")
             if current_page < total_pages:
-                print(f"成功抓取第{current_page}页，准备翻页...")
                 try:
                     next_btn = driver.find_element(By.CSS_SELECTOR, ".btn-next")
                     if "disabled" in next_btn.get_attribute("class"):
