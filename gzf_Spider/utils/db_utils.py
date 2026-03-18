@@ -25,7 +25,9 @@ def save_house_data_to_csv(house_data, filename=None):
     # 如果没有提供文件名，则使用当前日期作为文件名
     if filename is None:
         today = datetime.now().strftime("%Y-%m-%d")
-        filename = f"../data/house_data_{today}.csv"
+        # 使用绝对路径，确保路径一致
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        filename = os.path.join(script_dir, "..", "data", f"house_data_{today}.csv")
 
     # 确保目录存在
     os.makedirs(os.path.dirname(filename), exist_ok=True)
@@ -87,17 +89,27 @@ def read_recent_house_data(days=1, filename=None):
         house_data = []
         for i in range(days):
             date_str = (datetime.now() - timedelta(days=i)).strftime("%Y-%m-%d")
-            file_path = f"data/house_data_{date_str}.csv"
+            # 使用绝对路径，确保路径一致
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            file_path = os.path.join(script_dir, "..", "data", f"house_data_{date_str}.csv")
+
+            logger.info(f"尝试读取文件: {file_path}")
 
             if os.path.exists(file_path):
                 try:
                     with open(file_path, "r", encoding="utf-8") as csvfile:
                         reader = csv.DictReader(csvfile)
+                        count = 0
                         for row in reader:
                             house_data.append(row)
+                            count += 1
+                        logger.info(f"从 {file_path} 读取到 {count} 条数据")
                 except Exception as e:
                     logger.error(f"读取文件 {file_path} 时发生错误: {e}")
+            else:
+                logger.info(f"文件不存在: {file_path}")
 
+        logger.info(f"总共读取到 {len(house_data)} 条房源数据")
         return house_data
     else:
         # 读取指定文件

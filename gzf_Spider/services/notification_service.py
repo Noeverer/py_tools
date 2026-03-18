@@ -132,7 +132,9 @@ def send_notification(house_data):
     """
     # 检查推送时间
     if not is_push_time_enabled():
-        print("不在推送时间范围内，跳过推送")
+        print("⚠️ 不在推送时间范围内，跳过推送")
+        print("💡 提示: 当前配置的推送时间段为 8-11 和 19-21（上海时间）")
+        print("💡 如需立即测试推送，可临时设置环境变量: PUSH_TIME_ENABLED=false")
         return
 
     if not house_data:
@@ -256,7 +258,7 @@ def send_preset_notification(filter_name, house_data):
 
         message_lines.append(f"{i}.{house_info}")
 
-    full_message = "\\n".join(message_lines)
+    full_message = " | ".join(message_lines)
 
     # 使用特定分组推送
     group_name = f"{PUSH_GROUP}-{filter_name}"
@@ -325,7 +327,7 @@ def send_regular_notification(house_data):
 
         message_lines.append(f"{i}.{house_info}")
 
-    full_message = "\\n".join(message_lines)
+    full_message = " | ".join(message_lines)
 
     # 发送推送请求
     push_single_message(full_message)
@@ -419,7 +421,7 @@ def send_special_location_notification(house_data):
 
             message_lines.append(f"{i}.{house_info}")
 
-        full_message = "\\n".join(message_lines)
+        full_message = " | ".join(message_lines)
 
         # 根据地点选择推送密钥
         location_key = LOCATION_BARK_KEYS.get(location, BARK_KEY)
@@ -493,6 +495,8 @@ def push_single_message(message, key=None, group=None, is_test=False, auto_group
                 print(f"消息推送成功: {message[:50]}...")
         else:
             print(f"消息推送失败: {response.status_code}")
+            print(f"响应内容: {response.text}")
+            print(f"请求URL: {url[:200]}...")
     except Exception as e:
         print(f"推送过程中出错: {e}")
 
@@ -540,13 +544,13 @@ def push_house_message(house, filter_name="", key=None, group=None):
     if house.get("area"):
         parts.append(f"📐 {house['area']}㎡")
     
-    # 组合消息
-    message = "\n".join(parts)
-    
+    # 组合消息 - 将换行符转换为空格，避免URL编码问题
+    message = " ".join(parts)
+
     # 使用筛选方案作为分组
     if filter_name:
         group = f"{BARK_CONFIG.DEFAULT_GROUP}-{filter_name}"
-    
+
     # 推送
     push_single_message(message, key=key, group=group)
 

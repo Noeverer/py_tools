@@ -243,7 +243,7 @@ def main():
 
     # 从CSV文件读取房源数据
     try:
-        house_data = read_recent_house_data(limit_days=1)
+        house_data = read_recent_house_data(days=1)
         print(f"✅ 从CSV文件读取到 {len(house_data)} 条房源数据")
 
         # 如果有数据，显示前几条

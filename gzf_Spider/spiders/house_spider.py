@@ -155,11 +155,30 @@ def get_house_content(driver):
             print(f"成功抓取第{current_page}页，准备翻页...")
             if current_page < total_pages:
                 try:
-                    next_btn = driver.find_element(By.CSS_SELECTOR, ".btn-next")
+                    from selenium.webdriver.common.action_chains import ActionChains
+                    from selenium.webdriver.support.ui import WebDriverWait
+                    from selenium.webdriver.support import expected_conditions as EC
+
+                    # 等待并检查翻页按钮
+                    try:
+                        next_btn = WebDriverWait(driver, 5).until(
+                            EC.presence_of_element_located((By.CSS_SELECTOR, ".btn-next"))
+                        )
+                    except:
+                        print("未找到翻页按钮，可能已到最后一页")
+                        break
+
+                    # 检查按钮是否禁用
                     if "disabled" in next_btn.get_attribute("class"):
                         print("已到最后一页")
                         break
-                    next_btn.click()
+
+                    # 先滚动到按钮位置，避免被遮挡
+                    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", next_btn)
+                    time.sleep(0.5)
+
+                    # 使用JavaScript点击，避免元素遮挡问题
+                    driver.execute_script("arguments[0].click();", next_btn)
                     time.sleep(3)
                     current_page += 1
                 except Exception as e:
